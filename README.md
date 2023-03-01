@@ -11,16 +11,7 @@ TextView to display amounts of money in different formats.
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        app:symbol="¥"
-       app:amount="1256.56"
-       />
-
-~~~
-
-* Include the following code in your Activity in order to update the amount value:
-
-~~~java
-
-moneyTextView.setAmount(156);
+       app:amount="1256.56"/>
 
 ~~~
 
