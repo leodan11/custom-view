@@ -1,6 +1,11 @@
 # MoneyTextView
 TextView to display amounts of money in different formats.
 
+# Credits
+
+This is just an updated version of [MoneyTextView](https://github.com/fabiomsr/MoneyTextView) and applying some of the active pull requests in it. 
+Credits go completely to its creator and the people who has contributed with those pull requests.
+
 ## Usage
 
 * Include MoneyTextView in a layout xml file:
