@@ -7,23 +7,35 @@
     tools:context=".MainActivity">
 
     <com.leodan11.textview.MoneyTextView
+        android:id="@+id/money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        app:symbol="$"
-        app:symbolGravity="start|top"
-        app:symbolTextSize="30sp"
-        app:symbolMargin="6dp"
         app:amount="1256.56"
+        app:baseTextColor="#009688"
         app:baseTextSize="54sp"
         app:decimalDigitsTextSize="30sp"
         app:decimalMargin="6dp"
         app:includeDecimalSeparator="false"
-        app:baseTextColor="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:symbol="$"
+        app:symbolGravity="start|top"
+        app:symbolMargin="6dp"
+        app:symbolTextSize="30sp" />
+
+    <com.leodan11.textview.MaterialBadgeTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@color/black"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/money" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
