@@ -11,6 +11,9 @@ TextView to display amounts of money in different formats.
 This is just an updated version of [MoneyTextView](https://github.com/fabiomsr/MoneyTextView) and applying some of the active pull requests in it. 
 Credits go completely to its creator and the people who has contributed with those pull requests.
 
+The badge module is taken from [BadgeTextView](https://github.com/SmartToolFactory/BadgeTextView).
+Credits go completely to its creator and the people who has contributed with those pull requests.
+
 # Setup
 
 <details>
