@@ -28,14 +28,25 @@
         app:symbolTextSize="30sp" />
 
     <com.leodan11.textview.MaterialBadgeTextView
+        android:id="@+id/materialBadgeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:background="@color/black"
+        android:background="@color/teal_700"
         android:text="@string/app_name"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/money" />
+        app:layout_constraintTop_toBottomOf="@+id/money"
+        tools:ignore="TextContrastCheck" />
+
+    <com.leodan11.textview.SpannableTextView
+        android:id="@+id/spannableTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialBadgeTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

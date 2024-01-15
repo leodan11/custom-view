@@ -2,6 +2,7 @@ package com.leodan11.textview
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -9,7 +10,11 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
+import androidx.annotation.IntRange
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.content.ContextCompat
 import kotlin.math.min
 
 class MaterialBadgeTextView : AppCompatTextView {
@@ -17,26 +22,26 @@ class MaterialBadgeTextView : AppCompatTextView {
     private var badgeCount = -1
 
     /**
-     * This is them maximum number to be displayed
+     * This is the maximum number to be displayed
      * Any number above this will be showed as **MAX_NUMBER+**
      */
     var maxNumber = 99
 
     /**
-     * Should we draw circle or rounded rectangle shape
+     * Should we draw circle or rounded rectangle shape?
      */
     private var isCircleShape = true
 
     /**
      * After how many digits should start drawing rectangle shape
      *
-     * Setting threshold to 2 will draw circle when badge count is less or equal to 2
+     * Setting a threshold to 2 will draw circle when the badge count is less or equal to 2
      */
     var circleShapeThreshold = 1
 
     /**
      * Top and bottom margin for rectangle or circle which is
-     * half size between TextView's total width minus it's badge shape
+     *  half the size between TextView's total width minus it's badge shape
      *
      * If shape is circle vertical margin is equal to horizontal margin
      *
@@ -49,7 +54,7 @@ class MaterialBadgeTextView : AppCompatTextView {
 
     /**
      * Horizontal margin for rectangle or circle which is
-     * half size between TextView's total width minus it's badge shape
+     *  half the size between TextView's total width minus it's badge shape
      *
      * If shape is circle vertical margin is equal to horizontal margin
      */
@@ -60,7 +65,7 @@ class MaterialBadgeTextView : AppCompatTextView {
         }
 
     /**
-     * Radius for drawing rounded rect background.
+     * Radius for drawing a rounded rect background.
      *
      * It's 50% of the smaller dimension by default
      */
@@ -77,7 +82,7 @@ class MaterialBadgeTextView : AppCompatTextView {
     /**
      * Default background color
      */
-    var badgeBackgroundColor = Color.RED
+    private var badgeBackgroundColor = Color.RED
 
     /**
      * Enable debugging rectangle behind this view
@@ -107,7 +112,7 @@ class MaterialBadgeTextView : AppCompatTextView {
         }
 
     /**
-     * Offset for shadow for x axis. Setting positive number pushes shadow right.
+     * Offset for shadow for x-axis. Setting positive number pushes shadow right.
      */
     var badgeShadowYOffset = 1.5f
         get() {
@@ -116,7 +121,7 @@ class MaterialBadgeTextView : AppCompatTextView {
 
 
     /**
-     * Offset for shadow for x axis. Setting positive number pushes shadow down.
+     * Offset for shadow for x-axis. Setting positive number pushes shadow down.
      */
     private val drawShadow: Boolean
         get() {
@@ -207,7 +212,7 @@ class MaterialBadgeTextView : AppCompatTextView {
         // Should draw circle or rectangle
         isCircleShape = (length <= circleShapeThreshold)
 
-        // Get Text Width and Height, this is the smallest rectangle to be used
+        // Get Text Width and Height; this is the smallest rectangle to be used
         val textHeight = textSize
 
         // Select one of these. paint.measureText adds some space to text when measuring
@@ -218,7 +223,7 @@ class MaterialBadgeTextView : AppCompatTextView {
         // Space above and below text, this is drawing area + empty space
         val verticalSpaceAroundText = (textHeight * .12f + 6 + paddingVertical).toInt()
 
-        // Space left and right of the text, this is drawing area + empty space
+        // Space left and right of the text, this is a drawing area + empty space
         val horizontalSpaceAroundText = ((textHeight * .24f) + 8 + paddingHorizontal).toInt()
 
         // Measure dimensions
@@ -354,6 +359,10 @@ class MaterialBadgeTextView : AppCompatTextView {
         }
     }
 
+    /**
+     * Set number to be displayed in [MaterialBadgeTextView]. If it cannot be
+     * parsed to a number
+     */
     @SuppressLint("SetTextI18n")
     fun setBadgeCount(count: Int, showWhenZero: Boolean = false) {
 
