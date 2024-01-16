@@ -2,7 +2,6 @@ package com.leodan11.textview
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.ColorStateList
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -10,11 +9,8 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.View
-import androidx.annotation.IntRange
 import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.content.ContextCompat
 import kotlin.math.min
 
 class MaterialBadgeTextView : AppCompatTextView {
@@ -345,6 +341,18 @@ class MaterialBadgeTextView : AppCompatTextView {
 
         super.onDraw(canvas)
     }
+
+    /**
+     * Set badge background color in [MaterialBadgeTextView].
+     *
+     * @param color integer value
+     */
+    fun setBadgeBackgroundColor(@ColorInt color: Int) {
+        badgeShadowColor = color
+        paintBackground.color = color
+        requestLayout()
+    }
+
 
     /**
      * Set number to be displayed in [MaterialBadgeTextView]. If it cannot be
