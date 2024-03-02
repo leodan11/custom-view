@@ -18,7 +18,7 @@ import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class BadgeDrawable extends Drawable {
+public class MaterialBadgeDrawable extends Drawable {
     public static final int TYPE_NUMBER = 1;
     public static final int TYPE_ONLY_ONE_TEXT = 1 << 1;
     public static final int TYPE_WITH_TWO_TEXT = 1 << 2;
@@ -147,12 +147,12 @@ public class BadgeDrawable extends Drawable {
         }
 
         @NonNull
-        public BadgeDrawable build() {
-            return new BadgeDrawable(config);
+        public MaterialBadgeDrawable build() {
+            return new MaterialBadgeDrawable(config);
         }
     }
 
-    private BadgeDrawable(Config config) {
+    private MaterialBadgeDrawable(Config config) {
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setTypeface(config.typeface);
@@ -532,13 +532,13 @@ public class BadgeDrawable extends Drawable {
 
         String suffix = "...";
         while (paint.measureText(text + suffix) > width) {
-            if (text.length() > 0)
+            if (!text.isEmpty())
                 text = text.substring(0, text.length() - 1);
 
-            if (text.length() == 0) {
+            if (text.isEmpty()) {
                 suffix = suffix.substring(0, suffix.length() - 1);
 
-                if (suffix.length() == 0) break;
+                if (suffix.isEmpty()) break;
             }
         }
 

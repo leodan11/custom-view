@@ -4,8 +4,8 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.leodan11.textview.BadgeDrawable
-import com.leodan11.textview.BadgeDrawable.dipToPixels
+import com.leodan11.textview.MaterialBadgeDrawable
+import com.leodan11.textview.MaterialBadgeDrawable.dipToPixels
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,23 +15,23 @@ class MainActivity : AppCompatActivity() {
         val textView: TextView = findViewById(R.id.badgeTextView)
 
         val list = listOf(
-            BadgeDrawable.Builder()
-                .type(BadgeDrawable.TYPE_NUMBER)
+            MaterialBadgeDrawable.Builder()
+                .type(MaterialBadgeDrawable.TYPE_NUMBER)
                 .number(56)
                 .build(),
-            BadgeDrawable.Builder()
-                .type(BadgeDrawable.TYPE_ONLY_ONE_TEXT)
+            MaterialBadgeDrawable.Builder()
+                .type(MaterialBadgeDrawable.TYPE_ONLY_ONE_TEXT)
                 .badgeColor(Color.LTGRAY)
                 .textOne("One")
                 .build(),
-            BadgeDrawable.Builder()
-                .type(BadgeDrawable.TYPE_WITH_TWO_TEXT)
+            MaterialBadgeDrawable.Builder()
+                .type(MaterialBadgeDrawable.TYPE_WITH_TWO_TEXT)
                 .badgeColor(Color.MAGENTA)
                 .textOne("TEST")
                 .textTwo("Pass")
                 .build(),
-            BadgeDrawable.Builder()
-                .type(BadgeDrawable.TYPE_WITH_TWO_TEXT_COMPLEMENTARY)
+            MaterialBadgeDrawable.Builder()
+                .type(MaterialBadgeDrawable.TYPE_WITH_TWO_TEXT_COMPLEMENTARY)
                 .textOne("LEVEL")
                 .padding(dipToPixels(2f))
                 .strokeWidth(dipToPixels(1f).toInt())
