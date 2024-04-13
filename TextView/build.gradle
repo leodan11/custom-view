@@ -63,7 +63,7 @@ afterEvaluate {
                 pom {
                     name = "TextView"
                     description = "TextView to display text in different formats."
-                    url = "https://github.com/leodan11/TextView"
+                    url = "https://github.com/leodan11/CustomView"
                 }
 
             }
