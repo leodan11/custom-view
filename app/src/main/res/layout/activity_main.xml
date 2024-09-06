@@ -50,4 +50,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialBadgeTextView" />
 
+    <com.github.leodan11.customview.ticketview.TicketView
+        android:id="@+id/ticketView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/badgeTextView"
+        app:ticketBorderColor="?attr/colorAccent"
+        app:ticketBorderWidth="1dp"
+        app:ticketCornerType="rounded"
+        app:ticketDividerPadding="0dp"
+        app:ticketDividerType="dash"
+        app:ticketElevation="8dp"
+        app:ticketOrientation="horizontal"
+        app:ticketScallopPositionPercent="60"
+        app:ticketScallopRadius="10dp"
+        app:ticketShowBorder="false"
+        app:ticketShowDivider="true" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
