@@ -4,8 +4,8 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.leodan11.textview.MaterialBadgeDrawable
-import com.leodan11.textview.MaterialBadgeDrawable.dipToPixels
+import com.github.leodan11.customview.core.DisplayMetrics.dipToPixels
+import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

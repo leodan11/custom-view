@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.leodan11.textview.MoneyTextView
+    <com.github.leodan11.customview.textview.MoneyTextView
         android:id="@+id/money"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         app:symbolMargin="6dp"
         app:symbolTextSize="30sp" />
 
-    <com.leodan11.textview.MaterialBadgeTextView
+    <com.github.leodan11.customview.textview.MaterialBadgeTextView
         android:id="@+id/materialBadgeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

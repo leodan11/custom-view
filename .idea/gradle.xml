@@ -9,8 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/TextView" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/drawable" />
+            <option value="$PROJECT_DIR$/textview" />
+            <option value="$PROJECT_DIR$/ticketview" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

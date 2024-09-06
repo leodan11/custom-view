@@ -14,4 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "My Application"
 include ':app'
-include ':TextView'
+include ':core'
+include ':textview'
+include ':drawable'
+include ':ticketview'
