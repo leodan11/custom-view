@@ -30,7 +30,7 @@ allprojects {
 
 ```gradle
 dependencies {
-  implementation 'com.github.leodan11:CustomView:Tag'
+  implementation 'com.github.leodan11:custom-view:Tag'
 }
 ```
 
@@ -50,7 +50,7 @@ repositories {
 
 ```kotlin
 dependencies {
-  implementation("com.github.leodan11:CustomView:$tag")
+  implementation("com.github.leodan11:custom-view:$tag")
 }
 ```
   
@@ -72,7 +72,7 @@ dependencies {
 ```xml
 <dependency>
   <groupId>com.github.leodan11</groupId>
-  <artifactId>CustomView</artifactId>
+  <artifactId>custom-view</artifactId>
   <version>tag</version>
 </dependency>
 ```

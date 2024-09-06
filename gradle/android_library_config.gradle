@@ -1,50 +1,7 @@
-apply from: "$rootDir/dependencies.gradle"
-
 if (versions == null || versions.publish_version == null) {
     throw new IllegalStateException("Unable to reference publish_version!")
 } else if (module_group == null || module_name == null) {
     throw new IllegalStateException("Must provide module_group and module_name!")
-}
-
-android {
-    namespace "${module_group}.${module_name}"
-    compileSdk versions.compile_sdk
-
-    defaultConfig {
-        minSdk versions.min_sdk
-        targetSdk versions.target_sdk
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = '17'
-    }
-
-    publishing {
-        singleVariant('release') {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
-
-    lint {
-        abortOnError false
-    }
-
 }
 
 afterEvaluate {
@@ -64,11 +21,11 @@ afterEvaluate {
                     packaging 'aar'
                     name = module_name
                     description = '😍 A beautiful, fluid and extensible custom view API for Kotlin and Android'
-                    url = 'https://github.com/leodan11/CustomView'
+                    url = 'https://github.com/leodan11/custom-view'
                     licenses {
                         license {
                             name = 'Apache 2.0 License'
-                            url = 'https://github.com/leodan11/CustomView/blob/master/LICENCE.md'
+                            url = 'github.com/leodan11/custom-view/blob/master/LICENCE'
                         }
                     }
                     developers {
@@ -81,9 +38,9 @@ afterEvaluate {
                     }
                     // Version control info - if you're using GitHub, follow the format as seen here
                     scm {
-                        connection = 'scm:git:github.com/leodan11/CustomView.git'
-                        developerConnection = 'scm:git:ssh://github.com/leodan11/CustomView.git'
-                        url = 'https://github.com/leodan11/CustomView/tree/main'
+                        connection = 'scm:git:github.com/leodan11/custom-view.git'
+                        developerConnection = 'scm:git:ssh://github.com/leodan11/custom-view.git'
+                        url = 'https://github.com/leodan11/custom-view/tree/main'
                     }
                 }
             }
