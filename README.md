@@ -65,29 +65,6 @@ dependencies {
   implementation("com.github.leodan11.custom-view:ticketview:$custom_version")
 }
 ```
-  
-### Moven
-
-- Step 1. Add the JitPack repository
-
-```xml
-<repositories>
-  <repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-  </repository>
-</repositories>
-```
-    
-- Step 2. Add the dependency
-
-```xml
-<dependency>
-  <groupId>com.github.leodan11</groupId>
-  <artifactId>custom-view</artifactId>
-  <version>tag</version>
-</dependency>
-```
 
 ---
 
