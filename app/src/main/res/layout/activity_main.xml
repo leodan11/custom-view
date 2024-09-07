@@ -1,74 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.github.leodan11.customview.textview.MoneyTextView
-        android:id="@+id/money"
-        android:layout_width="wrap_content"
+    <com.github.leodan11.customview.ticketview.TicketLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        app:amount="1256.56"
-        app:baseTextColor="#009688"
-        app:baseTextSize="54sp"
-        app:decimalDigitsTextSize="30sp"
-        app:decimalMargin="6dp"
-        app:includeDecimalSeparator="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:symbol="$"
-        app:symbolGravity="start|top"
-        app:symbolMargin="6dp"
-        app:symbolTextSize="30sp" />
-
-    <com.github.leodan11.customview.textview.MaterialBadgeTextView
-        android:id="@+id/materialBadgeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@color/teal_700"
-        android:text="@string/app_name"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/money"
-        tools:ignore="TextContrastCheck" />
-
-
-    <TextView
-        android:id="@+id/badgeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialBadgeTextView" />
-
-    <com.github.leodan11.customview.ticketview.TicketView
-        android:id="@+id/ticketView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/badgeTextView"
-        app:ticketBorderColor="?attr/colorAccent"
-        app:ticketBorderWidth="1dp"
-        app:ticketCornerType="rounded"
-        app:ticketDividerPadding="0dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        app:ticketBackgroundColor="@color/white"
+        app:ticketCornerRadius="12dp"
+        app:ticketCornerType="scallop"
+        app:ticketDividerColor="#333333"
+        app:ticketDividerDesign="color"
+        app:ticketDividerLocation="top"
+        app:ticketDividerPadding="5dp"
         app:ticketDividerType="dash"
-        app:ticketElevation="8dp"
-        app:ticketOrientation="horizontal"
-        app:ticketScallopPositionPercent="60"
-        app:ticketScallopRadius="10dp"
+        app:ticketDividerWidth="1dp"
+        app:ticketElevation="20dp"
+        app:ticketOrientation="vertical"
+        app:ticketPunchLocation="top|bottom"
+        app:ticketPunchRadius="24dp"
+        app:ticketScallopRadius="0dp"
         app:ticketShowBorder="false"
-        app:ticketShowDivider="true" />
+        app:ticketShowDivider="true"
+        app:view="@id/price_holder2">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="vertical">
+
+            <com.github.leodan11.customview.textview.MoneyTextView
+                android:id="@+id/money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:amount="1256.56"
+                app:baseTextColor="#009688"
+                app:baseTextSize="54sp"
+                app:decimalDigitsTextSize="30sp"
+                app:decimalMargin="6dp"
+                app:includeDecimalSeparator="false"
+                app:symbol="$"
+                app:symbolGravity="start|top"
+                app:symbolMargin="6dp"
+                app:symbolTextSize="30sp" />
+
+            <com.github.leodan11.customview.textview.MaterialBadgeTextView
+                android:id="@+id/materialBadgeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@color/teal_700"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/badgeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="14dp" />
+
+            <RelativeLayout
+                android:id="@+id/price_holder2"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_gravity="end"
+                android:background="#A2878787"
+                android:paddingStart="22dp"
+                android:paddingEnd="22dp">
+
+                <com.github.leodan11.customview.ticketview.TicketView
+                    android:id="@+id/ticketView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:ticketBorderColor="?attr/colorAccent"
+                    app:ticketBorderWidth="1dp"
+                    app:ticketCornerType="rounded"
+                    app:ticketDividerPadding="0dp"
+                    app:ticketDividerType="dash"
+                    app:ticketElevation="8dp"
+                    app:ticketOrientation="horizontal"
+                    app:ticketScallopPositionPercent="60"
+                    app:ticketScallopRadius="10dp"
+                    app:ticketShowBorder="false"
+                    app:ticketShowDivider="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.github.leodan11.customview.ticketview.TicketLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

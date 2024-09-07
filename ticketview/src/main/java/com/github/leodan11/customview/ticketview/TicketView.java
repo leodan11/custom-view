@@ -25,6 +25,8 @@ import android.view.View;
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 
+import com.github.leodan11.customview.ticketview.utils.BlurBuilder;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
@@ -277,7 +279,7 @@ public class TicketView extends View {
             canvas.drawPath(mPath, mShadowPaint);
         }
 
-        mShadow = BlurBuilder.blur(getContext(), mShadow, mShadowBlurRadius);
+        mShadow = BlurBuilder.blur4(getContext(), mShadow, mShadowBlurRadius);
     }
 
     private void init(AttributeSet attrs) {
