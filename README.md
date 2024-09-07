@@ -30,7 +30,13 @@ allprojects {
 
 ```gradle
 dependencies {
-  implementation 'com.github.leodan11:custom-view:Tag'
+  def custom_version = "3.0.0"
+
+  implementation "com.github.leodan11.custom-view:core:$custom_version" // Mandatory
+  // Optional
+  implementation "com.github.leodan11.custom-view:drawable:$custom_version"
+  implementation "com.github.leodan11.custom-view:textview:$custom_version"
+  implementation "com.github.leodan11.custom-view:ticketview:$custom_version"
 }
 ```
 
@@ -50,7 +56,13 @@ repositories {
 
 ```kotlin
 dependencies {
-  implementation("com.github.leodan11:custom-view:$tag")
+  val custom_version = "3.0.0"
+
+  implementation("com.github.leodan11.custom-view:core:$custom_version")  // Mandatory
+  // Optional
+  implementation("com.github.leodan11.custom-view:drawable:$custom_version")
+  implementation("com.github.leodan11.custom-view:textview:$custom_version")
+  implementation("com.github.leodan11.custom-view:ticketview:$custom_version")
 }
 ```
   
@@ -78,24 +90,6 @@ dependencies {
 ```
 
 ---
-
-> [!TIP]
-> Below are the available views that can be used.
-
-# Material Badge TextView
-
-TextView to display a badge with text or numerical content. See the [documentation](https://github.com/leodan11/CustomView/wiki/Material-Badge-TextView) for examples and general usage of MaterialBadgeTextView
-
-## Credits
-The badge module is taken from [BadgeTextView](https://github.com/SmartToolFactory/BadgeTextView).Credits go completely to its creator and the people who has contributed with those pull requests.
-
-# Money TextView
-
-TextView to display amounts of money in different formats. See the [documentation](https://github.com/leodan11/CustomView/wiki/Money-TextView) for examples and general use of MoneyTextView
-
-## Credits
-
-This is just an updated version of [MoneyTextView](https://github.com/fabiomsr/MoneyTextView) and applying some of the active pull requests in it. Credits go completely to its creator and the people who has contributed with those pull requests.
 
 License
 -------
