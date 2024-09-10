@@ -30,13 +30,14 @@ allprojects {
 
 ```gradle
 dependencies {
-  def custom_version = "3.0.0"
+  def custom_version = "x.x.x"
 
   implementation "com.github.leodan11.custom-view:core:$custom_version" // Mandatory
   // Optional
   implementation "com.github.leodan11.custom-view:drawable:$custom_version"
+  implementation "com.github.leodan11.custom-view:layout:$custom_version"
   implementation "com.github.leodan11.custom-view:textview:$custom_version"
-  implementation "com.github.leodan11.custom-view:ticketview:$custom_version"
+  implementation "com.github.leodan11.custom-view:widget:$custom_version"
 }
 ```
 
@@ -56,13 +57,14 @@ repositories {
 
 ```kotlin
 dependencies {
-  val custom_version = "3.0.0"
+  val custom_version = "x.x.x"
 
   implementation("com.github.leodan11.custom-view:core:$custom_version")  // Mandatory
   // Optional
   implementation("com.github.leodan11.custom-view:drawable:$custom_version")
+  implementation("com.github.leodan11.custom-view:layout:$custom_version")
   implementation("com.github.leodan11.custom-view:textview:$custom_version")
-  implementation("com.github.leodan11.custom-view:ticketview:$custom_version")
+  implementation("com.github.leodan11.custom-view:widget:$custom_version")
 }
 ```
 
