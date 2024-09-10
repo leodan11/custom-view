@@ -2,17 +2,23 @@ package com.leodan11.myapplication
 
 import android.graphics.Color
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.github.leodan11.customview.core.DisplayMetrics.dipToPixels
+import androidx.core.view.isVisible
+import com.github.leodan11.customview.core.ReadMoreOption
+import com.github.leodan11.customview.core.utils.DisplayMetrics.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
+import com.leodan11.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        val textView: TextView = findViewById(R.id.badgeTextView)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val list = listOf(
             MaterialBadgeDrawable.Builder()
@@ -39,12 +45,65 @@ class MainActivity : AppCompatActivity() {
                 .build(),
         )
 
-        textView.text = list.first().toSpannable()
+        val more = ReadMoreOption.Builder(this@MainActivity)
+            .textLength(3)
+            .labelUnderLine(true)
+            .textLengthType(ReadMoreOption.TYPE_LINE)
+            .expandAnimation(true)
+            .build()
 
-        textView.setOnClickListener {
+        with(binding) {
 
-            textView.text = list.random().toSpannable()
+            buttonViewExample.setOnClickListener {
+                viewExample.root.isVisible = true
+                viewExampleSnowfall.root.isVisible = false
+                viewExampleSignature.root.isVisible = false
+            }
 
+            buttonViewExampleSignature.setOnClickListener {
+                viewExample.root.isVisible = false
+                viewExampleSnowfall.root.isVisible = false
+                viewExampleSignature.root.isVisible = true
+            }
+
+            buttonViewExampleAndroidSnowfall.setOnClickListener {
+                viewExample.root.isVisible = false
+                viewExampleSnowfall.root.isVisible = true
+                viewExampleSignature.root.isVisible = false
+                more.addReadMoreTo(binding.viewExampleSnowfall.textviewFirst, R.string.text_value_temp)
+            }
+
+        }
+
+        with(binding.viewExample) {
+            badgeTextView.text = list.first().toSpannable()
+            badgeTextView.setOnClickListener {
+                badgeTextView.text = list.random().toSpannable()
+            }
+        }
+
+        with(binding.viewExampleSignature) {
+
+            action.setOnClickListener {
+                if (value.isBitmapEmpty) {
+                    Toast.makeText(applicationContext, "Empty", Toast.LENGTH_LONG).show()
+                } else {
+                    view.setImageBitmap(value.signatureBitmap)
+                }
+            }
+
+            actionTwo.setOnClickListener {
+                value.clearCanvas()
+                view.setImageResource(R.drawable.ic_launcher_background)
+            }
+
+        }
+        with(binding.viewExampleSnowfall) {
+            var temp = true
+            textviewFirst.setOnClickListener {
+                if (temp) example.stopFalling() else example.restartFalling()
+                temp = !temp
+            }
         }
 
     }

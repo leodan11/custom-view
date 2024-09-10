@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SignatureView">
+        <attr name="toEnable" format="boolean" />
+        <attr name="toPenSize" format="dimension" />
+        <attr name="toPenColor" format="color" />
+        <attr name="toBackgroundColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SnowfallView">
+        <attr name="snowflakesNum" format="integer"/>
+        <attr name="snowflakeImage" format="reference"/>
+        <attr name="snowflakeAlphaMin" format="integer"/>
+        <attr name="snowflakeAlphaMax" format="integer"/>
+        <attr name="snowflakeAngleMax" format="integer"/>
+        <attr name="snowflakeSizeMin" format="dimension"/>
+        <attr name="snowflakeSizeMax" format="dimension"/>
+        <attr name="snowflakeSpeedMin" format="integer"/>
+        <attr name="snowflakeSpeedMax" format="integer"/>
+        <attr name="snowflakesFadingEnabled" format="boolean"/>
+        <attr name="snowflakesAlreadyFalling" format="boolean"/>
+        <attr name="snowflakesMultipleImages" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="TicketView">
+        <attr name="ticketOrientation" />
+        <attr name="ticketBackgroundColor" />
+        <attr name="ticketScallopRadius" />
+        <attr name="ticketScallopPositionPercent" />
+        <attr name="ticketShowBorder" />
+        <attr name="ticketBorderWidth" />
+        <attr name="ticketBorderColor" />
+        <attr name="ticketShowDivider" />
+        <attr name="ticketDividerWidth" />
+        <attr name="ticketDividerPadding" />
+        <attr name="ticketDividerColor" />
+        <attr name="ticketDividerType" />
+        <attr name="ticketDividerDashGap" />
+        <attr name="ticketDividerDashLength" />
+        <attr name="ticketCornerType" />
+        <attr name="ticketCornerRadius" />
+        <attr name="ticketElevation" />
+        <attr name="android:elevation" />
+        <attr name="ticketBackgroundBeforeDivider" format="reference" />
+        <attr name="ticketBackgroundAfterDivider" format="reference" />
+        <attr name="ticketShadowColor" format="color" />
+    </declare-styleable>
+
+</resources>

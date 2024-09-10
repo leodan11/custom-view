@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TicketLayout">
+        <attr name="ticketOrientation" />
+        <attr name="ticketBackgroundColor" />
+        <attr name="ticketScallopRadius" />
+        <attr name="ticketScallopPositionPercent" />
+        <attr name="ticketShowBorder" />
+        <attr name="ticketBorderWidth" />
+        <attr name="ticketBorderColor" />
+        <attr name="ticketShowDivider" />
+        <attr name="ticketDividerWidth" />
+        <attr name="ticketDividerPadding" />
+        <attr name="ticketDividerColor" />
+        <attr name="ticketDividerType" />
+        <attr name="ticketDividerDashGap" />
+        <attr name="ticketDividerDashLength" />
+        <attr name="ticketCornerType" />
+        <attr name="ticketCornerRadius" />
+        <attr name="ticketElevation" />
+        <attr name="android:elevation" />
+        <attr name="ticketDividerDesign" format="enum">
+            <enum name="color" value="0" />
+            <enum name="punch" value="1" />
+        </attr>
+        <attr name="view" format="reference" />
+        <attr name="ticketDividerLocation">
+            <flag name="none" value="0" />
+            <flag name="top" value="1" />
+            <flag name="bottom" value="2" />
+            <flag name="left" value="4" />
+            <flag name="right" value="8" />
+        </attr>
+        <attr name="ticketPunchLocation">
+            <flag name="none" value="0" />
+            <flag name="top" value="1" />
+            <flag name="bottom" value="2" />
+            <flag name="left" value="4" />
+            <flag name="right" value="8" />
+        </attr>
+        <attr name="ticketPunchRadius" format="dimension" />
+    </declare-styleable>
+
+</resources>

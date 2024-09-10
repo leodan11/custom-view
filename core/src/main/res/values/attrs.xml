@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="ticketOrientation" format="enum">
+        <enum name="horizontal" value="0" />
+        <enum name="vertical" value="1" />
+    </attr>
+    <attr name="ticketBackgroundColor" format="color" />
+    <attr name="ticketScallopRadius" format="dimension" />
+    <attr name="ticketScallopPositionPercent" format="float" />
+    <attr name="ticketShowBorder" format="boolean" />
+    <attr name="ticketBorderWidth" format="dimension" />
+    <attr name="ticketBorderColor" format="color" />
+    <attr name="ticketShowDivider" format="boolean" />
+    <attr name="ticketDividerWidth" format="dimension" />
+    <attr name="ticketDividerPadding" format="dimension" />
+    <attr name="ticketDividerColor" format="color" />
+    <attr name="ticketDividerType" format="enum">
+        <enum name="normal" value="0" />
+        <enum name="dash" value="1" />
+    </attr>
+    <attr name="ticketDividerDashGap" format="dimension" />
+    <attr name="ticketDividerDashLength" format="dimension" />
+    <attr name="ticketCornerType" format="enum">
+        <enum name="normal" value="0" />
+        <enum name="rounded" value="1" />
+        <enum name="scallop" value="2" />
+    </attr>
+    <attr name="ticketCornerRadius" format="dimension" />
+    <attr name="ticketElevation" format="dimension" />
+
+</resources>
