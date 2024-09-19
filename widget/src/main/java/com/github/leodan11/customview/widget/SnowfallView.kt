@@ -11,8 +11,8 @@ import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.github.leodan11.customview.core.utils.toBitmap
-import com.github.leodan11.customview.widget.io.Randomizer
-import com.github.leodan11.customview.widget.io.Snowflake
+import com.github.leodan11.customview.widget.tools.Randomizer
+import com.github.leodan11.customview.widget.tools.Snowflake
 
 class SnowfallView(context: Context, attrs: AttributeSet? = null) : View(context, attrs) {
 

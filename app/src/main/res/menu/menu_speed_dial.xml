@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_use_case_1"
+        android:icon="@drawable/baseline_ac_unit"
+        android:title="@string/use_case_1" />
+
+</menu>

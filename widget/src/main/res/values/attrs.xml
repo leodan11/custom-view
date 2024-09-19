@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="FabWithLabelView">
+        <attr name="android:src" />
+        <attr name="srcCompat" />
+        <attr name="fabLabel" format="string" />
+        <attr name="fabBackgroundColor" format="color" />
+        <attr name="fabLabelColor" format="color" />
+        <attr name="fabLabelBackgroundColor" format="color" />
+        <attr name="fabLabelClickable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SpeedDialView">
+        <attr name="android:enabled" />
+        <attr name="sdExpansionMode" format="enum">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="left" value="2" />
+            <enum name="right" value="3" />
+        </attr>
+        <attr name="sdMainFabAnimationRotateAngle" format="float" />
+        <attr name="sdMainFabClosedSrc" format="reference" />
+        <attr name="sdMainFabClosedIconColor" format="color" />
+        <attr name="sdMainFabClosedBackgroundColor" format="color" />
+        <attr name="sdMainFabOpenedSrc" format="reference" />
+        <attr name="sdMainFabOpenedIconColor" format="color" />
+        <attr name="sdMainFabOpenedBackgroundColor" format="color" />
+        <attr name="sdOverlayLayout" format="reference" />
+        <attr name="sdUseReverseAnimationOnClose" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SpeedDialOverlayLayout">
+        <attr name="clickable_overlay" format="boolean" />
+        <attr name="android:background" />
+    </declare-styleable>
+
     <declare-styleable name="SignatureView">
         <attr name="toEnable" format="boolean" />
         <attr name="toPenSize" format="dimension" />

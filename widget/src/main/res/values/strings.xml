@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="speeddial_snackbar_behavior" tools:ignore="UnusedResources">com.github.leodan11.customview.widget.speeddial.SpeedDialView$SnackbarBehavior</string>
+    <string name="speeddial_scrolling_view_snackbar_behavior" tools:ignore="UnusedResources">com.github.leodan11.customview.widget.speeddial.SpeedDialView$ScrollingViewSnackbarBehavior</string>
+</resources>

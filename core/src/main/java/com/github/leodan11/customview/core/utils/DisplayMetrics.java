@@ -22,6 +22,10 @@ public class DisplayMetrics {
         return (int) px;
     }
 
+    public static int pxToDp(float px) {
+        return Math.round(px / Resources.getSystem().getDisplayMetrics().density);
+    }
+
     public static float spToPixels(float spValue) {
         final float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
         return spValue * fontScale + 0.5f;

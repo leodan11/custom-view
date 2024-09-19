@@ -73,6 +73,12 @@ class MainActivity : AppCompatActivity() {
                 more.addReadMoreTo(binding.viewExampleSnowfall.textviewFirst, R.string.text_value_temp)
             }
 
+            speedDial.inflate(R.menu.menu_speed_dial)
+            speedDial.setOnActionSelectedListener {
+                Toast.makeText(this@MainActivity, "Selected", Toast.LENGTH_SHORT).show()
+                true
+            }
+
         }
 
         with(binding.viewExample) {
@@ -81,7 +87,6 @@ class MainActivity : AppCompatActivity() {
                 badgeTextView.text = list.random().toSpannable()
             }
         }
-
         with(binding.viewExampleSignature) {
 
             action.setOnClickListener {
