@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <public name="pen_size" type="dimen" />
+    <public name="speeddial_snackbar_behavior" type="string" />
+    <public name="speeddial_scrolling_view_snackbar_behavior" type="string" />
 </resources>
