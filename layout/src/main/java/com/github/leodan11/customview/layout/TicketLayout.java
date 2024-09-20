@@ -28,7 +28,7 @@ import static android.graphics.Color.TRANSPARENT;
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 import static android.graphics.PorterDuff.Mode.SRC_IN;
 
-import static com.github.leodan11.customview.core.utils.DisplayMetrics.dpToPx;
+import static com.github.leodan11.customview.core.utils.Converters.dpToPx;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
@@ -400,24 +400,24 @@ public class TicketLayout extends FrameLayout {
             TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.TicketLayout);
             mOrientation = typedArray.getInt(R.styleable.TicketLayout_ticketOrientation, Orientation.HORIZONTAL);
             mBackgroundColor = typedArray.getColor(R.styleable.TicketLayout_ticketBackgroundColor, getResources().getColor(android.R.color.white));
-            mScallopRadius = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketScallopRadius, dpToPx(20f, getContext()));
+            mScallopRadius = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketScallopRadius, dpToPx(getContext(),20f));
             mShowBorder = typedArray.getBoolean(R.styleable.TicketLayout_ticketShowBorder, false);
-            mBorderWidth = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketBorderWidth, dpToPx(2f, getContext()));
+            mBorderWidth = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketBorderWidth, dpToPx(getContext(),2f));
             mBorderColor = typedArray.getColor(R.styleable.TicketLayout_ticketBorderColor, getResources().getColor(android.R.color.black));
             mShowDivider = typedArray.getBoolean(R.styleable.TicketLayout_ticketShowDivider, false);
             mDividerType = typedArray.getInt(R.styleable.TicketLayout_ticketDividerType, DividerType.NORMAL);
             mDividerDesign = typedArray.getInt(R.styleable.TicketLayout_ticketDividerDesign, DividerDesign.COLOR);
-            mDividerWidth = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketDividerWidth, dpToPx(2f, getContext()));
+            mDividerWidth = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketDividerWidth, dpToPx(getContext(), 2f));
             mDividerColor = typedArray.getColor(R.styleable.TicketLayout_ticketDividerColor, getResources().getColor(android.R.color.darker_gray));
-            mDividerDashLength = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketDividerDashLength, dpToPx(8f, getContext()));
-            mDividerDashGap = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketDividerDashGap, dpToPx(4f, getContext()));
+            mDividerDashLength = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketDividerDashLength, dpToPx(getContext(), 8f));
+            mDividerDashGap = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketDividerDashGap, dpToPx(getContext(), 4f));
             mCornerType = typedArray.getInt(R.styleable.TicketLayout_ticketCornerType, CornerType.NORMAL);
-            mCornerRadius = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketCornerRadius, dpToPx(4f, getContext()));
-            mDividerPadding = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketDividerPadding, dpToPx(10f, getContext()));
+            mCornerRadius = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketCornerRadius, dpToPx(getContext(), 4f));
+            mDividerPadding = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketDividerPadding, dpToPx(getContext(), 10f));
             mViewID = typedArray.getResourceId(R.styleable.TicketLayout_view, -1);
             mDividerLocation = typedArray.getInt(R.styleable.TicketLayout_ticketDividerLocation, DividerLocation.NONE);
             mPunchLocation = typedArray.getInt(R.styleable.TicketLayout_ticketPunchLocation, PunchLocation.NONE);
-            mPunchRadius = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketPunchRadius, dpToPx(20f, getContext()));
+            mPunchRadius = typedArray.getDimensionPixelSize(R.styleable.TicketLayout_ticketPunchRadius, dpToPx(getContext(), 20f));
             float elevation = 0f;
             if (typedArray.hasValue(R.styleable.TicketLayout_ticketElevation)) {
                 elevation = typedArray.getDimension(R.styleable.TicketLayout_ticketElevation, elevation);
@@ -688,7 +688,7 @@ public class TicketLayout extends FrameLayout {
     }
 
     private void setShadowBlurRadius(float elevation) {
-        float maxElevation = dpToPx(24f, getContext());
+        float maxElevation = dpToPx(getContext(), 24f);
         mShadowBlurRadius = Math.min(25f * (elevation / maxElevation), 25f);
     }
 

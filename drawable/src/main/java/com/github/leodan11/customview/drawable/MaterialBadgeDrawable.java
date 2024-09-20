@@ -1,7 +1,7 @@
 package com.github.leodan11.customview.drawable;
 
-import static com.github.leodan11.customview.core.utils.DisplayMetrics.dipToPixels;
-import static com.github.leodan11.customview.core.utils.DisplayMetrics.spToPixels;
+import static com.github.leodan11.customview.core.utils.Converters.dipToPixels;
+import static com.github.leodan11.customview.core.utils.Converters.spToPixels;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;

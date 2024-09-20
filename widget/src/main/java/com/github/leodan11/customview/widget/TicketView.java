@@ -5,7 +5,7 @@ import static android.graphics.Color.TRANSPARENT;
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 import static android.graphics.PorterDuff.Mode.SRC_IN;
 
-import static com.github.leodan11.customview.core.utils.DisplayMetrics.dpToPx;
+import static com.github.leodan11.customview.core.utils.Converters.dpToPx;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -289,20 +289,20 @@ public class TicketView extends View {
             mBackgroundAfterDivider = typedArray.getDrawable(R.styleable.TicketView_ticketBackgroundAfterDivider);
             mOrientation = typedArray.getInt(R.styleable.TicketView_ticketOrientation, Orientation.HORIZONTAL);
             mBackgroundColor = typedArray.getColor(R.styleable.TicketView_ticketBackgroundColor, getResources().getColor(android.R.color.white));
-            mScallopRadius = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketScallopRadius, dpToPx(20f, getContext()));
+            mScallopRadius = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketScallopRadius, dpToPx(getContext(), 20f));
             mScallopPositionPercent = typedArray.getFloat(R.styleable.TicketView_ticketScallopPositionPercent, 50);
             mShowBorder = typedArray.getBoolean(R.styleable.TicketView_ticketShowBorder, false);
-            mBorderWidth = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketBorderWidth, dpToPx(2f, getContext()));
+            mBorderWidth = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketBorderWidth, dpToPx(getContext(), 2f));
             mBorderColor = typedArray.getColor(R.styleable.TicketView_ticketBorderColor, getResources().getColor(android.R.color.black));
             mShowDivider = typedArray.getBoolean(R.styleable.TicketView_ticketShowDivider, false);
             mDividerType = typedArray.getInt(R.styleable.TicketView_ticketDividerType, DividerType.NORMAL);
-            mDividerWidth = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketDividerWidth, dpToPx(2f, getContext()));
+            mDividerWidth = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketDividerWidth, dpToPx(getContext(), 2f));
             mDividerColor = typedArray.getColor(R.styleable.TicketView_ticketDividerColor, getResources().getColor(android.R.color.darker_gray));
-            mDividerDashLength = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketDividerDashLength, dpToPx(8f, getContext()));
-            mDividerDashGap = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketDividerDashGap, dpToPx(4f, getContext()));
+            mDividerDashLength = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketDividerDashLength, dpToPx(getContext(), 8f));
+            mDividerDashGap = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketDividerDashGap, dpToPx(getContext(), 4f));
             mCornerType = typedArray.getInt(R.styleable.TicketView_ticketCornerType, CornerType.NORMAL);
-            mCornerRadius = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketCornerRadius, dpToPx(4f, getContext()));
-            mDividerPadding = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketDividerPadding, dpToPx(10f, getContext()));
+            mCornerRadius = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketCornerRadius, dpToPx(getContext(), 4f));
+            mDividerPadding = typedArray.getDimensionPixelSize(R.styleable.TicketView_ticketDividerPadding, dpToPx(getContext(), 10f));
             float elevation = 0f;
             if (typedArray.hasValue(R.styleable.TicketView_ticketElevation)) {
                 elevation = typedArray.getDimension(R.styleable.TicketView_ticketElevation, elevation);
@@ -591,7 +591,7 @@ public class TicketView extends View {
     }
 
     private void setShadowBlurRadius(float elevation) {
-        float maxElevation = dpToPx(24f, getContext());
+        float maxElevation = dpToPx(getContext(), 24f);
         mShadowBlurRadius = Math.min(25f * (elevation / maxElevation), 25f);
     }
 

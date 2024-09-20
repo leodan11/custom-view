@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.github.leodan11.customview.core.ReadMoreOption
-import com.github.leodan11.customview.core.utils.DisplayMetrics.dipToPixels
+import com.github.leodan11.customview.core.utils.Converters.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 import com.leodan11.myapplication.databinding.ActivityMainBinding
 

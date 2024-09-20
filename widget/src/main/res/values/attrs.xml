@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="ExpandableCardView">
+        <attr name="expandTitle" format="string"/>
+        <attr name="expandIcon" format="reference"/>
+        <attr name="expandIconTint" format="color"/>
+        <attr name="expandArrowIcon" format="reference"/>
+        <attr name="expandArrowIconTint" format="color"/>
+        <attr name="innerViewExpand" format="reference"/>
+        <attr name="expandOnClick" format="boolean"/>
+        <attr name="animationExpandDuration" format="integer"/>
+        <attr name="startExpanded" format="boolean"/>
+    </declare-styleable>
+
     <declare-styleable name="FabWithLabelView">
         <attr name="android:src" />
         <attr name="srcCompat" />

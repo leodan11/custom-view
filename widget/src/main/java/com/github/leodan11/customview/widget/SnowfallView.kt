@@ -10,7 +10,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
-import com.github.leodan11.customview.core.utils.toBitmap
+import com.github.leodan11.customview.core.utils.Drawables.toBitmap
 import com.github.leodan11.customview.widget.tools.Randomizer
 import com.github.leodan11.customview.widget.tools.Snowflake
 
@@ -37,7 +37,7 @@ class SnowfallView(context: Context, attrs: AttributeSet? = null) : View(context
         val a = context.obtainStyledAttributes(attrs, R.styleable.SnowfallView)
         try {
             snowflakesNum = a.getInt(R.styleable.SnowfallView_snowflakesNum, DEFAULT_SNOWFLAKES_NUM)
-            snowflakeImage = a.getDrawable(R.styleable.SnowfallView_snowflakeImage)?.toBitmap()
+            snowflakeImage = toBitmap(a.getDrawable(R.styleable.SnowfallView_snowflakeImage))
             snowflakeAlphaMin =
                 a.getInt(R.styleable.SnowfallView_snowflakeAlphaMin, DEFAULT_SNOWFLAKE_ALPHA_MIN)
             snowflakeAlphaMax =
@@ -142,7 +142,7 @@ class SnowfallView(context: Context, attrs: AttributeSet? = null) : View(context
      * @param drawable – the [Drawable] to set the content
      */
     fun setSnowflakeImageDrawable(drawable: Drawable) {
-        snowflakeImage = drawable.toBitmap()
+        snowflakeImage = toBitmap(drawable)
     }
 
     /**
@@ -152,7 +152,7 @@ class SnowfallView(context: Context, attrs: AttributeSet? = null) : View(context
      */
     fun setSnowflakeImageDrawables(drawables: List<Drawable>) {
         drawables.forEach {
-            snowflakeImages.add(it.toBitmap())
+            snowflakeImages.add(toBitmap(it))
         }
     }
 
@@ -186,7 +186,7 @@ class SnowfallView(context: Context, attrs: AttributeSet? = null) : View(context
      *
      */
     fun setSnowflakeResource(@DrawableRes resId: Int) {
-        snowflakeImage = ContextCompat.getDrawable(context!!, resId)?.toBitmap()
+        snowflakeImage = toBitmap(ContextCompat.getDrawable(context!!, resId))
     }
 
     /**
@@ -198,7 +198,7 @@ class SnowfallView(context: Context, attrs: AttributeSet? = null) : View(context
      */
     fun setSnowflakeResources(@DrawableRes resIds: List<Int>) {
         resIds.forEach {
-            snowflakeImages.add(ContextCompat.getDrawable(context!!, it)?.toBitmap()!!)
+            snowflakeImages.add(toBitmap(ContextCompat.getDrawable(context!!, it))!!)
         }
     }
 

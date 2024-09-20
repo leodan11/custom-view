@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="@string/text_value_temp"
+            tools:ignore="VisualLintLongText" />
+
+        <com.github.leodan11.customview.widget.ExpandableCardView
+            android:id="@+id/expandable_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:expandIcon="@drawable/baseline_add"
+            app:expandOnClick="true"
+            app:expandTitle="@string/text_value_read_more"
+            app:innerViewExpand="@layout/example_content" />
+
+    </LinearLayout>
 
     <com.github.leodan11.customview.widget.SnowfallView
         android:id="@+id/example"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:snowflakeImage="@drawable/ic_baseline_color_confetti" />
-
-    <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:text="@string/text_value_temp" />
+        app:snowflakeImage="@drawable/ic_baseline_color_confetti"
+        app:snowflakeSizeMax="20dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
