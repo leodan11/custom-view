@@ -37,7 +37,7 @@ class SnowfallView(context: Context, attrs: AttributeSet? = null) : View(context
         val a = context.obtainStyledAttributes(attrs, R.styleable.SnowfallView)
         try {
             snowflakesNum = a.getInt(R.styleable.SnowfallView_snowflakesNum, DEFAULT_SNOWFLAKES_NUM)
-            snowflakeImage = toBitmap(a.getDrawable(R.styleable.SnowfallView_snowflakeImage))
+            snowflakeImage = a.getDrawable(R.styleable.SnowfallView_snowflakeImage)?.let { toBitmap(it) }
             snowflakeAlphaMin =
                 a.getInt(R.styleable.SnowfallView_snowflakeAlphaMin, DEFAULT_SNOWFLAKE_ALPHA_MIN)
             snowflakeAlphaMax =

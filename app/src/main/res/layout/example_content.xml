@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:layout_margin="10dp"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="@dimen/sd_fab_normal_size"
+        android:layout_height="@dimen/sd_fab_normal_size"
+        android:layout_gravity="center"
+        android:id="@+id/shapeableImageView"
+        android:layout_margin="10dp"
+        tools:src="@mipmap/ic_launcher" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="@string/app_name"
-        android:layout_height="wrap_content">
+        android:hint="@string/app_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -20,9 +29,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="@string/app_name"
-        android:layout_height="wrap_content">
+        android:hint="@string/app_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"

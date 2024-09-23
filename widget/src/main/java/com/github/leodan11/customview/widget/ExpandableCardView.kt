@@ -44,7 +44,6 @@ class ExpandableCardView @JvmOverloads constructor(
     private lateinit var cardStub: ViewStub
 
     private var title: String? = null
-    private var innerView: View? = null
     private var typedArray: TypedArray? = null
     private var innerViewRes: Int = 0
     private var iconDrawable: Drawable? = null
@@ -54,8 +53,12 @@ class ExpandableCardView @JvmOverloads constructor(
 
     var animDuration = DEFAULT_ANIM_DURATION.toLong()
 
+    var innerView: View? = null
+        private set
+
     var isExpanded = false
         private set
+
     private var isExpanding = false
     private var isCollapsing = false
     private var expandOnClick = false

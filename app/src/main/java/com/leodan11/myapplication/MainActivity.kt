@@ -2,12 +2,15 @@ package com.leodan11.myapplication
 
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.github.leodan11.customview.core.ReadMoreOption
 import com.github.leodan11.customview.core.utils.Converters.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
+import com.github.leodan11.customview.drawable.TextDrawable
 import com.leodan11.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -108,6 +111,12 @@ class MainActivity : AppCompatActivity() {
             textviewFirst.setOnClickListener {
                 if (temp) example.stopFalling() else example.restartFalling()
                 temp = !temp
+            }
+            expandableCardview.innerView?.let {
+                val drawable = TextDrawable
+                    .builder()
+                    .buildRound("EX", ContextCompat.getColor(this@MainActivity, R.color.purple_500))
+                it.findViewById<ImageView>(R.id.shapeableImageView).setImageDrawable(drawable)
             }
         }
 
