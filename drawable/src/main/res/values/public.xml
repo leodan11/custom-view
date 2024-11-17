@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public name="default_badge_color" type="color" />
+    <public name="default_badge_border_size" type="dimen" />
+    <public name="default_badge_size" type="dimen" />
+</resources>
