@@ -159,8 +159,8 @@ public abstract class ReadMoreOptionBase {
 
         protected Builder(@NonNull Context context) {
             this.context = context;
-            this.moreLabel = context.getString(R.string.text_value_read_more);
-            this.lessLabel = context.getString(R.string.text_value_read_less);
+            this.moreLabel = context.getString(R.string.text_read_more);
+            this.lessLabel = context.getString(R.string.text_read_less);
             this.moreLabelColor = getColorDefault();
             this.lessLabelColor = getColorDefault();
         }

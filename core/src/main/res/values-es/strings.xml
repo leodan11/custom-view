@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="text_value_read_more">[leer más]</string>
-    <string name="text_value_read_less">[leer menos]</string>
+    <string name="text_read_more">[leer más]</string>
+    <string name="text_read_less">[leer menos]</string>
+    <string name="text_warning">Advertencia</string>
+    <string name="text_success">Éxito</string>
+    <string name="text_error">Error</string>
+    <string name="text_info">Información</string>
+    <string name="text_erased">Borrado</string>
+    <string name="text_no_internet">Sin conexión a internet</string>
 </resources>

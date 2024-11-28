@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.github.leodan11.customview.core.ReadMoreOption
+import com.github.leodan11.customview.core.ToastFlasher
 import com.github.leodan11.customview.core.utils.Converters.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 import com.github.leodan11.customview.drawable.TextDrawable
@@ -61,12 +62,14 @@ class MainActivity : AppCompatActivity() {
                 viewExample.root.isVisible = true
                 viewExampleSnowfall.root.isVisible = false
                 viewExampleSignature.root.isVisible = false
+                ToastFlasher.createToast(this@MainActivity, message = getString(R.string.app_name), style = ToastFlasher.Style.INFO)
             }
 
             buttonViewExampleSignature.setOnClickListener {
                 viewExample.root.isVisible = false
                 viewExampleSnowfall.root.isVisible = false
                 viewExampleSignature.root.isVisible = true
+                ToastFlasher.createColorToast(this@MainActivity, message = getString(R.string.app_name), style = ToastFlasher.Style.INFO)
             }
 
             buttonViewExampleAndroidSnowfall.setOnClickListener {

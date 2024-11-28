@@ -26,7 +26,7 @@
             android:layout_margin="10dp"
             app:expandIcon="@drawable/baseline_add"
             app:expandOnClick="true"
-            app:expandTitle="@string/text_value_read_more"
+            app:expandTitle="@string/text_read_more"
             app:innerViewExpand="@layout/example_content" />
 
     </LinearLayout>
