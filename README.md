@@ -1,6 +1,6 @@
 # Custom View
 
-[![](https://jitpack.io/v/leodan11/CustomView.svg)](https://jitpack.io/#leodan11/CustomView)
+[![](https://jitpack.io/v/leodan11/custom-view.svg)](https://jitpack.io/#leodan11/custom-view)
 [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
