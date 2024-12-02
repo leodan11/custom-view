@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/dimen_100"
     android:layout_margin="@dimen/dimen_24"
-    android:background="@drawable/toast_round_background"
+    android:background="@drawable/ic_toast_round_background"
     android:backgroundTint="@color/warning_color"
     tools:ignore="TextSizeCheck">
 
@@ -16,7 +16,7 @@
         android:layout_height="40dp"
         android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/dimen_12"
-        android:background="@drawable/color_view_background"
+        android:background="@drawable/ic_view_color_background"
         android:contentDescription="@string/text_info"
         android:padding="@dimen/dimen_8"
         android:src="@drawable/ic_warning_yellow"
@@ -40,7 +40,6 @@
             android:layout_marginStart="@dimen/dimen_12"
             android:layout_marginTop="@dimen/dimen_12"
             android:layout_marginEnd="@dimen/dimen_12"
-            android:fontFamily="@font/montserrat_bold"
             android:letterSpacing="0.10"
             android:text="@string/text_warning"
             android:textAlignment="textStart"
@@ -60,7 +59,6 @@
             android:layout_marginEnd="@dimen/dimen_12"
             android:layout_marginBottom="@dimen/dimen_12"
             android:ellipsize="marquee"
-            android:fontFamily="@font/montserrat_regular"
             android:maxLines="4"
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"

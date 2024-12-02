@@ -143,7 +143,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         successBackgroundToastColor, layout, context
                     )
 
@@ -192,7 +192,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, errorToastColor)
 
                     val drawable =
-                        ContextCompat.getDrawable(context, R.drawable.toast_round_background)
+                        ContextCompat.getDrawable(context, R.drawable.ic_toast_round_background)
                     drawable?.colorFilter = PorterDuffColorFilter(
                         ContextCompat.getColor(context, errorBackgroundToastColor),
                         PorterDuff.Mode.MULTIPLY
@@ -238,7 +238,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, warningToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         warningBackgroundToastColor, layout, context
                     )
 
@@ -283,7 +283,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, infoToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         infoBackgroundToastColor, layout, context
                     )
 
@@ -327,7 +327,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, deleteToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         deleteBackgroundToastColor, layout, context
                     )
 
@@ -373,7 +373,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, warningToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         warningBackgroundToastColor, layout, context
                     )
 
@@ -436,7 +436,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         successToastColor, layout, context
                     )
 
@@ -481,7 +481,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         errorToastColor, layout, context
                     )
 
@@ -526,7 +526,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         warningToastColor, layout, context
                     )
 
@@ -571,7 +571,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         infoToastColor, layout, context
                     )
 
@@ -616,7 +616,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         deleteToastColor, layout, context
                     )
 
@@ -662,7 +662,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         warningToastColor, layout, context
                     )
 
@@ -724,7 +724,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -773,7 +773,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -823,7 +823,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -873,7 +873,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -923,7 +923,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -976,7 +976,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -1049,7 +1049,7 @@ class ToastFlasher {
 
                     // round background color
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -1098,7 +1098,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, errorToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -1142,7 +1142,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, warningToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -1187,7 +1187,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, infoToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -1231,7 +1231,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, deleteToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 
@@ -1275,7 +1275,7 @@ class ToastFlasher {
                         ContextCompat.getColorStateList(context, warningToastColor)
 
                     setBackgroundAndFilter(
-                        R.drawable.toast_round_background,
+                        R.drawable.ic_toast_round_background,
                         R.color.dark_bg_color, layout, context
                     )
 

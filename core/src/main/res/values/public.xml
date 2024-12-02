@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <public name="text_warning" type="string"/>
-    <public name="text_success" type="string"/>
-    <public name="text_error" type="string"/>
-    <public name="text_erased" type="string"/>
-    <public name="text_info" type="string"/>
-    <public name="text_no_internet" type="string"/>
+    <public name="text_warning" type="string" />
+    <public name="text_success" type="string" />
+    <public name="text_error" type="string" />
+    <public name="text_erased" type="string" />
+    <public name="text_info" type="string" />
+    <public name="text_no_internet" type="string" />
 
-    <public name="warning_color" type="color"/>
-    <public name="error_color" type="color"/>
-    <public name="success_color" type="color"/>
-    <public name="info_color" type="color"/>
-    <public name="delete_color" type="color"/>
+    <public name="warning_color" type="color" />
+    <public name="error_color" type="color" />
+    <public name="success_color" type="color" />
+    <public name="info_color" type="color" />
+    <public name="delete_color" type="color" />
 
-    <public name="warning_bg_color" type="color"/>
-    <public name="error_bg_color" type="color"/>
-    <public name="success_bg_color" type="color"/>
-    <public name="info_bg_color" type="color"/>
-    <public name="delete_bg_color" type="color"/>
+    <public name="warning_bg_color" type="color" />
+    <public name="error_bg_color" type="color" />
+    <public name="success_bg_color" type="color" />
+    <public name="info_bg_color" type="color" />
+    <public name="delete_bg_color" type="color" />
 
-    <public name="dark_bg_color" type="color"/>
+    <public name="dark_bg_color" type="color" />
 
-    <public name="dimen_0" type="dimen"/>
-    <public name="dimen_1" type="dimen"/>
-    <public name="dimen_2" type="dimen"/>
-    <public name="dimen_3" type="dimen"/>
-    <public name="dimen_4" type="dimen"/>
-    <public name="dimen_5" type="dimen"/>
-    <public name="dimen_6" type="dimen"/>
-    <public name="dimen_7" type="dimen"/>
-    <public name="dimen_8" type="dimen"/>
-    <public name="dimen_9" type="dimen"/>
-    <public name="dimen_10" type="dimen"/>
-    <public name="dimen_12" type="dimen"/>
-    <public name="dimen_14" type="dimen"/>
-    <public name="dimen_16" type="dimen"/>
-    <public name="dimen_18" type="dimen"/>
-    <public name="dimen_20" type="dimen"/>
-    <public name="dimen_22" type="dimen"/>
-    <public name="dimen_24" type="dimen"/>
-    <public name="dimen_26" type="dimen"/>
-    <public name="dimen_28" type="dimen"/>
-    <public name="dimen_30" type="dimen"/>
-    <public name="dimen_32" type="dimen"/>
-    <public name="dimen_48" type="dimen"/>
-    <public name="dimen_64" type="dimen"/>
-    <public name="dimen_72" type="dimen"/>
-    <public name="dimen_82" type="dimen"/>
-    <public name="dimen_80" type="dimen"/>
-    <public name="dimen_100" type="dimen"/>
+    <public name="dimen_0" type="dimen" />
+    <public name="dimen_1" type="dimen" />
+    <public name="dimen_2" type="dimen" />
+    <public name="dimen_3" type="dimen" />
+    <public name="dimen_4" type="dimen" />
+    <public name="dimen_5" type="dimen" />
+    <public name="dimen_6" type="dimen" />
+    <public name="dimen_7" type="dimen" />
+    <public name="dimen_8" type="dimen" />
+    <public name="dimen_9" type="dimen" />
+    <public name="dimen_10" type="dimen" />
+    <public name="dimen_12" type="dimen" />
+    <public name="dimen_14" type="dimen" />
+    <public name="dimen_16" type="dimen" />
+    <public name="dimen_18" type="dimen" />
+    <public name="dimen_20" type="dimen" />
+    <public name="dimen_22" type="dimen" />
+    <public name="dimen_24" type="dimen" />
+    <public name="dimen_26" type="dimen" />
+    <public name="dimen_28" type="dimen" />
+    <public name="dimen_30" type="dimen" />
+    <public name="dimen_32" type="dimen" />
+    <public name="dimen_48" type="dimen" />
+    <public name="dimen_64" type="dimen" />
+    <public name="dimen_72" type="dimen" />
+    <public name="dimen_82" type="dimen" />
+    <public name="dimen_80" type="dimen" />
+    <public name="dimen_100" type="dimen" />
 
 </resources>
