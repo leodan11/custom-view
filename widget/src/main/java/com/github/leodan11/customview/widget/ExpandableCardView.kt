@@ -106,7 +106,7 @@ class ExpandableCardView @JvmOverloads constructor(
         iconDrawable = typedArray.getDrawable(R.styleable.ExpandableCardView_expandIcon)
         iconDrawableTint = typedArray.getColor(R.styleable.ExpandableCardView_expandIconTint, 0)
         iconDrawableArrow = typedArray.getDrawable(R.styleable.ExpandableCardView_expandArrowIcon)
-            ?: ContextCompat.getDrawable(context, R.drawable.baseline_keyboard_arrow_down)
+            ?: ContextCompat.getDrawable(context, R.drawable.ic_keyboard_arrow_down_baseline)
         iconDrawableArrowTint =
             typedArray.getColor(R.styleable.ExpandableCardView_expandArrowIconTint, 0)
         innerViewRes =

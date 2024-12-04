@@ -54,7 +54,7 @@
                     android:background="?selectableItemBackgroundBorderless"
                     android:contentDescription="@string/expandable_card_view_image_content_description"
                     tools:ignore="TouchTargetSizeCheck"
-                    tools:src="@drawable/baseline_keyboard_arrow_down" />
+                    tools:src="@drawable/ic_keyboard_arrow_down_baseline" />
 
             </RelativeLayout>
 
