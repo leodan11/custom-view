@@ -163,7 +163,7 @@ class DrawableBadge private constructor(val context: Context,
     }
 
     companion object {
-        const val MAXIMUM_COUNT = 99
+        private const val MAXIMUM_COUNT = 99
     }
 }
 

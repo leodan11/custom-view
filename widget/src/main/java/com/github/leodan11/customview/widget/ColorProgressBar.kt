@@ -35,7 +35,7 @@ class ColorProgressBar : ProgressBar {
 
     private fun init(attrs: AttributeSet) {
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.ColorProgressBar)
-        val color = attributes.getColor(R.styleable.ColorProgressBar_progressColor, Color.WHITE)
+        val color = attributes.getColor(R.styleable.ColorProgressBar_toProgressColor, Color.WHITE)
         attributes.recycle()
         setColor(color)
     }

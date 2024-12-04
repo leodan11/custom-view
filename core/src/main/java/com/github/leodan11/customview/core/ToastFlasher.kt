@@ -24,20 +24,18 @@ import com.github.leodan11.customview.core.databinding.MotionToastBinding
 class ToastFlasher {
 
     enum class Style {
-
         SUCCESS, ERROR, WARNING, INFO, DELETE, NO_INTERNET;
+    }
 
+    enum class Gravity(val value: Int) {
+        TOP(50), CENTER(20), BOTTOM(80)
+    }
+
+    enum class Duration(val value: Long) {
+        LONG(8000L), MAX_LONG(10000L), MIN_SHORT(800L), NORMAL(5000L), SHORT(2000L)
     }
 
     companion object {
-
-        const val MAX_LONG_DURATION = 10000L // 10 seconds
-        const val LONG_DURATION = 8000L // 8 seconds
-        const val NORMAL_DURATION = 5000L // 5 seconds
-        const val SHORT_DURATION = 2000L // 2 seconds
-        const val GRAVITY_TOP = 50
-        const val GRAVITY_CENTER = 20
-        const val GRAVITY_BOTTOM = 80
 
         private lateinit var layoutInflater: LayoutInflater
 
@@ -113,8 +111,8 @@ class ToastFlasher {
             title: String? = null,
             message: String,
             style: Style,
-            position: Int = GRAVITY_BOTTOM,
-            duration: Long = SHORT_DURATION,
+            position: Gravity = Gravity.BOTTOM,
+            duration: Duration = Duration.SHORT,
             font: Typeface? = null
         ) {
             layoutInflater = LayoutInflater.from(context)
@@ -409,8 +407,8 @@ class ToastFlasher {
             title: String? = null,
             message: String,
             style: Style,
-            position: Int = GRAVITY_BOTTOM,
-            duration: Long = SHORT_DURATION,
+            position: Gravity = Gravity.BOTTOM,
+            duration: Duration = Duration.SHORT,
             font: Typeface? = null
         ) {
             layoutInflater = LayoutInflater.from(context)
@@ -698,8 +696,8 @@ class ToastFlasher {
             title: String? = null,
             message: String,
             style: Style,
-            position: Int = GRAVITY_BOTTOM,
-            duration: Long = SHORT_DURATION,
+            position: Gravity = Gravity.BOTTOM,
+            duration: Duration = Duration.SHORT,
             font: Typeface? = null
         ) {
             layoutInflater = LayoutInflater.from(context)
@@ -1020,8 +1018,8 @@ class ToastFlasher {
             title: String? = null,
             message: String,
             style: Style,
-            position: Int = GRAVITY_BOTTOM,
-            duration: Long = SHORT_DURATION,
+            position: Gravity = Gravity.BOTTOM,
+            duration: Duration = Duration.SHORT,
             font: Typeface? = null
         ) {
             layoutInflater = LayoutInflater.from(context)
@@ -1304,8 +1302,8 @@ class ToastFlasher {
             }
         }
 
-        private fun startTimer(duration: Long, toast: Toast) {
-            val timer = object : CountDownTimer(duration, 1000) {
+        private fun startTimer(duration: Duration, toast: Toast) {
+            val timer = object : CountDownTimer(duration.value, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     // do nothing
                 }
@@ -1335,11 +1333,11 @@ class ToastFlasher {
             }
         }
 
-        private fun setGravity(position: Int, toast: Toast) {
-            if (position == GRAVITY_BOTTOM) {
-                toast.setGravity(position, 0, 100)
+        private fun setGravity(position: Gravity, toast: Toast) {
+            if (position == Gravity.BOTTOM) {
+                toast.setGravity(position.value, 0, 100)
             } else {
-                toast.setGravity(position, 0, 0)
+                toast.setGravity(position.value, 0, 0)
             }
         }
 

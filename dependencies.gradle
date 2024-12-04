@@ -2,5 +2,5 @@ ext.versions = [
         compile_sdk    : 34,
         min_sdk        : 21,
         target_sdk     : 34,
-        publish_version: "4.2.8-alpha01",
+        publish_version: "4.2.8-alpha02",
 ]

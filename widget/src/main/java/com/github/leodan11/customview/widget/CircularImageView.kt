@@ -64,7 +64,7 @@ class CircularImageView @JvmOverloads constructor(
             setBorderColor(attributes.getColor(R.styleable.CircularImageView_border_color, Color.WHITE))
         }
 
-        setBackgroundColor(attributes.getColor(R.styleable.CircularImageView_background_color, Color.WHITE))
+        setBackgroundColor(attributes.getColor(R.styleable.CircularImageView_circularBackgroundColor, Color.WHITE))
 
         // Init Shadow
         if (attributes.getBoolean(R.styleable.CircularImageView_shadow, false)) {
@@ -191,11 +191,11 @@ class CircularImageView @JvmOverloads constructor(
             return
 
         if (!isInEditMode) {
-            canvasSize = Math.min(width, height)
+            canvasSize = width.coerceAtMost(height)
         }
 
         // circleCenter is the x or y of the view's center
-        // radius is the radius in pixels of the cirle to be drawn
+        // radius is the radius in pixels of the circle to be drawn
         // paint contains the shader that will texture the shape
         val circleCenter = (canvasSize - borderWidth * 2).toInt() / 2
         val margeWithShadowRadius = shadowRadius * 2
@@ -237,7 +237,7 @@ class CircularImageView @JvmOverloads constructor(
      */
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-        canvasSize = Math.min(w, h)
+        canvasSize = w.coerceAtMost(h)
         if (image != null)
             updateShader()
     }

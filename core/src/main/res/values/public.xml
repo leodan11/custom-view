@@ -49,18 +49,4 @@
     <public name="dimen_82" type="dimen" />
     <public name="dimen_80" type="dimen" />
     <public name="dimen_100" type="dimen" />
-
-    <public name="pen_size" type="dimen" />
-    <public name="sd_close_elevation" type="dimen" />
-    <public name="sd_fab_mini_size" type="dimen" />
-    <public name="sd_fab_normal_size" type="dimen" />
-    <public name="sd_fab_side_margin" type="dimen" />
-    <public name="sd_label_max_width" type="dimen" />
-    <public name="sd_open_elevation" type="dimen" />
-    <public name="sd_overlay_elevation" type="dimen" />
-    <public name="default_card_height" type="dimen" />
-    <public name="default_vertical_padding" type="dimen" />
-    <public name="speeddial_snackbar_behavior" type="string" />
-    <public name="speeddial_scrolling_view_snackbar_behavior" type="string" />
-
 </resources>

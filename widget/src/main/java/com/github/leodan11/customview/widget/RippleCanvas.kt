@@ -63,13 +63,13 @@ class RippleCanvas @JvmOverloads constructor(
         val w = width.toFloat()
         val h = height.toFloat()
         val x = when (startX) {
-            MIDDLE -> w / 2
-            END -> w
+            RippleType.MIDDLE.value -> w / 2
+            RippleType.END.value -> w
             else -> startX
         }
         val y = when (startY) {
-            MIDDLE -> h / 2
-            END -> h
+            RippleType.MIDDLE.value -> h / 2
+            RippleType.END.value -> h
             else -> startY
         }
         val maxRadius =
@@ -123,9 +123,8 @@ class RippleCanvas @JvmOverloads constructor(
         val maxRadius: Float
     )
 
-    companion object {
-        const val MIDDLE = -1.0f
-        const val END = -2.0f
+    enum class RippleType(val value: Float) {
+        END(-2.0f), MIDDLE(-1.0f)
     }
 
 }

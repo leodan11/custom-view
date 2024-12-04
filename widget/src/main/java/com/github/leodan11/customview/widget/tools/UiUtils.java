@@ -9,7 +9,9 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -24,9 +26,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 
+import com.github.leodan11.customview.widget.CurvedView;
 import com.github.leodan11.customview.widget.R;
+
+import org.jetbrains.annotations.NotNull;
 
 public class UiUtils {
 
@@ -292,6 +298,58 @@ public class UiUtils {
         Canvas canvas = new Canvas(circleBitmap);
         canvas.drawCircle(circleCenter, circleCenter, circleCenter, paint);
         return UiUtils.getDrawableFromBitmap(circleBitmap);
+    }
+
+
+    public static RectF getRectCoordinates(@NotNull CurvedView.Curvature curvature, int width, int height) {
+        Float multiplier = switch (curvature) {
+            case HIGH -> 1f;
+            case MEDIUM -> 2f;
+            default -> 3f;
+        };
+        return new RectF((-multiplier * width), ((float) (-height * 2)), ((multiplier + 1) * width), ((float) height));
+    }
+
+
+    public static void curveIt(ViewGroup group, CurvedView curvedView) {
+
+        group.post(() -> {
+
+            Paint paint = new Paint();
+            int width = group.getMeasuredWidth();
+            int height = group.getMeasuredHeight();
+
+            group.getLayoutParams().height = height;
+            Bitmap pallet = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(pallet);
+
+            CurvedView.Curvature curvature = curvedView.getCurvature();
+            RectF rect = getRectCoordinates(curvature, width, height);
+
+            paint.setStyle(Paint.Style.FILL);
+
+            LinearGradient linearGradient = new LinearGradient(
+                    0f,
+                    0f,
+                    width,
+                    height,
+                    ContextCompat.getColor(group.getContext(), curvedView.getStartColor()),
+                    ContextCompat.getColor(group.getContext(), curvedView.getEndColor()),
+                    Shader.TileMode.CLAMP
+            );
+
+            paint.setShader(linearGradient);
+
+            Drawable drawable = new BitmapDrawable(group.getResources(), pallet);
+
+            canvas.drawArc(rect, 0f, 180f, true, paint);
+
+            group.setBackground(drawable);
+
+            group.requestLayout();
+
+        });
+
     }
 
 }

@@ -20,11 +20,11 @@ open class DividerView @JvmOverloads constructor(context: Context, attrs: Attrib
         val a = context.theme.obtainStyledAttributes(attrs, R.styleable.DividerView, 0, 0)
 
         try {
-            dashGap = a.getDimensionPixelSize(R.styleable.DividerView_dashGap, 5)
-            dashLength = a.getDimensionPixelSize(R.styleable.DividerView_dashLength, 5)
-            dashThickness = a.getDimensionPixelSize(R.styleable.DividerView_dashThickness, 3)
-            color = a.getColor(R.styleable.DividerView_color, -0x1000000)
-            orientation = a.getInt(R.styleable.DividerView_orientation, ORIENTATION_HORIZONTAL)
+            dashGap = a.getDimensionPixelSize(R.styleable.DividerView_dividerDashGap, 5)
+            dashLength = a.getDimensionPixelSize(R.styleable.DividerView_dividerDashLength, 5)
+            dashThickness = a.getDimensionPixelSize(R.styleable.DividerView_dividerDashThickness, 3)
+            color = a.getColor(R.styleable.DividerView_toDividerColor, -0x1000000)
+            orientation = a.getInt(R.styleable.DividerView_toDividerOrientation, ORIENTATION_HORIZONTAL)
         } finally {
             a.recycle()
         }
@@ -48,8 +48,8 @@ open class DividerView @JvmOverloads constructor(context: Context, attrs: Attrib
     }
 
     companion object {
-        const val ORIENTATION_HORIZONTAL = 0
-        const val ORIENTATION_VERTICAL = 1
+        private const val ORIENTATION_HORIZONTAL = 0
+        private const val ORIENTATION_VERTICAL = 1
     }
 
 }
