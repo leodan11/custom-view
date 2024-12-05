@@ -10,24 +10,46 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textview_first"
+        <Button
+            android:id="@+id/buttonFadeOutAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:text="@string/text_value_temp"
-            tools:ignore="VisualLintLongText" />
+            android:text="@string/fadeout"
+            android:layout_margin="@dimen/dimen_14" />
 
-        <com.github.leodan11.customview.widget.ExpandableCardView
-            android:id="@+id/expandable_cardview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:expandIcon="@drawable/baseline_add"
-            app:expandOnClick="true"
-            app:expandTitle="@string/text_read_more"
-            app:innerViewExpand="@layout/example_content" />
+        <com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout
+            android:id="@+id/fadeoutParticleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textview_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:text="@string/text_value_temp"
+                    tools:ignore="VisualLintLongText" />
+
+                <com.github.leodan11.customview.widget.ExpandableCardView
+                    android:id="@+id/expandable_cardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:expandIcon="@drawable/baseline_add"
+                    app:expandOnClick="true"
+                    app:expandTitle="@string/text_read_more"
+                    app:innerViewExpand="@layout/example_content" />
+
+            </LinearLayout>
+
+        </com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout>
 
     </LinearLayout>
 

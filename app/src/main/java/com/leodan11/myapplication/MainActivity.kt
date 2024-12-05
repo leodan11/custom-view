@@ -62,21 +62,32 @@ class MainActivity : AppCompatActivity() {
                 viewExample.root.isVisible = true
                 viewExampleSnowfall.root.isVisible = false
                 viewExampleSignature.root.isVisible = false
-                ToastFlasher.createToast(this@MainActivity, message = getString(R.string.app_name), style = ToastFlasher.Style.INFO)
+                ToastFlasher.createToast(
+                    this@MainActivity,
+                    message = getString(R.string.app_name),
+                    style = ToastFlasher.Style.INFO
+                )
             }
 
             buttonViewExampleSignature.setOnClickListener {
                 viewExample.root.isVisible = false
                 viewExampleSnowfall.root.isVisible = false
                 viewExampleSignature.root.isVisible = true
-                ToastFlasher.createColorToast(this@MainActivity, message = getString(R.string.app_name), style = ToastFlasher.Style.INFO)
+                ToastFlasher.createColorToast(
+                    this@MainActivity,
+                    message = getString(R.string.app_name),
+                    style = ToastFlasher.Style.INFO
+                )
             }
 
             buttonViewExampleAndroidSnowfall.setOnClickListener {
                 viewExample.root.isVisible = false
                 viewExampleSnowfall.root.isVisible = true
                 viewExampleSignature.root.isVisible = false
-                more.addReadMoreTo(binding.viewExampleSnowfall.textviewFirst, R.string.text_value_temp)
+                more.addReadMoreTo(
+                    binding.viewExampleSnowfall.textviewFirst,
+                    R.string.text_value_temp
+                )
             }
 
             speedDial.inflate(R.menu.menu_speed_dial)
@@ -111,6 +122,16 @@ class MainActivity : AppCompatActivity() {
         }
         with(binding.viewExampleSnowfall) {
             var temp = true
+            var animationView = true
+            buttonFadeOutAction.setOnClickListener {
+                if (animationView) {
+                    fadeoutParticleLayout.startAnimation()
+                    animationView = false
+                } else {
+                    fadeoutParticleLayout.reset()
+                    animationView = true
+                }
+            }
             textviewFirst.setOnClickListener {
                 if (temp) example.stopFalling() else example.restartFalling()
                 temp = !temp
