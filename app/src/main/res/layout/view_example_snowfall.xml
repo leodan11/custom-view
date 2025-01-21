@@ -5,53 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:scrollbars="none"
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/buttonFadeOutAction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/fadeout"
-            android:layout_margin="@dimen/dimen_14" />
-
-        <com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout
-            android:id="@+id/fadeoutParticleLayout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/buttonFadeOutAction"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:text="@string/fadeout"
+                android:layout_margin="@dimen/dimen_14" />
 
-                <TextView
-                    android:id="@+id/textview_first"
-                    android:layout_width="wrap_content"
+            <com.github.leodan11.customview.widget.WaveLoadingView
+                android:layout_width="30dp"
+                android:layout_margin="@dimen/dimen_16"
+                android:layout_gravity="center"
+                app:wlv_borderColor="@color/black"
+                app:wlv_borderWidth="0.5dp"
+                app:wlv_progressValue="50"
+                app:wlv_shapeType="rectangle"
+                app:wlv_round_rectangle="true"
+                app:wlv_triangle_direction="north"
+                app:wlv_waveAmplitude="70"
+                app:wlv_waveColor="@color/black"
+                android:layout_height="30dp" />
+
+            <com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout
+                android:id="@+id/fadeoutParticleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:text="@string/text_value_temp"
-                    tools:ignore="VisualLintLongText" />
+                    android:orientation="vertical">
 
-                <com.github.leodan11.customview.widget.ExpandableCardView
-                    android:id="@+id/expandable_cardview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:expandIcon="@drawable/baseline_add"
-                    app:expandOnClick="true"
-                    app:expandTitle="@string/text_read_more"
-                    app:innerViewExpand="@layout/example_content" />
+                    <TextView
+                        android:id="@+id/textview_first"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:text="@string/text_value_temp"
+                        tools:ignore="VisualLintLongText" />
 
-            </LinearLayout>
+                    <com.github.leodan11.customview.widget.ExpandableCardView
+                        android:id="@+id/expandable_cardview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        app:expandIcon="@drawable/baseline_add"
+                        app:expandOnClick="true"
+                        app:expandTitle="@string/text_read_more"
+                        app:innerViewExpand="@layout/example_content" />
 
-        </com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout>
+                </LinearLayout>
 
-    </LinearLayout>
+            </com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
     <com.github.leodan11.customview.widget.SnowfallView
         android:id="@+id/example"

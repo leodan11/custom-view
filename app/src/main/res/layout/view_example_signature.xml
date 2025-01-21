@@ -46,4 +46,15 @@
         app:layout_constraintTop_toBottomOf="@id/action"
         tools:ignore="ImageContrastCheck" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/containerList"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_0"
+        android:layout_marginTop="@dimen/dimen_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,7 @@ import android.view.View
 import android.widget.ImageView.ScaleType.CENTER_CROP
 import android.widget.ImageView.ScaleType.CENTER_INSIDE
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
 
 class CircularImageView @JvmOverloads constructor(
     context: Context,
@@ -61,10 +62,10 @@ class CircularImageView @JvmOverloads constructor(
         if (attributes.getBoolean(R.styleable.CircularImageView_border, true)) {
             val defaultBorderSize = DEFAULT_BORDER_WIDTH * getContext().resources.displayMetrics.density
             setBorderWidth(attributes.getDimension(R.styleable.CircularImageView_border_width, defaultBorderSize))
-            setBorderColor(attributes.getColor(R.styleable.CircularImageView_border_color, Color.WHITE))
+            setBorderColor(attributes.getColor(R.styleable.CircularImageView_border_color, ContextCompat.getColor(context, android.R.color.white)))
         }
 
-        setBackgroundColor(attributes.getColor(R.styleable.CircularImageView_circularBackgroundColor, Color.WHITE))
+        setBackgroundColor(attributes.getColor(R.styleable.CircularImageView_circularBackgroundColor, ContextCompat.getColor(context, android.R.color.white)))
 
         // Init Shadow
         if (attributes.getBoolean(R.styleable.CircularImageView_shadow, false)) {

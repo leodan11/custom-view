@@ -12,6 +12,8 @@ import com.github.leodan11.customview.core.ToastFlasher
 import com.github.leodan11.customview.core.utils.Converters.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 import com.github.leodan11.customview.drawable.TextDrawable
+import com.github.leodan11.customview.widget.helpers.SwipeListener
+import com.github.leodan11.customview.widget.helpers.makeLeftRightSwipeAble
 import com.leodan11.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -118,6 +120,26 @@ class MainActivity : AppCompatActivity() {
                 value.clearCanvas()
                 view.setImageResource(R.drawable.ic_launcher_background)
             }
+
+            val adapter = CustomAdapter()
+            containerList.adapter = adapter
+            val listData = listOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+            adapter.updateFlowerCount(listData)
+            containerList.makeLeftRightSwipeAble(this@MainActivity)
+                .setListener(object : SwipeListener {
+
+                    override fun onSwipedLeft(position: Int) {
+                        Toast.makeText(this@MainActivity, "Archived $position", Toast.LENGTH_SHORT).show()
+                        adapter.notifyItemRangeChanged(position, adapter.itemCount)
+                    }
+
+                    override fun onSwipedRight(position: Int) {
+                        Toast.makeText(this@MainActivity, "Deleted $position", Toast.LENGTH_SHORT).show()
+                        adapter.notifyItemRangeChanged(position, adapter.itemCount)
+                    }
+
+                })
+                .createSwipeAble()
 
         }
         with(binding.viewExampleSnowfall) {

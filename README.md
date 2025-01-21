@@ -34,10 +34,7 @@ dependencies {
 
   implementation "com.github.leodan11.custom-view:core:$custom_version" // Mandatory
   // Optional
-  implementation "com.github.leodan11.custom-view:drawable:$custom_version"
-  implementation "com.github.leodan11.custom-view:layout:$custom_version"
-  implementation "com.github.leodan11.custom-view:textview:$custom_version"
-  implementation "com.github.leodan11.custom-view:widget:$custom_version"
+  implementation "com.github.leodan11.custom-view:module:$custom_version"
 }
 ```
 
@@ -61,10 +58,7 @@ dependencies {
 
   implementation("com.github.leodan11.custom-view:core:$custom_version")  // Mandatory
   // Optional
-  implementation("com.github.leodan11.custom-view:drawable:$custom_version")
-  implementation("com.github.leodan11.custom-view:layout:$custom_version")
-  implementation("com.github.leodan11.custom-view:textview:$custom_version")
-  implementation("com.github.leodan11.custom-view:widget:$custom_version")
+  implementation("com.github.leodan11.custom-view:module:$custom_version")
 }
 ```
 
