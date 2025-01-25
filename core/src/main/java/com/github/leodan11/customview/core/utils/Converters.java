@@ -18,7 +18,7 @@ public class Converters {
         return dpToPx(context.getResources(), dp);
     }
 
-    public static int dpToPx(@NonNull Resources resources,float dp) {
+    public static int dpToPx(@NonNull Resources resources, float dp) {
         float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.getDisplayMetrics());
         return (int) px;
     }
@@ -30,6 +30,14 @@ public class Converters {
     public static float spToPixels(float spValue) {
         final float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
         return spValue * fontScale + 0.5f;
+    }
+
+    public static float spToPixels(@NonNull Context context, float sp) {
+        return spToPixels(context.getResources(), sp);
+    }
+
+    public static float spToPixels(@NonNull Resources resources, float sp) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, resources.getDisplayMetrics());
     }
 
     public static float convertPixelsToDp(@NonNull Context context, float px) {
