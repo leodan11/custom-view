@@ -164,6 +164,18 @@ class MainActivity : AppCompatActivity() {
                     .buildRound("EX", ContextCompat.getColor(this@MainActivity, R.color.purple_500))
                 it.findViewById<ImageView>(R.id.shapeableImageView).setImageDrawable(drawable)
             }
+            gradientTextView.apply {
+                addGradientToFullText(
+                    startColorHex = "#FF0000",
+                    endColorHex = "#00FF00"
+                )
+            }
+            gradientCheckBox.apply {
+                addGradientToFullText(
+                    startColorHex = "#FF0000",
+                    endColorHex = "#00FF00"
+                )
+            }
         }
 
     }

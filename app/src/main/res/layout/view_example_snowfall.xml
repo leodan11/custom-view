@@ -70,6 +70,84 @@
 
             </com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout>
 
+            <com.github.leodan11.customview.widget.GradientView
+                android:layout_width="@dimen/dimen_72"
+                android:layout_gravity="center"
+                app:gv_alpha_end="0.5"
+                app:gv_alpha_start="0.5"
+                app:gv_direction="bottom_to_top"
+                app:gv_end="?colorAccent"
+                app:gv_start="?colorPrimary"
+                android:layout_height="@dimen/dimen_72" />
+
+            <com.github.leodan11.customview.widget.gradient.ui.GradientLinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:orientation="vertical"
+                app:gradient_ui_startColor="?colorPrimary"
+                app:gradient_ui_endColor="?colorAccent"
+                app:gradient_ui_centerColor="?attr/colorError"
+                app:gradient_ui_animate="true"
+                android:layout_height="wrap_content">
+
+                <com.github.leodan11.customview.widget.gradient.ui.GradientTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gradientTextView"
+                    android:text="@string/app_name"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dimen_12"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+                <com.github.leodan11.customview.widget.gradient.ui.GradientCheckBox
+                    android:layout_width="match_parent"
+                    android:id="@+id/gradientCheckBox"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dimen_12"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+                <com.github.leodan11.customview.widget.gradient.ui.GradientButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:gradient_ui_startColor="?android:attr/colorActivatedHighlight"
+                    app:gradient_ui_endColor="?android:attr/colorForeground"
+                    app:gradient_ui_centerColor="?attr/colorSecondaryVariant"
+                    app:gradient_ui_orientation="TOP_BOTTOM"
+                    app:gradient_ui_animate="true"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:layout_margin="@dimen/dimen_12" />
+
+                <com.github.leodan11.customview.widget.gradient.ui.GradientCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_12"
+                    app:gradient_ui_startColor="?android:attr/colorActivatedHighlight"
+                    app:gradient_ui_endColor="?android:attr/colorForeground"
+                    app:gradient_ui_centerColor="?attr/colorSecondaryVariant"
+                    android:layout_gravity="center">
+
+                    <LinearLayout
+                        android:layout_margin="@dimen/dimen_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="?android:attr/colorBackground"
+                            android:text="@string/app_name"/>
+
+                    </LinearLayout>
+
+                </com.github.leodan11.customview.widget.gradient.ui.GradientCardView>
+
+            </com.github.leodan11.customview.widget.gradient.ui.GradientLinearLayout>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
