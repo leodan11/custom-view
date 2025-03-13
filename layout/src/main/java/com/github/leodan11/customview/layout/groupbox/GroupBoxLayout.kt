@@ -16,6 +16,7 @@ import com.github.leodan11.customview.layout.R
 import com.github.leodan11.customview.layout.databinding.LayoutGroupBoxBinding
 import com.google.android.material.shape.RoundedCornerTreatment
 import com.google.android.material.shape.ShapeAppearanceModel
+import androidx.core.content.withStyledAttributes
 
 /**
  * The GroupBoxLayout is a container layout view that has a title label and draws a rounded border
@@ -105,42 +106,41 @@ class GroupBoxLayout : RelativeLayout {
      * @param defStyleAttr default style
      */
     private fun applyAttributes(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
-        val attributes =
-            context.obtainStyledAttributes(attrs, R.styleable.GroupBoxLayout, defStyleAttr, 0)
+        context.withStyledAttributes(attrs, R.styleable.GroupBoxLayout, defStyleAttr, 0) {
 
-        val styleResId = attributes.getResourceId(R.styleable.GroupBoxLayout_layoutLabelStyle, -1)
-        if (styleResId != -1) setLabelStyleResource(styleResId)
+            val styleResId = getResourceId(R.styleable.GroupBoxLayout_layoutLabelStyle, -1)
+            if (styleResId != -1) setLabelStyleResource(styleResId)
 
-        val labelText = attributes.getString(R.styleable.GroupBoxLayout_layoutLabelText)
-        setLabelText(labelText)
+            val labelText = getString(R.styleable.GroupBoxLayout_layoutLabelText)
+            setLabelText(labelText)
 
-        val labelTextColor =
-            attributes.getColor(R.styleable.GroupBoxLayout_layoutLabelTextColor, DEFAULT_COLOR)
-        setLabelTextColor(labelTextColor)
+            val labelTextColor =
+                getColor(R.styleable.GroupBoxLayout_layoutLabelTextColor, DEFAULT_COLOR)
+            setLabelTextColor(labelTextColor)
 
-        val labelSize =
-            attributes.getDimensionPixelSize(R.styleable.GroupBoxLayout_layoutLabelTextSize, 0)
-        if (labelSize > 0) setLabelTextSize(TypedValue.COMPLEX_UNIT_PX, labelSize)
+            val labelSize =
+                getDimensionPixelSize(R.styleable.GroupBoxLayout_layoutLabelTextSize, 0)
+            if (labelSize > 0) setLabelTextSize(TypedValue.COMPLEX_UNIT_PX, labelSize)
 
-        val strokeColor =
-            attributes.getColor(R.styleable.GroupBoxLayout_layoutBorderColor, DEFAULT_COLOR)
-        setStrokeColor(strokeColor)
+            val strokeColor =
+                getColor(R.styleable.GroupBoxLayout_layoutBorderColor, DEFAULT_COLOR)
+            setStrokeColor(strokeColor)
 
-        val strokeWidth =
-            attributes.getDimensionPixelSize(
-                R.styleable.GroupBoxLayout_layoutBorderStrokeWidth,
-                DEFAULT_STROKE_WIDTH.dp()
-            )
-        setStrokeWidth(strokeWidth)
+            val strokeWidth =
+                getDimensionPixelSize(
+                    R.styleable.GroupBoxLayout_layoutBorderStrokeWidth,
+                    DEFAULT_STROKE_WIDTH.dp()
+                )
+            setStrokeWidth(strokeWidth)
 
-        val cornerRadius =
-            attributes.getDimensionPixelSize(
-                R.styleable.GroupBoxLayout_layoutBorderCornerRadius,
-                DEFAULT_CORNER_RADIUS.dp()
-            )
-        setCornerRadius(cornerRadius)
+            val cornerRadius =
+                getDimensionPixelSize(
+                    R.styleable.GroupBoxLayout_layoutBorderCornerRadius,
+                    DEFAULT_CORNER_RADIUS.dp()
+                )
+            setCornerRadius(cornerRadius)
 
-        attributes.recycle()
+        }
     }
 
     /**

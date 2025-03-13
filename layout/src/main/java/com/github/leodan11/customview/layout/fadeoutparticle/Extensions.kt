@@ -4,15 +4,12 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.view.View
 import android.view.ViewTreeObserver
+import androidx.core.graphics.createBitmap
 
 
 internal fun View.toBitmapOrNull(scale: Float): Bitmap? {
     val bitmap: Bitmap = runCatching {
-        Bitmap.createBitmap(
-            (width * scale).toInt(),
-            (height * scale).toInt(),
-            Bitmap.Config.ARGB_8888
-        )
+        createBitmap((width * scale).toInt(), (height * scale).toInt())
     }.getOrNull() ?: return null
     val canvas = Canvas(bitmap)
     canvas.scale(scale, scale)

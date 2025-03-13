@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.DecelerateInterpolator
 import android.widget.FrameLayout
+import androidx.core.graphics.withSave
 
 class FadeOutParticleFrameLayout : FrameLayout {
 
@@ -52,14 +53,14 @@ class FadeOutParticleFrameLayout : FrameLayout {
     }
 
     override fun dispatchDraw(canvas: Canvas) {
-        canvas.save()
+        canvas.withSave {
 
-        super.dispatchDraw(canvas)
+            super.dispatchDraw(this)
 
-        val animationValue = animator.animatedValue as Float
-        fadeOutDrawable.draw(canvas, animationValue)
+            val animationValue = animator.animatedValue as Float
+            fadeOutDrawable.draw(this, animationValue)
 
-        canvas.restore()
+        }
     }
 
 

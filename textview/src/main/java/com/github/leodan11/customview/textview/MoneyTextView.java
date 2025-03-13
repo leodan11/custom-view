@@ -12,6 +12,8 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.text.DecimalFormat;
@@ -28,22 +30,22 @@ public class MoneyTextView extends View {
     private static final int GRAVITY_CENTER_HORIZONTAL = 32;
     private static final float MIN_PADDING = 2;
 
-    private TextPaint     mTextPaint;
+    private TextPaint mTextPaint;
     private DecimalFormat mDecimalFormat;
-    private Section       mSymbolSection;
-    private Section       mIntegerSection;
-    private Section       mDecimalSection;
-    private char          mDecimalSeparator;
-    private float         mAmount;
-    private int           mGravity;
-    private int           mSymbolGravity;
-    private int           mDecimalGravity;
-    private float         mSymbolMargin;
-    private float         mDecimalMargin;
-    private boolean       mIncludeDecimalSeparator;
-    private int           mWidth;
-    private int           mHeight;
-    private float         mTextPaintRoomSize;
+    private Section mSymbolSection;
+    private Section mIntegerSection;
+    private Section mDecimalSection;
+    private char mDecimalSeparator;
+    private float mAmount;
+    private int mGravity;
+    private int mSymbolGravity;
+    private int mDecimalGravity;
+    private float mSymbolMargin;
+    private float mDecimalMargin;
+    private boolean mIncludeDecimalSeparator;
+    private int mWidth;
+    private int mHeight;
+    private float mTextPaintRoomSize;
 
     public MoneyTextView(Context context) {
         super(context);
@@ -95,12 +97,24 @@ public class MoneyTextView extends View {
             mDecimalSection.color = typedArray.getInt(R.styleable.MoneyTextView_decimalTextColor, mIntegerSection.color);
             mDecimalSection.drawUnderline = typedArray.getBoolean(R.styleable.MoneyTextView_decimalUnderline, false);
 
-            String format           = typedArray.getString(R.styleable.MoneyTextView_format);
+            String format = typedArray.getString(R.styleable.MoneyTextView_format);
             String decimalSeparator = typedArray.getString(R.styleable.MoneyTextView_decimalSeparator);
-            String fontPath         = typedArray.getString(R.styleable.MoneyTextView_fontPath);
+            String fontPath = typedArray.getString(R.styleable.MoneyTextView_fontPath);
             if (fontPath != null) {
                 Typeface typeface = Typeface.createFromAsset(context.getAssets(), fontPath);
                 mTextPaint.setTypeface(typeface);
+            } else {
+                int mTextStyle = typedArray.getInt(R.styleable.MoneyTextView_baseTextStyle, -1);
+                if (mTextStyle >= 0 && mTextStyle <= 3) {
+                    int[] typefaceStyles = {
+                            Typeface.NORMAL,             // 0 -> NORMAL
+                            Typeface.BOLD,               // 1 -> BOLD
+                            Typeface.ITALIC,             // 2 -> ITALIC
+                            Typeface.BOLD_ITALIC        // 3 -> BOLD_ITALIC
+                    };
+                    Typeface typeface = Typeface.create(mTextPaint.getTypeface(), typefaceStyles[mTextStyle]);
+                    mTextPaint.setTypeface(typeface);
+                }
             }
 
             if (format == null) {
@@ -138,8 +152,8 @@ public class MoneyTextView extends View {
         setMeasuredDimension(mWidth, mHeight);
     }
 
-    public void setAmount(float amount) {
-        mAmount = amount;
+    public void setAmount(@NonNull Number amount) {
+        mAmount = amount.floatValue();
         requestLayout();
     }
 
@@ -159,8 +173,8 @@ public class MoneyTextView extends View {
     }
 
     private void calculateBounds(int widthMeasureSpec, int heightMeasureSpec) {
-        int widthMode  = MeasureSpec.getMode(widthMeasureSpec);
-        int widthSize  = MeasureSpec.getSize(widthMeasureSpec);
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
 
@@ -181,7 +195,8 @@ public class MoneyTextView extends View {
                 mWidth = (int) (mIntegerSection.width + mDecimalSection.width + mSymbolSection.width
                         + mSymbolMargin + mDecimalMargin + getPaddingLeft() + getPaddingRight());
                 break;
-            default:break;
+            default:
+                break;
         }
 
         switch (heightMode) {
@@ -193,7 +208,8 @@ public class MoneyTextView extends View {
                 mHeight = getPaddingTop() + getPaddingBottom()
                         + Math.max(mIntegerSection.height, Math.max(mDecimalSection.height, mSymbolSection.height));
                 break;
-            default:break;
+            default:
+                break;
         }
     }
 
@@ -248,7 +264,7 @@ public class MoneyTextView extends View {
 
 
     @Override
-    public void draw(Canvas canvas) {
+    public void draw(@NonNull Canvas canvas) {
         super.draw(canvas);
 
         drawSection(canvas, mIntegerSection);
@@ -262,21 +278,19 @@ public class MoneyTextView extends View {
         mTextPaint.setColor(section.color);
         mTextPaint.setUnderlineText(section.drawUnderline);
 
-        canvas.drawText(section.text, section.x - mTextPaintRoomSize*2, section.y-mTextPaintRoomSize/2, mTextPaint);
+        canvas.drawText(section.text, section.x - mTextPaintRoomSize * 2, section.y - mTextPaintRoomSize / 2, mTextPaint);
     }
 
 
-    ///
     /// SETTERS
-    ///
 
-    public void setAmount(float amount, String symbol) {
-        mAmount = amount;
+    public void setAmount(@NonNull Number amount, @NonNull String symbol) {
+        mAmount = amount.floatValue();
         mSymbolSection.text = symbol;
         requestLayout();
     }
 
-    public void setDecimalFormat(DecimalFormat decimalFormat) {
+    public void setDecimalFormat(@NonNull DecimalFormat decimalFormat) {
         mDecimalFormat = decimalFormat;
         requestLayout();
     }
@@ -306,7 +320,7 @@ public class MoneyTextView extends View {
         requestLayout();
     }
 
-    public void setSymbol(String symbol) {
+    public void setSymbol(@NonNull String symbol) {
         mSymbolSection.text = symbol;
         requestLayout();
     }
@@ -341,20 +355,20 @@ public class MoneyTextView extends View {
     }
 
     private int getMinPadding(int padding) {
-        if(padding == 0){
+        if (padding == 0) {
             return (int) (MIN_PADDING * Resources.getSystem().getDisplayMetrics().density);
         }
 
         return padding;
     }
 
-    private int getMinVerticalPadding(int padding){
+    private int getMinVerticalPadding(int padding) {
 
         float maxTextSize = Math.max(mIntegerSection.textSize, mDecimalSection.textSize);
         mTextPaint.setTextSize(maxTextSize);
         float maximumDistanceLowestGlyph = mTextPaint.getFontMetrics().bottom;
 
-        if(padding < maximumDistanceLowestGlyph) {
+        if (padding < maximumDistanceLowestGlyph) {
             return (int) maximumDistanceLowestGlyph;
         }
 
@@ -362,14 +376,14 @@ public class MoneyTextView extends View {
     }
 
     private static class Section {
-        public int     x;
-        public int     y;
-        public Rect    bounds;
-        public String  text;
-        public float   textSize;
-        public int     color;
-        public int     width;
-        public int     height;
+        public int x;
+        public int y;
+        public Rect bounds;
+        public String text;
+        public float textSize;
+        public int color;
+        public int width;
+        public int height;
         public boolean drawUnderline;
 
         public Section() {

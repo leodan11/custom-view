@@ -12,6 +12,7 @@ import android.view.View
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatTextView
 import kotlin.math.min
+import androidx.core.content.withStyledAttributes
 
 class MaterialBadgeTextView : AppCompatTextView {
 
@@ -416,80 +417,82 @@ class MaterialBadgeTextView : AppCompatTextView {
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
 
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.MaterialBadgeTextView)
+        context.withStyledAttributes(attrs, R.styleable.MaterialBadgeTextView) {
 
-        circleShapeThreshold =
-            typedArray.getInteger(
-                R.styleable.MaterialBadgeTextView_badge_circle_threshold,
-                circleShapeThreshold
-            )
+            circleShapeThreshold =
+                getInteger(
+                    R.styleable.MaterialBadgeTextView_badge_circle_threshold,
+                    circleShapeThreshold
+                )
 
-        maxNumber =
-            typedArray.getInteger(R.styleable.MaterialBadgeTextView_badge_max_number, maxNumber)
+            maxNumber =
+                getInteger(R.styleable.MaterialBadgeTextView_badge_max_number, maxNumber)
 
-        radiusRatio =
-            typedArray.getFloat(
-                R.styleable.MaterialBadgeTextView_badge_round_corner_ratio,
-                radiusRatio
-            )
+            radiusRatio =
+                getFloat(
+                    R.styleable.MaterialBadgeTextView_badge_round_corner_ratio,
+                    radiusRatio
+                )
 
 
-        badgeBackgroundColor =
-            typedArray.getColor(
-                R.styleable.MaterialBadgeTextView_android_background,
-                badgeBackgroundColor
-            )
+            badgeBackgroundColor =
+                getColor(
+                    R.styleable.MaterialBadgeTextView_android_background,
+                    badgeBackgroundColor
+                )
 
-        paintBackground.color = badgeBackgroundColor
+            paintBackground.color = badgeBackgroundColor
 
-        // Padding
-        paddingHorizontal =
-            typedArray.getDimensionPixelOffset(
-                R.styleable.MaterialBadgeTextView_badge_padding_horizontal,
-                dp2px(4f)
-            )
-        paddingVertical =
-            typedArray.getDimensionPixelOffset(
-                R.styleable.MaterialBadgeTextView_badge_padding_vertical,
-                dp2px(4f)
-            )
+            // Padding
+            paddingHorizontal =
+                getDimensionPixelOffset(
+                    R.styleable.MaterialBadgeTextView_badge_padding_horizontal,
+                    dp2px(4f)
+                )
+            paddingVertical =
+                getDimensionPixelOffset(
+                    R.styleable.MaterialBadgeTextView_badge_padding_vertical,
+                    dp2px(4f)
+                )
 
-        // Border
-        borderWidth =
-            typedArray.getDimensionPixelOffset(
-                R.styleable.MaterialBadgeTextView_badge_border_width,
-                dp2px(borderWidth)
-            )
-                .toFloat()
-        borderColor =
-            typedArray.getInteger(R.styleable.MaterialBadgeTextView_badge_border_color, borderColor)
+            // Border
+            borderWidth =
+                getDimensionPixelOffset(
+                    R.styleable.MaterialBadgeTextView_badge_border_width,
+                    dp2px(borderWidth)
+                )
+                    .toFloat()
+            borderColor =
+                getInteger(R.styleable.MaterialBadgeTextView_badge_border_color, borderColor)
 
-        paintBorder.strokeWidth = borderWidth
-        paintBorder.color = borderColor
+            paintBorder.strokeWidth = borderWidth
+            paintBorder.color = borderColor
 
-        // Shadow
-        badgeShadowRadius = typedArray.getDimensionPixelOffset(
-            R.styleable.MaterialBadgeTextView_badge_shadow_radius, dp2px(badgeShadowRadius)
-        ).toFloat()
-        badgeShadowXOffset =
-            typedArray.getDimensionPixelOffset(
-                R.styleable.MaterialBadgeTextView_badge_shadow_offset_x, dp2px(badgeShadowXOffset)
+            // Shadow
+            badgeShadowRadius = getDimensionPixelOffset(
+                R.styleable.MaterialBadgeTextView_badge_shadow_radius, dp2px(badgeShadowRadius)
             ).toFloat()
-        badgeShadowYOffset =
-            typedArray.getDimensionPixelOffset(
-                R.styleable.MaterialBadgeTextView_badge_shadow_offset_y, dp2px(badgeShadowYOffset)
-            ).toFloat()
-        badgeShadowColor =
-            typedArray.getColor(
-                R.styleable.MaterialBadgeTextView_badge_shadow_color,
-                badgeShadowColor
-            )
+            badgeShadowXOffset =
+                getDimensionPixelOffset(
+                    R.styleable.MaterialBadgeTextView_badge_shadow_offset_x,
+                    dp2px(badgeShadowXOffset)
+                ).toFloat()
+            badgeShadowYOffset =
+                getDimensionPixelOffset(
+                    R.styleable.MaterialBadgeTextView_badge_shadow_offset_y,
+                    dp2px(badgeShadowYOffset)
+                ).toFloat()
+            badgeShadowColor =
+                getColor(
+                    R.styleable.MaterialBadgeTextView_badge_shadow_color,
+                    badgeShadowColor
+                )
 
 
-        // Debug
-        isDebug = typedArray.getBoolean(R.styleable.MaterialBadgeTextView_badge_is_debug, false)
+            // Debug
+            isDebug = getBoolean(R.styleable.MaterialBadgeTextView_badge_is_debug, false)
 
-        typedArray.recycle()
+        }
 
         init()
     }

@@ -16,6 +16,8 @@ import androidx.annotation.DimenRes
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.createBitmap
+import androidx.core.graphics.drawable.toDrawable
 
 class DrawableBadge private constructor(val context: Context,
                                         @ColorInt val textColor: Int,
@@ -102,7 +104,7 @@ class DrawableBadge private constructor(val context: Context,
         val sourceBitmap = bitmap
         val width = sourceBitmap.width + (badgeSize / 2).toInt()
         val height = sourceBitmap.height + (badgeSize / 2).toInt()
-        val output = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+        val output = createBitmap(width, height)
         val canvas = Canvas(output)
         val rect = Rect(0, 0, width, height)
         val rect1 = Rect(0, (badgeSize / 2).toInt(), width, height + (badgeSize / 2).toInt())
@@ -159,7 +161,7 @@ class DrawableBadge private constructor(val context: Context,
         if (counter != 0)
             canvas.drawText(text, x, y, textPaint)
 
-        return BitmapDrawable(resources, output)
+        return output.toDrawable(resources)
     }
 
     companion object {

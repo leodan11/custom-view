@@ -46,6 +46,7 @@
                 app:decimalDigitsTextSize="30sp"
                 app:decimalMargin="6dp"
                 app:includeDecimalSeparator="false"
+                app:baseTextStyle="italic"
                 app:symbol="$"
                 app:symbolGravity="start|top"
                 app:symbolMargin="6dp"
