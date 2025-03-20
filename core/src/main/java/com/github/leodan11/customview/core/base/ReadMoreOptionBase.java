@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
 import com.github.leodan11.customview.core.R;
@@ -26,18 +27,24 @@ public abstract class ReadMoreOptionBase {
     protected int textLength;
     protected int textLengthType;
     protected String moreLabel;
+    @Nullable
+    protected ReadOptionListener.More onClickMoreListener;
     protected String lessLabel;
+    @Nullable
+    protected ReadOptionListener.Less onClickLessListener;
     protected int moreLabelColor;
     protected int lessLabelColor;
     protected boolean labelUnderLine;
     protected boolean expandAnimation;
 
-    protected ReadMoreOptionBase(Context context, int textLength, int textLengthType, String moreLabel, String lessLabel, int moreLabelColor, int lessLabelColor, boolean labelUnderLine, boolean expandAnimation) {
+    protected ReadMoreOptionBase(Context context, int textLength, int textLengthType, String moreLabel, @Nullable ReadOptionListener.More onClickMoreListener, String lessLabel, @Nullable ReadOptionListener.Less onClickLessListener, int moreLabelColor, int lessLabelColor, boolean labelUnderLine, boolean expandAnimation) {
         this.context = context;
         this.textLength = textLength;
         this.textLengthType = textLengthType;
         this.moreLabel = moreLabel;
+        this.onClickMoreListener = onClickMoreListener;
         this.lessLabel = lessLabel;
+        this.onClickLessListener = onClickLessListener;
         this.moreLabelColor = moreLabelColor;
         this.lessLabelColor = lessLabelColor;
         this.labelUnderLine = labelUnderLine;
@@ -48,7 +55,7 @@ public abstract class ReadMoreOptionBase {
      * Set the text displayed in the textview.
      *
      * @param textView The view where the text will be displayed.
-     * @param text The text to display.
+     * @param text     The text to display.
      */
     public void addReadMoreTo(TextView textView, @StringRes int text) {
         addReadMoreTo(textView, context.getString(text));
@@ -58,7 +65,7 @@ public abstract class ReadMoreOptionBase {
      * Set the text displayed in the textview.
      *
      * @param textView The view where the text will be displayed.
-     * @param text The text to display.
+     * @param text     The text to display.
      */
     public void addReadMoreTo(TextView textView, CharSequence text) {
         if (textLengthType == ReadMoreOption.TYPE_CHARACTER) {
@@ -91,6 +98,9 @@ public abstract class ReadMoreOptionBase {
                 ClickableSpan clickableSpan = new ClickableSpan() {
                     @Override
                     public void onClick(@NonNull View view) {
+                        if (onClickMoreListener != null) {
+                            onClickMoreListener.onClickMoreListener(view);
+                        }
                         addReadLess(textView, text);
                     }
 
@@ -113,6 +123,15 @@ public abstract class ReadMoreOptionBase {
         });
     }
 
+    /**
+     * Set the listener to the more action.
+     *
+     * @param onClickMoreListener The listener to the more action.
+     */
+    public void addMoreClickListener(@Nullable ReadOptionListener.More onClickMoreListener) {
+        this.onClickMoreListener = onClickMoreListener;
+    }
+
     private void addReadLess(TextView textView, CharSequence text) {
         textView.setMaxLines(Integer.MAX_VALUE);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text)
@@ -122,7 +141,12 @@ public abstract class ReadMoreOptionBase {
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View view) {
-                new Handler(Looper.getMainLooper()).post(() -> addReadMoreTo(textView, text));
+                new Handler(Looper.getMainLooper()).post(() -> {
+                    if (onClickLessListener != null) {
+                        onClickLessListener.onClickLessListener(view);
+                    }
+                    addReadMoreTo(textView, text);
+                });
             }
 
             @Override
@@ -139,6 +163,16 @@ public abstract class ReadMoreOptionBase {
 
 
     /**
+     * Set the listener to the less action.
+     *
+     * @param onClickLessListener The listener to the less action.
+     */
+    public void addLessClickListener(@Nullable ReadOptionListener.Less onClickLessListener) {
+        this.onClickLessListener = onClickLessListener;
+    }
+
+
+    /**
      * Creates an [ReadMoreOption] with the arguments supplied to this builder.
      *
      * @property context The parent context
@@ -151,7 +185,11 @@ public abstract class ReadMoreOptionBase {
         protected int textLength = 100;
         protected int textLengthType = ReadMoreOption.TYPE_CHARACTER;
         protected String moreLabel;
+        @Nullable
+        protected ReadOptionListener.More onClickMoreListener;
         protected String lessLabel;
+        @Nullable
+        protected ReadOptionListener.Less onClickLessListener;
         protected int moreLabelColor;
         protected int lessLabelColor;
         protected boolean labelUnderLine = false;
@@ -160,7 +198,9 @@ public abstract class ReadMoreOptionBase {
         protected Builder(@NonNull Context context) {
             this.context = context;
             this.moreLabel = context.getString(R.string.text_read_more);
+            this.onClickMoreListener = null;
             this.lessLabel = context.getString(R.string.text_read_less);
+            this.onClickLessListener = null;
             this.moreLabelColor = getColorDefault();
             this.lessLabelColor = getColorDefault();
         }
@@ -197,12 +237,32 @@ public abstract class ReadMoreOptionBase {
         }
 
         /**
+         * Set the listener to the more action.
+         *
+         * @param onClickMoreListener The listener to the more action.
+         */
+        public Builder<D> onClickMoreListener(@Nullable ReadOptionListener.More onClickMoreListener) {
+            this.onClickMoreListener = onClickMoreListener;
+            return this;
+        }
+
+        /**
          * Set the label text to action read less.
          *
          * @param less The text to display.
          */
         public Builder<D> lessLabel(String less) {
             this.lessLabel = less;
+            return this;
+        }
+
+        /**
+         * Set the listener to the less action.
+         *
+         * @param onClickLessListener The listener to the less action.
+         */
+        public Builder<D> onClickLessListener(@Nullable ReadOptionListener.Less onClickLessListener) {
+            this.onClickLessListener = onClickLessListener;
             return this;
         }
 
@@ -259,9 +319,22 @@ public abstract class ReadMoreOptionBase {
 
         /**
          * Creates an [ReadMoreOption] with the arguments supplied to this builder.
-         *
          */
         public abstract D build();
     }
+
+
+    public interface ReadOptionListener {
+
+        interface More {
+            void onClickMoreListener(@NonNull View view);
+        }
+
+        interface Less {
+            void onClickLessListener(@NonNull View view);
+        }
+
+    }
+
 
 }

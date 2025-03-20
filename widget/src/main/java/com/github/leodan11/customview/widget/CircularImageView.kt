@@ -18,6 +18,8 @@ import android.widget.ImageView.ScaleType.CENTER_CROP
 import android.widget.ImageView.ScaleType.CENTER_INSIDE
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
+import androidx.core.content.withStyledAttributes
+import androidx.core.graphics.createBitmap
 
 class CircularImageView @JvmOverloads constructor(
     context: Context,
@@ -56,30 +58,49 @@ class CircularImageView @JvmOverloads constructor(
         paintBackground!!.isAntiAlias = true
 
         // Load the styled attributes and set their properties
-        val attributes = context.obtainStyledAttributes(attrs, R.styleable.CircularImageView, defStyleAttr, 0)
+        context.withStyledAttributes(attrs, R.styleable.CircularImageView, defStyleAttr, 0) {
 
-        // Init Border
-        if (attributes.getBoolean(R.styleable.CircularImageView_border, true)) {
-            val defaultBorderSize = DEFAULT_BORDER_WIDTH * getContext().resources.displayMetrics.density
-            setBorderWidth(attributes.getDimension(R.styleable.CircularImageView_border_width, defaultBorderSize))
-            setBorderColor(attributes.getColor(R.styleable.CircularImageView_border_color, ContextCompat.getColor(context, android.R.color.white)))
-        }
+            // Init Border
+            if (getBoolean(R.styleable.CircularImageView_border, true)) {
+                val defaultBorderSize =
+                    DEFAULT_BORDER_WIDTH * getContext().resources.displayMetrics.density
+                setBorderWidth(
+                    getDimension(
+                        R.styleable.CircularImageView_border_width,
+                        defaultBorderSize
+                    )
+                )
+                setBorderColor(
+                    getColor(
+                        R.styleable.CircularImageView_border_color,
+                        ContextCompat.getColor(context, android.R.color.white)
+                    )
+                )
+            }
 
-        setBackgroundColor(attributes.getColor(R.styleable.CircularImageView_circularBackgroundColor, ContextCompat.getColor(context, android.R.color.white)))
-
-        // Init Shadow
-        if (attributes.getBoolean(R.styleable.CircularImageView_shadow, false)) {
-            shadowRadius = DEFAULT_SHADOW_RADIUS
-            drawShadow(
-                attributes.getFloat(R.styleable.CircularImageView_shadow_radius, shadowRadius),
-                attributes.getColor(R.styleable.CircularImageView_shadow_color, shadowColor)
+            setBackgroundColor(
+                getColor(
+                    R.styleable.CircularImageView_circularBackgroundColor,
+                    ContextCompat.getColor(context, android.R.color.white)
+                )
             )
-            val shadowGravityIntValue =
-                attributes.getInteger(R.styleable.CircularImageView_shadow_gravity, ShadowGravity.BOTTOM.value)
-            shadowGravity = ShadowGravity.fromValue(shadowGravityIntValue)
-        }
 
-        attributes.recycle()
+            // Init Shadow
+            if (getBoolean(R.styleable.CircularImageView_shadow, false)) {
+                shadowRadius = DEFAULT_SHADOW_RADIUS
+                drawShadow(
+                    getFloat(R.styleable.CircularImageView_shadow_radius, shadowRadius),
+                    getColor(R.styleable.CircularImageView_shadow_color, shadowColor)
+                )
+                val shadowGravityIntValue =
+                    getInteger(
+                        R.styleable.CircularImageView_shadow_gravity,
+                        ShadowGravity.BOTTOM.value
+                    )
+                shadowGravity = ShadowGravity.fromValue(shadowGravityIntValue)
+            }
+
+        }
     }
     //endregion
 
@@ -329,7 +350,7 @@ class CircularImageView @JvmOverloads constructor(
 
         return try {
             // Create Bitmap object out of the mDrawable
-            val bitmap = Bitmap.createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
+            val bitmap = createBitmap(drawable.intrinsicWidth, drawable.intrinsicHeight)
             val canvas = Canvas(bitmap)
             drawable.setBounds(0, 0, canvas.width, canvas.height)
             drawable.draw(canvas)

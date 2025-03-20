@@ -28,6 +28,8 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.github.leodan11.customview.core.utils.Converters.convertDpToPixels
+import androidx.core.graphics.toColorInt
+import androidx.core.content.withStyledAttributes
 
 class ExpandableCardView @JvmOverloads constructor(
     context: Context,
@@ -100,24 +102,24 @@ class ExpandableCardView @JvmOverloads constructor(
     }
 
     private fun initAttributes(context: Context, attrs: AttributeSet) {
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.ExpandableCardView)
-        this@ExpandableCardView.typedArray = typedArray
-        title = typedArray.getString(R.styleable.ExpandableCardView_expandTitle)
-        iconDrawable = typedArray.getDrawable(R.styleable.ExpandableCardView_expandIcon)
-        iconDrawableTint = typedArray.getColor(R.styleable.ExpandableCardView_expandIconTint, 0)
-        iconDrawableArrow = typedArray.getDrawable(R.styleable.ExpandableCardView_expandArrowIcon)
-            ?: ContextCompat.getDrawable(context, R.drawable.ic_keyboard_arrow_down_baseline)
-        iconDrawableArrowTint =
-            typedArray.getColor(R.styleable.ExpandableCardView_expandArrowIconTint, 0)
-        innerViewRes =
-            typedArray.getResourceId(R.styleable.ExpandableCardView_innerViewExpand, View.NO_ID)
-        expandOnClick = typedArray.getBoolean(R.styleable.ExpandableCardView_expandOnClick, false)
-        animDuration = typedArray.getInteger(
-            R.styleable.ExpandableCardView_animationExpandDuration,
-            DEFAULT_ANIM_DURATION
-        ).toLong()
-        startExpanded = typedArray.getBoolean(R.styleable.ExpandableCardView_startExpanded, false)
-        typedArray.recycle()
+        context.withStyledAttributes(attrs, R.styleable.ExpandableCardView) {
+            this@ExpandableCardView.typedArray = this
+            title = getString(R.styleable.ExpandableCardView_expandTitle)
+            iconDrawable = getDrawable(R.styleable.ExpandableCardView_expandIcon)
+            iconDrawableTint = getColor(R.styleable.ExpandableCardView_expandIconTint, 0)
+            iconDrawableArrow = getDrawable(R.styleable.ExpandableCardView_expandArrowIcon)
+                ?: ContextCompat.getDrawable(context, R.drawable.ic_keyboard_arrow_down_baseline)
+            iconDrawableArrowTint =
+                getColor(R.styleable.ExpandableCardView_expandArrowIconTint, 0)
+            innerViewRes =
+                getResourceId(R.styleable.ExpandableCardView_innerViewExpand, View.NO_ID)
+            expandOnClick = getBoolean(R.styleable.ExpandableCardView_expandOnClick, false)
+            animDuration = getInteger(
+                R.styleable.ExpandableCardView_animationExpandDuration,
+                DEFAULT_ANIM_DURATION
+            ).toLong()
+            startExpanded = getBoolean(R.styleable.ExpandableCardView_startExpanded, false)
+        }
     }
 
     override fun onFinishInflate() {
@@ -360,7 +362,7 @@ class ExpandableCardView @JvmOverloads constructor(
      * @param tint the tint
      */
     fun setIconTint(tint: String) {
-        setIconTint(Color.parseColor(tint))
+        setIconTint(tint.toColorInt())
     }
 
     /**
@@ -430,7 +432,7 @@ class ExpandableCardView @JvmOverloads constructor(
      * @param tint the tint
      */
     fun setIconArrowTint(tint: String) {
-        setIconArrowTint(Color.parseColor(tint))
+        setIconArrowTint(tint.toColorInt())
     }
 
     /**

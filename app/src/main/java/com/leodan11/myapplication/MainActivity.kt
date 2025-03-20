@@ -54,7 +54,13 @@ class MainActivity : AppCompatActivity() {
         val more = ReadMoreOption.Builder(this@MainActivity)
             .textLength(3)
             .labelUnderLine(true)
+            .onClickMoreListener {
+                Toast.makeText(this@MainActivity, "More", Toast.LENGTH_SHORT).show()
+            }
             .textLengthType(ReadMoreOption.TYPE_LINE)
+            .onClickLessListener {
+                Toast.makeText(this@MainActivity, "Less", Toast.LENGTH_SHORT).show()
+            }
             .expandAnimation(true)
             .build()
 
@@ -129,12 +135,14 @@ class MainActivity : AppCompatActivity() {
                 .setListener(object : SwipeListener {
 
                     override fun onSwipedLeft(position: Int) {
-                        Toast.makeText(this@MainActivity, "Archived $position", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity, "Archived $position", Toast.LENGTH_SHORT)
+                            .show()
                         adapter.notifyItemRangeChanged(position, adapter.itemCount)
                     }
 
                     override fun onSwipedRight(position: Int) {
-                        Toast.makeText(this@MainActivity, "Deleted $position", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@MainActivity, "Deleted $position", Toast.LENGTH_SHORT)
+                            .show()
                         adapter.notifyItemRangeChanged(position, adapter.itemCount)
                     }
 
