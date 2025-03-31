@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="default_card_height">50dp</dimen>
+    <dimen name="default_vertical_padding">10dp</dimen>
+    <dimen name="otp_view_item_size">48dp</dimen>
+    <dimen name="otp_view_item_radius">5dp</dimen>
+    <dimen name="otp_view_item_spacing">5dp</dimen>
+    <dimen name="otp_view_item_line_width">2dp</dimen>
+    <dimen name="otp_view_cursor_width">2dp</dimen>
     <dimen name="pen_size">3dp</dimen>
     <dimen name="sd_close_elevation">5dp</dimen>
     <dimen name="sd_fab_mini_size">54dp</dimen>
@@ -8,6 +15,4 @@
     <dimen name="sd_label_max_width">160dp</dimen>
     <dimen name="sd_open_elevation">8dp</dimen>
     <dimen name="sd_overlay_elevation">@dimen/sd_close_elevation</dimen>
-    <dimen name="default_card_height">50dp</dimen>
-    <dimen name="default_vertical_padding">10dp</dimen>
 </resources>

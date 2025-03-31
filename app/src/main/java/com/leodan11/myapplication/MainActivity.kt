@@ -108,7 +108,13 @@ class MainActivity : AppCompatActivity() {
 
         with(binding.viewExample) {
             badgeTextView.text = list.first().toSpannable()
+            otpView.itemCount = 6
+            otpView.setOtpCompletionListener {
+                Toast.makeText(this@MainActivity, "OTP Completed - $it", Toast.LENGTH_SHORT).show()
+            }
             badgeTextView.setOnClickListener {
+                Toast.makeText(this@MainActivity, "Badge Clicked - OTP: ${otpView.otp}", Toast.LENGTH_SHORT)
+                    .show()
                 badgeTextView.text = list.random().toSpannable()
             }
         }

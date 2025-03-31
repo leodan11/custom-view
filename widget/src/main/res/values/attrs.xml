@@ -148,6 +148,38 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="OtpViewTheme">
+        <attr name="otpViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="OtpView">
+        <attr name="OtpItemCount" format="integer" />
+        <attr name="OtpItemWidth" format="dimension" />
+        <attr name="OtpItemHeight" format="dimension" />
+        <attr name="OtpItemRadius" format="dimension" />
+        <attr name="OtpItemSpacing" format="dimension" />
+        <attr name="OtpLineWidth" format="dimension" />
+        <attr name="OtpLineColor" format="reference|color" />
+        <attr name="OtpViewType" format="enum">
+            <enum name="rectangle" value="0" />
+            <enum name="line" value="1" />
+            <enum name="none" value="2" />
+        </attr>
+        <attr name="android:cursorVisible" />
+        <attr name="android:textAllCaps" />
+        <attr name="OtpCursorWidth" format="dimension" />
+        <attr name="OtpCursorColor" format="reference|color" />
+        <attr name="android:itemBackground" />
+        <attr name="OtpItemBackgroundFilled" format="reference" />
+        <attr name="OtpItemBackgroundInvalid" format="reference" />
+        <attr name="OtpItemBackgroundRemove" format="reference" />
+        <attr name="android:selectableItemBackground" />
+        <attr name="OtpHideLineWhenFilled" format="boolean" />
+        <attr name="OtpState_filled" format="boolean" />
+        <attr name="OtpRtlTextDirection" format="boolean" />
+        <attr name="OtpMaskingChar" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="RecyclerViewSwipe">
         <attr name="leftBgColorSwipe" format="color" />
         <attr name="leftImageSwipe" format="reference" />
@@ -230,9 +262,9 @@
     </declare-styleable>
 
     <declare-styleable name="WaveLoadingView">
-        <attr name="wlv_borderWidth" format="dimension"/>
-        <attr name="wlv_borderColor" format="color"/>
-        <attr name="wlv_progressValue" format="integer"/>
+        <attr name="wlv_borderWidth" format="dimension" />
+        <attr name="wlv_borderColor" format="color" />
+        <attr name="wlv_progressValue" format="integer" />
         <attr name="wlv_shapeType" format="enum">
             <enum name="triangle" value="0" />
             <enum name="circle" value="1" />
@@ -245,26 +277,26 @@
             <enum name="east" value="2" />
             <enum name="west" value="3" />
         </attr>
-        <attr name="wlv_round_rectangle" format="boolean"/>
-        <attr name="wlv_round_rectangle_x_and_y" format="integer"/>
-        <attr name="wlv_waveColor" format="color"/>
-        <attr name="wlv_wave_background_Color" format="color"/>
-        <attr name="wlv_waveAmplitude" format="float"/>
-        <attr name="wlv_titleTop" format="string"/>
-        <attr name="wlv_titleCenter" format="string"/>
-        <attr name="wlv_titleBottom" format="string"/>
-        <attr name="wlv_titleTopSize" format="dimension"/>
-        <attr name="wlv_titleCenterSize" format="dimension"/>
-        <attr name="wlv_titleBottomSize" format="dimension"/>
-        <attr name="wlv_titleTopColor" format="color"/>
-        <attr name="wlv_titleCenterColor" format="color"/>
-        <attr name="wlv_titleBottomColor" format="color"/>
-        <attr name="wlv_titleTopStrokeColor" format="color"/>
-        <attr name="wlv_titleTopStrokeWidth" format="dimension"/>
-        <attr name="wlv_titleBottomStrokeColor" format="color"/>
-        <attr name="wlv_titleBottomStrokeWidth" format="dimension"/>
-        <attr name="wlv_titleCenterStrokeColor" format="color"/>
-        <attr name="wlv_titleCenterStrokeWidth" format="dimension"/>
+        <attr name="wlv_round_rectangle" format="boolean" />
+        <attr name="wlv_round_rectangle_x_and_y" format="integer" />
+        <attr name="wlv_waveColor" format="color" />
+        <attr name="wlv_wave_background_Color" format="color" />
+        <attr name="wlv_waveAmplitude" format="float" />
+        <attr name="wlv_titleTop" format="string" />
+        <attr name="wlv_titleCenter" format="string" />
+        <attr name="wlv_titleBottom" format="string" />
+        <attr name="wlv_titleTopSize" format="dimension" />
+        <attr name="wlv_titleCenterSize" format="dimension" />
+        <attr name="wlv_titleBottomSize" format="dimension" />
+        <attr name="wlv_titleTopColor" format="color" />
+        <attr name="wlv_titleCenterColor" format="color" />
+        <attr name="wlv_titleBottomColor" format="color" />
+        <attr name="wlv_titleTopStrokeColor" format="color" />
+        <attr name="wlv_titleTopStrokeWidth" format="dimension" />
+        <attr name="wlv_titleBottomStrokeColor" format="color" />
+        <attr name="wlv_titleBottomStrokeWidth" format="dimension" />
+        <attr name="wlv_titleCenterStrokeColor" format="color" />
+        <attr name="wlv_titleCenterStrokeWidth" format="dimension" />
     </declare-styleable>
 
 </resources>

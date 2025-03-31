@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.github.leodan11.customview.layout.TicketLayout
         android:layout_width="match_parent"
@@ -43,10 +43,10 @@
                 app:amount="1256.56"
                 app:baseTextColor="#009688"
                 app:baseTextSize="54sp"
+                app:baseTextStyle="italic"
                 app:decimalDigitsTextSize="30sp"
                 app:decimalMargin="6dp"
                 app:includeDecimalSeparator="false"
-                app:baseTextStyle="italic"
                 app:symbol="$"
                 app:symbolGravity="start|top"
                 app:symbolMargin="6dp"
@@ -61,6 +61,23 @@
                 android:text="@string/app_name"
                 android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
+
+            <com.github.leodan11.customview.widget.otp.OtpView
+                android:id="@+id/otpView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_20"
+                android:width="30dp"
+                android:cursorVisible="false"
+                android:focusableInTouchMode="true"
+                android:inputType="textPassword"
+                android:selectableItemBackground="@drawable/ic_item_selected_otp"
+                android:textAllCaps="true"
+                app:OtpHideLineWhenFilled="true"
+                app:OtpItemBackgroundInvalid="@drawable/ic_invalid_otp"
+                app:OtpItemHeight="60dp"
+                app:OtpItemSpacing="6dp"
+                app:OtpViewType="line" />
 
             <TextView
                 android:id="@+id/badgeTextView"
