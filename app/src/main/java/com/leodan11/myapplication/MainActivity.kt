@@ -132,6 +132,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Badge Clicked - OTP: ${otpView.text}", Toast.LENGTH_SHORT)
                     .show()
                 badgeTextView.text = list.random().toSpannable()
+                switchIconView.switchState()
             }
         }
         with(binding.viewExampleSignature) {

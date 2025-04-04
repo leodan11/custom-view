@@ -140,6 +140,10 @@ class PinView @JvmOverloads constructor(
         this.onTextChangedListener = onTextChangedListener
     }
 
+    fun removeOnTextChangedListener() {
+        this.onTextChangedListener = null
+    }
+
     private fun addPinStateObserver() {
         CoroutineScope(viewScope).launch {
             pinStateEmitter.collectLatest {
