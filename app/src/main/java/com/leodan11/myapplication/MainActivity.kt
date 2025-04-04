@@ -14,6 +14,7 @@ import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 import com.github.leodan11.customview.drawable.TextDrawable
 import com.github.leodan11.customview.widget.helpers.SwipeListener
 import com.github.leodan11.customview.widget.helpers.makeLeftRightSwipeAble
+import com.github.leodan11.customview.widget.pin.model.PinListener
 import com.leodan11.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -108,12 +109,27 @@ class MainActivity : AppCompatActivity() {
 
         with(binding.viewExample) {
             badgeTextView.text = list.first().toSpannable()
-            otpView.itemCount = 6
-            otpView.setOtpCompletionListener {
-                Toast.makeText(this@MainActivity, "OTP Completed - $it", Toast.LENGTH_SHORT).show()
-            }
+            otpView.setOnTextChangedListener(object : PinListener {
+
+                override fun onTextChangedListener(text: String?) {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "OTP changed - $text",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                override fun onPinCompletedListener(text: String) {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "OTP Completed - $text",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+            })
             badgeTextView.setOnClickListener {
-                Toast.makeText(this@MainActivity, "Badge Clicked - OTP: ${otpView.otp}", Toast.LENGTH_SHORT)
+                Toast.makeText(this@MainActivity, "Badge Clicked - OTP: ${otpView.text}", Toast.LENGTH_SHORT)
                     .show()
                 badgeTextView.text = list.random().toSpannable()
             }

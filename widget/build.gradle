@@ -37,6 +37,10 @@ android {
         jvmTarget = versions.jvm
     }
 
+    viewBinding {
+        enabled = true
+    }
+
     publishing {
         singleVariant('release') {
             withSourcesJar()

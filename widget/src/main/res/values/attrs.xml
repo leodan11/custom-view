@@ -148,36 +148,24 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="OtpViewTheme">
-        <attr name="otpViewStyle" format="reference" />
+    <declare-styleable name="pinViewTheme">
+        <attr name="pinViewStyle" format="reference" />
     </declare-styleable>
 
-    <declare-styleable name="OtpView">
-        <attr name="OtpItemCount" format="integer" />
-        <attr name="OtpItemWidth" format="dimension" />
-        <attr name="OtpItemHeight" format="dimension" />
-        <attr name="OtpItemRadius" format="dimension" />
-        <attr name="OtpItemSpacing" format="dimension" />
-        <attr name="OtpLineWidth" format="dimension" />
-        <attr name="OtpLineColor" format="reference|color" />
-        <attr name="OtpViewType" format="enum">
-            <enum name="rectangle" value="0" />
-            <enum name="line" value="1" />
-            <enum name="none" value="2" />
+    <declare-styleable name="PinView">
+        <attr name="pinCount" format="integer" />
+        <attr name="isPassword" format="boolean" />
+        <attr name="pinPadding" format="dimension" />
+        <attr name="pinBackground" format="reference" />
+        <attr name="pinMask" format="string" />
+        <attr name="android:textSize" format="dimension" />
+        <attr name="android:fontFamily" format="string|reference" />
+        <attr name="android:textColor" format="reference|color" />
+        <attr name="android:textStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
         </attr>
-        <attr name="android:cursorVisible" />
-        <attr name="android:textAllCaps" />
-        <attr name="OtpCursorWidth" format="dimension" />
-        <attr name="OtpCursorColor" format="reference|color" />
-        <attr name="android:itemBackground" />
-        <attr name="OtpItemBackgroundFilled" format="reference" />
-        <attr name="OtpItemBackgroundInvalid" format="reference" />
-        <attr name="OtpItemBackgroundRemove" format="reference" />
-        <attr name="android:selectableItemBackground" />
-        <attr name="OtpHideLineWhenFilled" format="boolean" />
-        <attr name="OtpState_filled" format="boolean" />
-        <attr name="OtpRtlTextDirection" format="boolean" />
-        <attr name="OtpMaskingChar" format="string" />
     </declare-styleable>
 
     <declare-styleable name="RecyclerViewSwipe">
