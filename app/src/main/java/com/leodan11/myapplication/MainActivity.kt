@@ -16,6 +16,8 @@ import com.github.leodan11.customview.widget.helpers.SwipeListener
 import com.github.leodan11.customview.widget.helpers.makeLeftRightSwipeAble
 import com.github.leodan11.customview.widget.pin.model.PinListener
 import com.leodan11.myapplication.databinding.ActivityMainBinding
+import java.util.UUID
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,31 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val list = listOf(
-            MaterialBadgeDrawable.Builder()
-                .type(MaterialBadgeDrawable.TYPE_NUMBER)
-                .number(56)
-                .build(),
-            MaterialBadgeDrawable.Builder()
-                .type(MaterialBadgeDrawable.TYPE_ONLY_ONE_TEXT)
-                .badgeColor(Color.LTGRAY)
-                .textOne("One")
-                .build(),
-            MaterialBadgeDrawable.Builder()
-                .type(MaterialBadgeDrawable.TYPE_WITH_TWO_TEXT)
-                .badgeColor(Color.MAGENTA)
-                .textOne("TEST")
-                .textTwo("Pass")
-                .build(),
-            MaterialBadgeDrawable.Builder()
-                .type(MaterialBadgeDrawable.TYPE_WITH_TWO_TEXT_COMPLEMENTARY)
-                .textOne("LEVEL")
-                .padding(dipToPixels(2f))
-                .strokeWidth(dipToPixels(1f).toInt())
-                .textTwo("10")
-                .build(),
-        )
 
         val more = ReadMoreOption.Builder(this@MainActivity)
             .textLength(3)
@@ -108,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         with(binding.viewExample) {
-            badgeTextView.text = list.first().toSpannable()
+            badgeTextView.text = generateRandomBadgeDrawable().toSpannable()
             otpView.setOnTextChangedListener(object : PinListener {
 
                 override fun onTextChangedListener(text: String?) {
@@ -129,9 +106,13 @@ class MainActivity : AppCompatActivity() {
 
             })
             badgeTextView.setOnClickListener {
-                Toast.makeText(this@MainActivity, "Badge Clicked - OTP: ${otpView.text}", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    this@MainActivity,
+                    "Badge Clicked - OTP: ${otpView.text}",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
-                badgeTextView.text = list.random().toSpannable()
+                badgeTextView.text = generateRandomBadgeDrawable().toSpannable()
                 switchIconView.switchState()
             }
         }
@@ -196,7 +177,10 @@ class MainActivity : AppCompatActivity() {
             expandableCardview.innerView?.let {
                 val drawable = TextDrawable
                     .builder()
-                    .buildRound("EX", ContextCompat.getColor(this@MainActivity, R.color.purple_500))
+                    .buildRound(
+                        generateRandomString(2),
+                        ContextCompat.getColor(this@MainActivity, R.color.purple_500)
+                    )
                 it.findViewById<ImageView>(R.id.shapeableImageView).setImageDrawable(drawable)
             }
             gradientTextView.apply {
@@ -214,4 +198,51 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun generateRandomString(length: Int = 10): String {
+        val charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        return (1..length)
+            .map { charset.random() }
+            .joinToString("")
+    }
+
+    private fun generateRandomBadgeDrawable(): MaterialBadgeDrawable {
+        val index = (0..3).random()
+        return when (index) {
+            0 -> {
+                MaterialBadgeDrawable.Builder()
+                    .type(MaterialBadgeDrawable.TYPE_NUMBER)
+                    .number((0..9999).random())
+                    .build()
+            }
+
+            1 -> {
+                MaterialBadgeDrawable.Builder()
+                    .type(MaterialBadgeDrawable.TYPE_ONLY_ONE_TEXT)
+                    .badgeColor(Color.LTGRAY)
+                    .textOne(" ${generateRandomString()}")
+                    .build()
+            }
+
+            2 -> {
+                MaterialBadgeDrawable.Builder()
+                    .type(MaterialBadgeDrawable.TYPE_WITH_TWO_TEXT)
+                    .badgeColor(Color.MAGENTA)
+                    .textOne(" UUID ")
+                    .textTwo(" ${UUID.randomUUID()} ")
+                    .build()
+            }
+
+            else -> {
+                MaterialBadgeDrawable.Builder()
+                    .type(MaterialBadgeDrawable.TYPE_WITH_TWO_TEXT_COMPLEMENTARY)
+                    .textOne(" LEVEL ")
+                    .padding(dipToPixels(2f))
+                    .strokeWidth(dipToPixels(1f).toInt())
+                    .textTwo(" ${Random.nextInt()} ")
+                    .build()
+            }
+        }
+    }
+
 }

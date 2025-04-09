@@ -21,17 +21,37 @@
             app:pinMask="."
             app:pinPadding="@dimen/dimen_4" />
 
-        <com.github.leodan11.customview.widget.SwitchIconView
-            android:id="@+id/switchIconView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:si_animation_duration="500"
-            app:si_disabled_alpha=".5"
-            app:si_disabled_color="#b7b7b7"
-            app:si_enabled="false"
-            app:si_no_dash="true"
-            app:si_tint_color="#ff3c00"
-            app:srcCompat="@drawable/ic_warning_yellow" />
+            android:layout_margin="@dimen/dimen_14"
+            android:orientation="horizontal">
+
+            <com.github.leodan11.customview.widget.SwitchIconView
+                android:id="@+id/switchIconView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dimen_10"
+                app:si_animation_duration="500"
+                app:si_disabled_alpha=".5"
+                app:si_disabled_color="#b7b7b7"
+                app:si_enabled="false"
+                app:si_no_dash="true"
+                app:si_tint_color="#ff3c00"
+                app:srcCompat="@drawable/ic_warning_yellow" />
+
+            <com.github.leodan11.customview.widget.MaskEditText
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:inputType="number"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:mask="+90 (___) ___ __ __" />
+
+        </LinearLayout>
 
         <com.github.leodan11.customview.layout.TicketLayout
             android:layout_width="match_parent"

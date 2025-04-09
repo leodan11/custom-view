@@ -148,6 +148,16 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="MaskEditText">
+        <attr name="mask" format="string" />
+        <attr name="maskCharacter" format="string" />
+        <attr name="maskStyle" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="completable" value="1" />
+            <enum name="persistent" value="2" />
+        </attr>
+    </declare-styleable>
+
     <declare-styleable name="NumberPicker">
         <attr name="snp_buttonIconDown" format="integer"/>
         <attr name="snp_buttonIconUp" format="integer"/>
