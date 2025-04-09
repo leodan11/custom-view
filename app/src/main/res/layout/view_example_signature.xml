@@ -25,6 +25,15 @@
         app:layout_constraintTop_toBottomOf="@id/value"
         tools:ignore="DuplicateSpeakableTextCheck,HardcodedText" />
 
+    <com.github.leodan11.customview.widget.picker.NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/action"
+        app:layout_constraintEnd_toStartOf="@id/action_two"
+        app:layout_constraintStart_toEndOf="@id/action"
+        app:layout_constraintTop_toBottomOf="@id/value" />
+
     <Button
         android:id="@+id/action_two"
         android:layout_width="wrap_content"

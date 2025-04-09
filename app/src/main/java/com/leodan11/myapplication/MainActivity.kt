@@ -145,6 +145,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            numberPicker.setListener {
+                Toast.makeText(this@MainActivity, "Number Picker [$it]", Toast.LENGTH_SHORT).show()
+            }
+
             actionTwo.setOnClickListener {
                 value.clearCanvas()
                 view.setImageResource(R.drawable.ic_launcher_background)

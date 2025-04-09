@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <public name="default_button_size" type="dimen" />
+    <public name="default_scroll_offset" type="dimen" />
+    <public name="default_scroll_repeat_length" type="dimen" />
+    <public name="default_button_scale_factor" type="dimen" />
     <public name="sd_label_text_color" type="color" />
     <public name="sd_label_background_color" type="color" />
     <public name="sd_overlay_color" type="color" />
@@ -14,6 +18,10 @@
     <public name="default_card_height" type="dimen" />
     <public name="default_vertical_padding" type="dimen" />
     <public name="ic_keyboard_arrow_down_baseline" type="drawable" />
+    <public name="ic_arrow_down_baseline" type="drawable" />
+    <public name="ic_arrow_left_baseline" type="drawable" />
+    <public name="ic_arrow_right_baseline" type="drawable" />
+    <public name="ic_arrow_up_baseline" type="drawable" />
     <public name="speeddial_snackbar_behavior" type="string" />
     <public name="speeddial_scrolling_view_snackbar_behavior" type="string" />
 </resources>

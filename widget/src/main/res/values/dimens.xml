@@ -2,6 +2,16 @@
 <resources>
     <dimen name="default_card_height">50dp</dimen>
     <dimen name="default_vertical_padding">10dp</dimen>
+    <dimen name="default_button_size">24dp</dimen>
+    <dimen name="default_button_padding_left">0dp</dimen>
+    <dimen name="default_button_padding_right">0dp</dimen>
+    <dimen name="default_button_padding_top">0dp</dimen>
+    <dimen name="default_button_padding_bottom">0dp</dimen>
+    <dimen name="default_value_margin_start">0dp</dimen>
+    <dimen name="default_value_margin_end">0dp</dimen>
+    <dimen name="default_scroll_offset">4dp</dimen>
+    <dimen name="default_scroll_repeat_length">25dp</dimen>
+    <item name="default_button_scale_factor" format="float" type="dimen">1.0</item>
     <dimen name="otp_view_item_size">48dp</dimen>
     <dimen name="otp_view_item_radius">5dp</dimen>
     <dimen name="otp_view_item_spacing">5dp</dimen>
