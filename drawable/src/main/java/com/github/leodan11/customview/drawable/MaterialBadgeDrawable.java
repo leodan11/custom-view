@@ -3,6 +3,7 @@ package com.github.leodan11.customview.drawable;
 import static com.github.leodan11.customview.core.utils.Converters.dipToPixels;
 import static com.github.leodan11.customview.core.utils.Converters.spToPixels;
 
+import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
@@ -335,6 +336,7 @@ public class MaterialBadgeDrawable extends Drawable {
         return config.strokeWidth;
     }
 
+    @SuppressLint("SwitchIntDef")
     private void measureBadge() {
         badgeHeight = (int) (getTextSize() + getPaddingTop() + getPaddingBottom());
 
@@ -401,6 +403,7 @@ public class MaterialBadgeDrawable extends Drawable {
         measureBadge();
     }
 
+    @SuppressLint("SwitchIntDef")
     @Override
     public void draw(@NonNull Canvas canvas) {
         Rect bounds = getBounds();
