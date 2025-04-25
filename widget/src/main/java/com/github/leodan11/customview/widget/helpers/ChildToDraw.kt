@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.github.leodan11.customview.core.utils.Converters
+import androidx.core.graphics.drawable.toDrawable
 
 class ChildToDraw(
     private val dX: Int,
@@ -59,7 +60,10 @@ class ChildToDraw(
                     iconRight = v.left + iconMargin + icon!!.intrinsicWidth
                     icon!!.setBounds(iconLeft, iconTop, iconRight, iconBottom)
                 }
-                bg = ColorDrawable(ContextCompat.getColor(context, swipeView.leftBg))
+                bg = (swipeView.leftBgInt ?: ContextCompat.getColor(
+                    context,
+                    swipeView.leftBg
+                )).toDrawable()
                 bg!!.setBounds(v.left, v.top, v.left + dX, v.bottom)
             }
 
@@ -70,7 +74,10 @@ class ChildToDraw(
                     iconRight = v.right - iconMargin + (text!!.length / 2)
                     icon!!.setBounds(iconLeft, iconTop, iconRight, iconBottom)
                 }
-                bg = ColorDrawable(ContextCompat.getColor(context, swipeView.rightBg))
+                bg = (swipeView.rightBgInt ?: ContextCompat.getColor(
+                    context,
+                    swipeView.rightBg
+                )).toDrawable()
                 bg!!.setBounds(v.right + dX, v.top, v.right, v.bottom)
             }
         }

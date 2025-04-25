@@ -15,7 +15,9 @@ class SwipeView(icons: IntArray, backgrounds: IntArray, texts: Array<String>) {
     var leftIcon: Int = R.drawable.ic_keyboard_arrow_down_baseline
     var rightIcon: Int = R.drawable.ic_keyboard_arrow_down_baseline
     var leftBg: Int = android.R.color.holo_red_light
+    var leftBgInt: Int? = null
     var rightBg: Int = android.R.color.holo_green_light
+    var rightBgInt: Int? = null
 
     init {
         if (mIcons.size == 2) {

@@ -3,6 +3,9 @@ package com.github.leodan11.customview.widget
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.github.leodan11.customview.widget.helpers.SwipeCallback
@@ -23,13 +26,23 @@ class RecyclerViewSwipe(
         recyclerView.setWillNotDraw(false)
     }
 
-    fun setRightBg(bg: Int): RecyclerViewSwipe {
+    fun setRightBg(@ColorRes bg: Int): RecyclerViewSwipe {
         mSwipedView.rightBg = bg
         return this
     }
 
-    fun setLeftBg(bg: Int): RecyclerViewSwipe {
+    fun setRightBgInt(@ColorInt bg: Int): RecyclerViewSwipe {
+        mSwipedView.rightBgInt = bg
+        return this
+    }
+
+    fun setLeftBg(@ColorRes bg: Int): RecyclerViewSwipe {
         mSwipedView.leftBg = bg
+        return this
+    }
+
+    fun setLeftBgInt(@ColorInt bg: Int): RecyclerViewSwipe {
+        mSwipedView.leftBgInt = bg
         return this
     }
 
@@ -43,17 +56,17 @@ class RecyclerViewSwipe(
         return this
     }
 
-    fun setRightImage(imgRef: Int): RecyclerViewSwipe {
+    fun setRightImage(@DrawableRes imgRef: Int): RecyclerViewSwipe {
         mSwipedView.rightIcon = imgRef
         return this
     }
 
-    fun setLeftImage(imgRef: Int): RecyclerViewSwipe {
+    fun setLeftImage(@DrawableRes imgRef: Int): RecyclerViewSwipe {
         mSwipedView.leftIcon = imgRef
         return this
     }
 
-    fun setTextColor(color: Int): RecyclerViewSwipe {
+    fun setTextColor(@ColorInt color: Int): RecyclerViewSwipe {
         mSwipedView.textColor = color
         return this
     }
