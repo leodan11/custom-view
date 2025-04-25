@@ -2,6 +2,10 @@ package com.leodan11.myapplication
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +16,7 @@ import com.github.leodan11.customview.core.ToastFlasher
 import com.github.leodan11.customview.core.utils.Converters.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 import com.github.leodan11.customview.drawable.TextDrawable
+import com.github.leodan11.customview.widget.MaterialSpinner
 import com.github.leodan11.customview.widget.helpers.SwipeListener
 import com.github.leodan11.customview.widget.helpers.makeLeftRightSwipeAble
 import com.github.leodan11.customview.widget.pin.model.PinListener
@@ -182,6 +187,27 @@ class MainActivity : AppCompatActivity() {
                         ContextCompat.getColor(this@MainActivity, R.color.purple_500)
                     )
                 it.findViewById<ImageView>(R.id.shapeableImageView).setImageDrawable(drawable)
+                val spinner = it.findViewById<MaterialSpinner>(R.id.material_spinner)
+                val listItems = arrayOf("USA", "Japan", "India")
+                spinner.onItemSelectedListener = object : MaterialSpinner.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: MaterialSpinner,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        parent.focusSearch(View.FOCUS_UP)?.requestFocus()
+                    }
+
+                    override fun onNothingSelected(parent: MaterialSpinner) {
+                        Log.v("MaterialSpinner", "onNothingSelected parent=${parent.id}")
+                    }
+
+
+                }
+                val adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_item, listItems)
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spinner.adapter = adapter
             }
             gradientTextView.apply {
                 addGradientToFullText(
