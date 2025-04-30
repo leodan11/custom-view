@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Toast
@@ -12,7 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.github.leodan11.customview.core.ReadMoreOption
-import com.github.leodan11.customview.core.ToastFlasher
+import com.github.leodan11.customview.core.ToastKit
+import com.github.leodan11.customview.core.Toasty
 import com.github.leodan11.customview.core.utils.Converters.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 import com.github.leodan11.customview.drawable.TextDrawable
@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity() {
             .textLength(3)
             .labelUnderLine(true)
             .onClickMoreListener {
-                Toast.makeText(this@MainActivity, "More", Toast.LENGTH_SHORT).show()
+                Toasty.info(this@MainActivity, "More", Toast.LENGTH_SHORT).show()
             }
             .textLengthType(ReadMoreOption.TYPE_LINE)
             .onClickLessListener {
-                Toast.makeText(this@MainActivity, "Less", Toast.LENGTH_SHORT).show()
+                Toasty.success(this@MainActivity, "Less", Toast.LENGTH_SHORT).show()
             }
             .expandAnimation(true)
             .build()
@@ -53,10 +53,10 @@ class MainActivity : AppCompatActivity() {
                 viewExample.root.isVisible = true
                 viewExampleSnowfall.root.isVisible = false
                 viewExampleSignature.root.isVisible = false
-                ToastFlasher.createToast(
+                ToastKit.createToast(
                     this@MainActivity,
                     message = getString(R.string.app_name),
-                    style = ToastFlasher.Style.INFO
+                    style = ToastKit.Style.INFO
                 )
             }
 
@@ -64,10 +64,10 @@ class MainActivity : AppCompatActivity() {
                 viewExample.root.isVisible = false
                 viewExampleSnowfall.root.isVisible = false
                 viewExampleSignature.root.isVisible = true
-                ToastFlasher.createColorToast(
+                ToastKit.createColorToast(
                     this@MainActivity,
                     message = getString(R.string.app_name),
-                    style = ToastFlasher.Style.INFO
+                    style = ToastKit.Style.INFO
                 )
             }
 
@@ -148,13 +148,13 @@ class MainActivity : AppCompatActivity() {
                 .setListener(object : SwipeListener {
 
                     override fun onSwipedLeft(position: Int) {
-                        Toast.makeText(this@MainActivity, "Archived $position", Toast.LENGTH_SHORT)
+                        Toasty.normal(this@MainActivity, "Archived $position", Toast.LENGTH_SHORT)
                             .show()
                         adapter.notifyItemRangeChanged(position, adapter.itemCount)
                     }
 
                     override fun onSwipedRight(position: Int) {
-                        Toast.makeText(this@MainActivity, "Deleted $position", Toast.LENGTH_SHORT)
+                        Toasty.warning(this@MainActivity, "Deleted $position", Toast.LENGTH_SHORT)
                             .show()
                         adapter.notifyItemRangeChanged(position, adapter.itemCount)
                     }

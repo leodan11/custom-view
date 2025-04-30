@@ -21,10 +21,18 @@ import androidx.core.graphics.drawable.DrawableCompat
 import com.github.leodan11.customview.core.databinding.FullColorToastBinding
 import com.github.leodan11.customview.core.databinding.MotionToastBinding
 
-class ToastFlasher {
+class ToastKit {
 
     enum class Style {
         SUCCESS, ERROR, WARNING, INFO, DELETE, NO_INTERNET;
+
+        fun getName(): String {
+            if (this.name.contains("_")) {
+                return this.name.replaceFirst("_", " ")
+            }
+            return this.name
+        }
+
     }
 
     enum class Gravity(val value: Int) {

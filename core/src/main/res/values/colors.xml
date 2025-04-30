@@ -3,9 +3,10 @@
     <!--    Background Colors-->
     <color name="warning_color">#FBC02D</color>
     <color name="error_color">#D50000</color>
-    <color name="success_color">#17B978</color>
-    <color name="info_color">#0340DA</color>
+    <color name="success_color">#388E3C</color>
+    <color name="info_color">#3F51B5</color>
     <color name="delete_color">#0288D1</color>
+    <color name="normal_color">#353A3E</color>
 
     <!--    Background Transparent Colors-->
     <color name="warning_bg_color">#33FBC02D</color>
