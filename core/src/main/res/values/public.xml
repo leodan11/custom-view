@@ -43,10 +43,46 @@
     <public name="dimen_28" type="dimen" />
     <public name="dimen_30" type="dimen" />
     <public name="dimen_32" type="dimen" />
+    <public name="dimen_34" type="dimen" />
+    <public name="dimen_36" type="dimen" />
+    <public name="dimen_38" type="dimen" />
+    <public name="dimen_40" type="dimen" />
+    <public name="dimen_42" type="dimen" />
+    <public name="dimen_44" type="dimen" />
+    <public name="dimen_46" type="dimen" />
     <public name="dimen_48" type="dimen" />
+    <public name="dimen_50" type="dimen" />
+    <public name="dimen_52" type="dimen" />
+    <public name="dimen_54" type="dimen" />
+    <public name="dimen_56" type="dimen" />
+    <public name="dimen_58" type="dimen" />
+    <public name="dimen_60" type="dimen" />
+    <public name="dimen_62" type="dimen" />
     <public name="dimen_64" type="dimen" />
+    <public name="dimen_66" type="dimen" />
+    <public name="dimen_68" type="dimen" />
+    <public name="dimen_70" type="dimen" />
     <public name="dimen_72" type="dimen" />
-    <public name="dimen_82" type="dimen" />
+    <public name="dimen_74" type="dimen" />
+    <public name="dimen_76" type="dimen" />
+    <public name="dimen_78" type="dimen" />
     <public name="dimen_80" type="dimen" />
+    <public name="dimen_82" type="dimen" />
+    <public name="dimen_84" type="dimen" />
+    <public name="dimen_86" type="dimen" />
+    <public name="dimen_88" type="dimen" />
+    <public name="dimen_90" type="dimen" />
+    <public name="dimen_92" type="dimen" />
+    <public name="dimen_94" type="dimen" />
+    <public name="dimen_96" type="dimen" />
+    <public name="dimen_98" type="dimen" />
     <public name="dimen_100" type="dimen" />
+    <public name="dimen_text_normal" type="dimen" />
+    <public name="dimen_text_small" type="dimen" />
+    <public name="dimen_text_medium" type="dimen" />
+    <public name="dimen_text_large" type="dimen" />
+    <public name="dimen_text_x_large" type="dimen" />
+    <public name="dimen_text_x_small" type="dimen" />
+    <public name="dimen_text_xx_large" type="dimen" />
+    <public name="dimen_text_xxx_large" type="dimen" />
 </resources>
