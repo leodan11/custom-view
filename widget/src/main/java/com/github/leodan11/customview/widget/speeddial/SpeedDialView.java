@@ -737,6 +737,10 @@ public class SpeedDialView extends LinearLayout implements CoordinatorLayout.Att
                             .SpeedDialView_sdMainFabOpenedIconColor,
                     getMainFabOpenedIconColor()));
             mOverlayLayoutId = styledAttrs.getResourceId(R.styleable.SpeedDialView_sdOverlayLayout, RESOURCE_NOT_SET);
+            @MenuRes int menuRes = styledAttrs.getResourceId(R.styleable.SpeedDialView_sdMenu, RESOURCE_NOT_SET);
+            if (menuRes != RESOURCE_NOT_SET) {
+                inflate(menuRes);
+            }
         } catch (Exception e) {
             Log.e(TAG, "Failure setting FabWithLabelView icon", e);
         } finally {

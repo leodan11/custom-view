@@ -255,6 +255,7 @@
         <attr name="sdMainFabOpenedSrc" format="reference" />
         <attr name="sdMainFabOpenedIconColor" format="color" />
         <attr name="sdMainFabOpenedBackgroundColor" format="color" />
+        <attr name="sdMenu" format="reference" />
         <attr name="sdOverlayLayout" format="reference" />
         <attr name="sdUseReverseAnimationOnClose" format="boolean" />
     </declare-styleable>

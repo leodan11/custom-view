@@ -67,9 +67,10 @@
             android:id="@+id/speedDial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
             android:layout_gravity="bottom|end"
-            app:sdMainFabClosedSrc="@drawable/baseline_add" />
+            android:layout_margin="16dp"
+            app:sdMainFabClosedSrc="@drawable/baseline_add"
+            app:sdMenu="@menu/menu_speed_dial" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -81,7 +81,6 @@ class MainActivity : AppCompatActivity() {
                 )
             }
 
-            speedDial.inflate(R.menu.menu_speed_dial)
             speedDial.setOnActionSelectedListener {
                 Toast.makeText(this@MainActivity, "Selected", Toast.LENGTH_SHORT).show()
                 true
