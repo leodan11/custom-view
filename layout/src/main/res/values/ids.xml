@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="MainTable" type="id" />
+    <item name="ColumnHeaderTable" type="id" />
+    <item name="RowHeaderTable" type="id" />
+    <item name="CornerTable" type="id" />
     <item name="tb_toggle_id" type="id" />
 </resources>

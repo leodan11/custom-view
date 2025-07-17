@@ -14,11 +14,12 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/drawable" />
             <option value="$PROJECT_DIR$/layout" />
+            <option value="$PROJECT_DIR$/progress" />
+            <option value="$PROJECT_DIR$/textfield" />
             <option value="$PROJECT_DIR$/textview" />
             <option value="$PROJECT_DIR$/widget" />
           </set>
         </option>
-        <option name="resolveExternalAnnotations" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

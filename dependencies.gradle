@@ -1,8 +1,8 @@
 ext.versions = [
-        compile_sdk    : 34,
+        compile_sdk    : 35,
         java_version   : JavaVersion.VERSION_17,
-        jvm            : "17",
+        jvm            : '17',
         min_sdk        : 21,
-        target_sdk     : 34,
-        publish_version: "4.3.14",
+        target_sdk     : 35,
+        publish_version: "5.0.0-alpha01",
 ]

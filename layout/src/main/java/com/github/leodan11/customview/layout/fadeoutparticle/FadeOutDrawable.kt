@@ -16,6 +16,7 @@ import kotlin.math.cos
 import kotlin.math.pow
 import kotlin.math.sqrt
 import kotlin.random.Random
+import androidx.core.graphics.get
 
 internal class FadeOutDrawable(private val density: Float) {
 
@@ -129,7 +130,7 @@ internal class FadeOutDrawable(private val density: Float) {
 
     private fun Bitmap.getPixel(x: Int, y: Int, space: Int): Int {
         val effectiveX = 0.coerceAtLeast(x - space)
-        val color = getPixel(effectiveX, y)
+        val color = this[effectiveX, y]
         if (effectiveX != 0 && space != 0 && color == Color.TRANSPARENT) {
             return getPixel(x, y, space - 1)
         }

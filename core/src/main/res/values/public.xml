@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <public name="text_warning" type="string" />
     <public name="text_success" type="string" />
     <public name="text_error" type="string" />
@@ -85,4 +86,5 @@
     <public name="dimen_text_x_small" type="dimen" />
     <public name="dimen_text_xx_large" type="dimen" />
     <public name="dimen_text_xxx_large" type="dimen" />
+
 </resources>

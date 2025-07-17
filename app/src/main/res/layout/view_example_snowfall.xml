@@ -23,7 +23,7 @@
                 android:text="@string/fadeout"
                 android:layout_margin="@dimen/dimen_14" />
 
-            <com.github.leodan11.customview.widget.WaveLoadingView
+            <com.github.leodan11.customview.progress.WaveLoadingView
                 android:layout_width="30dp"
                 android:layout_margin="@dimen/dimen_16"
                 android:layout_gravity="center"
@@ -37,7 +37,7 @@
                 app:wlv_waveColor="@color/black"
                 android:layout_height="30dp" />
 
-            <com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout
+            <com.github.leodan11.customview.layout.FadeOutParticleFrameLayout
                 android:id="@+id/fadeoutParticleLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -68,7 +68,7 @@
 
                 </LinearLayout>
 
-            </com.github.leodan11.customview.layout.fadeoutparticle.FadeOutParticleFrameLayout>
+            </com.github.leodan11.customview.layout.FadeOutParticleFrameLayout>
 
             <com.github.leodan11.customview.widget.GradientView
                 android:layout_width="@dimen/dimen_72"
@@ -80,7 +80,7 @@
                 app:gv_start="?colorPrimary"
                 android:layout_height="@dimen/dimen_72" />
 
-            <com.github.leodan11.customview.widget.gradient.ui.GradientLinearLayout
+            <com.github.leodan11.customview.layout.GradientLinearLayout
                 android:layout_width="match_parent"
                 android:layout_marginTop="@dimen/dimen_10"
                 android:orientation="vertical"
@@ -90,7 +90,7 @@
                 app:gradient_ui_animate="true"
                 android:layout_height="wrap_content">
 
-                <com.github.leodan11.customview.widget.gradient.ui.GradientTextView
+                <com.github.leodan11.customview.textview.GradientTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/gradientTextView"
@@ -99,7 +99,7 @@
                     android:layout_margin="@dimen/dimen_12"
                     android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
 
-                <com.github.leodan11.customview.widget.gradient.ui.GradientCheckBox
+                <com.github.leodan11.customview.widget.GradientCheckBox
                     android:layout_width="match_parent"
                     android:id="@+id/gradientCheckBox"
                     android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
                     android:layout_margin="@dimen/dimen_12"
                     android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
 
-                <com.github.leodan11.customview.widget.gradient.ui.GradientButton
+                <com.github.leodan11.customview.widget.GradientButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -121,7 +121,7 @@
                     android:textColor="@color/white"
                     android:layout_margin="@dimen/dimen_12" />
 
-                <com.github.leodan11.customview.widget.gradient.ui.GradientCardView
+                <com.github.leodan11.customview.widget.GradientCardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dimen_12"
@@ -144,9 +144,9 @@
 
                     </LinearLayout>
 
-                </com.github.leodan11.customview.widget.gradient.ui.GradientCardView>
+                </com.github.leodan11.customview.widget.GradientCardView>
 
-            </com.github.leodan11.customview.widget.gradient.ui.GradientLinearLayout>
+            </com.github.leodan11.customview.layout.GradientLinearLayout>
 
         </LinearLayout>
 

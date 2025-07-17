@@ -7,7 +7,6 @@
     android:layout_margin="10dp"
     android:orientation="vertical">
 
-
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/shapeableImageView"
         android:layout_width="@dimen/sd_fab_normal_size"
@@ -16,7 +15,7 @@
         android:layout_margin="10dp"
         tools:src="@mipmap/ic_launcher" />
 
-    <com.github.leodan11.customview.widget.MaterialSpinner
+    <com.github.leodan11.customview.textfield.MaterialSpinner
         android:id="@+id/material_spinner"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
@@ -25,7 +24,7 @@
         android:hint="Select Country"
         tools:ignore="HardcodedText" />
 
-    <com.github.leodan11.customview.layout.groupbox.GroupBoxLayout
+    <com.github.leodan11.customview.layout.GroupBoxLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -49,12 +48,13 @@
             android:layout_margin="10dp"
             android:hint="@string/app_name">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.github.leodan11.customview.textfield.InputMaskedEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:masked="###-******" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-    </com.github.leodan11.customview.layout.groupbox.GroupBoxLayout>
+    </com.github.leodan11.customview.layout.GroupBoxLayout>
 
 </LinearLayout>

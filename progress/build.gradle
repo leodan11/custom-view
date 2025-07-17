@@ -1,0 +1,62 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    id 'maven-publish'
+}
+
+apply from: "$rootDir/dependencies.gradle"
+
+ext.module_group = "com.github.leodan11.customview"
+ext.module_name = "progress"
+
+android {
+    namespace = "${module_group}.${module_name}"
+    compileSdk = versions.compile_sdk
+
+    defaultConfig {
+        minSdk = versions.min_sdk
+        targetSdk = versions.target_sdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility versions.java_version
+        targetCompatibility versions.java_version
+    }
+    kotlinOptions {
+        jvmTarget = versions.jvm
+    }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    api project(":core")
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}
+
+apply from: "$rootDir/gradle/android_library_config.gradle"

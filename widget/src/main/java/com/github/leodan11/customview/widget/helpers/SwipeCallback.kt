@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.github.leodan11.customview.core.utils.Converters
+import com.github.leodan11.customview.core.helper.Converters
 
 class SwipeCallback(private val listener: SwipeListener, private val swipeView: SwipeView) :
     ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {

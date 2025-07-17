@@ -23,6 +23,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.core.widget.ImageViewCompat;
 
 import com.github.leodan11.customview.widget.R;
+import com.github.leodan11.customview.widget.SpeedDialView;
 import com.github.leodan11.customview.widget.tools.UiUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

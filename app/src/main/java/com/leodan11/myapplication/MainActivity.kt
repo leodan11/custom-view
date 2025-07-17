@@ -13,10 +13,10 @@ import androidx.core.view.isVisible
 import com.github.leodan11.customview.core.ReadMoreOption
 import com.github.leodan11.customview.core.ToastKit
 import com.github.leodan11.customview.core.Toasty
-import com.github.leodan11.customview.core.utils.Converters.dipToPixels
+import com.github.leodan11.customview.core.helper.Converters.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 import com.github.leodan11.customview.drawable.TextDrawable
-import com.github.leodan11.customview.widget.MaterialSpinner
+import com.github.leodan11.customview.textfield.MaterialSpinner
 import com.github.leodan11.customview.widget.helpers.SwipeListener
 import com.github.leodan11.customview.widget.helpers.makeLeftRightSwipeAble
 import com.github.leodan11.customview.widget.pin.model.PinListener

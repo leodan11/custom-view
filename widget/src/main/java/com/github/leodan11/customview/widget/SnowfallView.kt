@@ -10,7 +10,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
-import com.github.leodan11.customview.core.utils.Drawables.toBitmap
+import com.github.leodan11.customview.core.helper.Drawables.toBitmap
 import com.github.leodan11.customview.widget.tools.Randomizer
 import com.github.leodan11.customview.widget.tools.Snowflake
 

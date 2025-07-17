@@ -28,12 +28,12 @@ import static android.graphics.Color.TRANSPARENT;
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 import static android.graphics.PorterDuff.Mode.SRC_IN;
 
-import static com.github.leodan11.customview.core.utils.Converters.dpToPx;
+import static com.github.leodan11.customview.core.helper.Converters.dpToPx;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 
-import com.github.leodan11.customview.core.utils.BlurBuilder;
+import com.github.leodan11.customview.core.helper.BlurBuilder;
 
 public class TicketLayout extends FrameLayout {
 

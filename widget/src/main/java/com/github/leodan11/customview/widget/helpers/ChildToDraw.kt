@@ -6,7 +6,7 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.github.leodan11.customview.core.utils.Converters
+import com.github.leodan11.customview.core.helper.Converters
 import androidx.core.graphics.drawable.toDrawable
 
 class ChildToDraw(

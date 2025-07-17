@@ -12,7 +12,7 @@
         android:layout_marginTop="@dimen/dimen_10"
         android:orientation="vertical">
 
-        <com.github.leodan11.customview.widget.pin.PinView
+        <com.github.leodan11.customview.widget.PinView
             android:id="@+id/otpView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,16 +22,29 @@
             app:pinMask="."
             app:pinPadding="@dimen/dimen_4" />
 
-        <com.github.leodan11.customview.textview.CustomTextView
-            android:layout_width="wrap_content"
+        <com.github.leodan11.customview.widget.ZigzagView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/dimen_20"
-            android:padding="@dimen/dimen_4"
-            android:text="@string/text_no_internet"
-            app:lib_setRoundedBorderColor="?attr/colorPrimary"
-            app:lib_setRoundedView="true"
-            app:lib_setShape="rectangle" />
+            android:layout_margin="@dimen/dimen_16"
+            app:zigzagBackgroundColor="?attr/colorPrimary"
+            app:zigzagElevation="@dimen/dimen_8"
+            app:zigzagHeight="@dimen/dimen_10"
+            app:zigzagShadowAlpha="0.9"
+            app:zigzagSides="top|bottom|right|left">
+
+            <com.github.leodan11.customview.textview.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dimen_20"
+                android:padding="@dimen/dimen_4"
+                android:text="@string/text_no_internet"
+                android:textColor="?android:attr/colorBackground"
+                app:lib_setRoundedBorderColor="?attr/colorError"
+                app:lib_setRoundedView="true"
+                app:lib_setShape="rectangle" />
+
+        </com.github.leodan11.customview.widget.ZigzagView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,7 +66,7 @@
                 app:si_tint_color="#ff3c00"
                 app:srcCompat="@drawable/ic_warning_yellow" />
 
-            <com.github.leodan11.customview.widget.MaskEditText
+            <com.github.leodan11.customview.textfield.MaskEditText
                 android:id="@+id/input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

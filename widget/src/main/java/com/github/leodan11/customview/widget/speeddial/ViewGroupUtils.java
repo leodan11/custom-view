@@ -53,7 +53,7 @@ public class ViewGroupUtils {
      * @param descendant descendant view to reference
      * @param out        rect to set to the bounds of the descendant view
      */
-    static void getDescendantRect(ViewGroup parent, View descendant, Rect out) {
+    public static void getDescendantRect(ViewGroup parent, View descendant, Rect out) {
         out.set(0, 0, descendant.getWidth(), descendant.getHeight());
         offsetDescendantRect(parent, descendant, out);
     }

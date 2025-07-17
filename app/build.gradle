@@ -1,16 +1,16 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
-    namespace 'com.leodan11.myapplication'
-    compileSdk 34
+    namespace = 'com.leodan11.myapplication'
+    compileSdk = 35
 
     defaultConfig {
         applicationId "com.leodan11.myapplication"
-        minSdk 24
-        targetSdk 34
+        minSdk = 24
+        targetSdk = 35
         versionCode 1
         versionName "1.0"
 
@@ -48,6 +48,8 @@ dependencies {
     implementation project(":core")
     implementation project(":drawable")
     implementation project(":layout")
+    implementation project(":progress")
+    implementation project(":textfield")
     implementation project(":textview")
     implementation project(":widget")
 

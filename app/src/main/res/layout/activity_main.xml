@@ -1,77 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
-        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/buttonViewExample"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:text="One"
-            tools:ignore="HardcodedText" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buttonViewExampleSignature"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:text="Two"
-            tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/buttonViewExample"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="One"
+                tools:ignore="HardcodedText" />
 
-        <Button
-            android:id="@+id/buttonViewExampleAndroidSnowfall"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:text="Three"
-            tools:ignore="HardcodedText" />
+            <Button
+                android:id="@+id/buttonViewExampleSignature"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="Two"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/buttonViewExampleAndroidSnowfall"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="Three"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/view_example"
+                layout="@layout/view_example" />
+
+            <include
+                android:id="@+id/view_example_signature"
+                layout="@layout/view_example_signature"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/view_example_snowfall"
+                layout="@layout/view_example_snowfall"
+                android:visibility="gone" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </LinearLayout>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <com.github.leodan11.customview.widget.SpeedDialView
+        android:id="@+id/speedDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:sdMainFabClosedSrc="@drawable/baseline_add"
+        app:sdMenu="@menu/menu_speed_dial" />
 
-        <include
-            android:id="@+id/view_example"
-            layout="@layout/view_example" />
-
-        <include
-            android:id="@+id/view_example_signature"
-            layout="@layout/view_example_signature"
-            android:visibility="gone" />
-
-        <include
-            android:id="@+id/view_example_snowfall"
-            layout="@layout/view_example_snowfall"
-            android:visibility="gone" />
-
-        <com.github.leodan11.customview.widget.speeddial.SpeedDialView
-            android:id="@+id/speedDial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            app:sdMainFabClosedSrc="@drawable/baseline_add"
-            app:sdMenu="@menu/menu_speed_dial" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

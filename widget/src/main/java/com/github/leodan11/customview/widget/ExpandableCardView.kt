@@ -27,7 +27,7 @@ import androidx.annotation.StringRes
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.github.leodan11.customview.core.utils.Converters.convertDpToPixels
+import com.github.leodan11.customview.core.helper.Converters.convertDpToPixels
 import androidx.core.graphics.toColorInt
 import androidx.core.content.withStyledAttributes
 

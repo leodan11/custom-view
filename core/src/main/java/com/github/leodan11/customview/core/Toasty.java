@@ -21,6 +21,8 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
+import com.github.leodan11.customview.core.helper.ToastyUtils;
+
 
 @SuppressLint("InflateParams")
 public class Toasty {

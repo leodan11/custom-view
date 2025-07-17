@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="GradientConstraintLayout">
+        <attr name="gradient_ui_startColor" />
+        <attr name="gradient_ui_centerColor" />
+        <attr name="gradient_ui_endColor" />
+        <attr name="gradient_ui_colors" />
+        <attr name="gradient_ui_orientation" />
+        <attr name="gradient_ui_animate" />
+        <attr name="gradient_ui_animationEnterDuration" />
+        <attr name="gradient_ui_animationExitDuration" />
+        <attr name="gradient_ui_cornerRadius" />
+    </declare-styleable>
+
+    <declare-styleable name="GradientCoordinatorLayout">
+        <attr name="gradient_ui_startColor" />
+        <attr name="gradient_ui_centerColor" />
+        <attr name="gradient_ui_endColor" />
+        <attr name="gradient_ui_colors" />
+        <attr name="gradient_ui_orientation" />
+        <attr name="gradient_ui_animate" />
+        <attr name="gradient_ui_animationEnterDuration" />
+        <attr name="gradient_ui_animationExitDuration" />
+        <attr name="gradient_ui_cornerRadius" />
+    </declare-styleable>
+
+    <declare-styleable name="GradientFrameLayout">
+        <attr name="gradient_ui_startColor" />
+        <attr name="gradient_ui_centerColor" />
+        <attr name="gradient_ui_endColor" />
+        <attr name="gradient_ui_colors" />
+        <attr name="gradient_ui_orientation" />
+        <attr name="gradient_ui_animate" />
+        <attr name="gradient_ui_animationEnterDuration" />
+        <attr name="gradient_ui_animationExitDuration" />
+        <attr name="gradient_ui_cornerRadius" />
+    </declare-styleable>
+
+    <declare-styleable name="GradientLinearLayout">
+        <attr name="gradient_ui_startColor" />
+        <attr name="gradient_ui_centerColor" />
+        <attr name="gradient_ui_endColor" />
+        <attr name="gradient_ui_colors" />
+        <attr name="gradient_ui_orientation" />
+        <attr name="gradient_ui_animate" />
+        <attr name="gradient_ui_animationEnterDuration" />
+        <attr name="gradient_ui_animationExitDuration" />
+        <attr name="gradient_ui_cornerRadius" />
+    </declare-styleable>
+
+    <declare-styleable name="GradientRelativeLayout">
+        <attr name="gradient_ui_startColor" />
+        <attr name="gradient_ui_centerColor" />
+        <attr name="gradient_ui_endColor" />
+        <attr name="gradient_ui_colors" />
+        <attr name="gradient_ui_orientation" />
+        <attr name="gradient_ui_animate" />
+        <attr name="gradient_ui_animationEnterDuration" />
+        <attr name="gradient_ui_animationExitDuration" />
+        <attr name="gradient_ui_cornerRadius" />
+    </declare-styleable>
+
     <declare-styleable name="GroupBoxLayout">
         <attr name="layoutLabelText" format="string" />
         <attr name="layoutLabelTextColor" format="color" />
@@ -11,16 +71,21 @@
         <attr name="layoutBorderStrokeWidth" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="TableLayout">
+        <attr name="fhtl_min_scale" format="float" />
+        <attr name="fhtl_max_scale" format="float" />
+    </declare-styleable>
+
     <declare-styleable name="ToggleButtonLayout">
-        <attr name="menu" format="reference"/>
-        <attr name="multipleSelection" format="boolean"/>
-        <attr name="allowDeselection" format="boolean"/>
-        <attr name="dividerColor" format="color"/>
-        <attr name="selectedColor" format="color"/>
-        <attr name="customLayout" format="reference"/>
+        <attr name="menu" format="reference" />
+        <attr name="multipleSelection" format="boolean" />
+        <attr name="allowDeselection" format="boolean" />
+        <attr name="dividerColor" format="color" />
+        <attr name="selectedColor" format="color" />
+        <attr name="customLayout" format="reference" />
         <attr name="toggleMode" format="enum">
-            <enum name="wrap" value="0"/>
-            <enum name="even" value="1"/>
+            <enum name="wrap" value="0" />
+            <enum name="even" value="1" />
         </attr>
     </declare-styleable>
 

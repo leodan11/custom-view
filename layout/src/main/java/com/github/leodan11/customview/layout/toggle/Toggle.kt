@@ -1,6 +1,7 @@
 package com.github.leodan11.customview.layout.toggle
 
 import android.graphics.drawable.Drawable
+import com.github.leodan11.customview.layout.ToggleButtonLayout
 
 /**
  * An item within a [ToggleButtonLayout]

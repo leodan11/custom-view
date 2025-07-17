@@ -1,7 +1,7 @@
 package com.github.leodan11.customview.drawable;
 
-import static com.github.leodan11.customview.core.utils.Converters.dipToPixels;
-import static com.github.leodan11.customview.core.utils.Converters.spToPixels;
+import static com.github.leodan11.customview.core.helper.Converters.dipToPixels;
+import static com.github.leodan11.customview.core.helper.Converters.spToPixels;
 
 import android.annotation.SuppressLint;
 import android.graphics.Canvas;

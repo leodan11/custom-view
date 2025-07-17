@@ -14,6 +14,8 @@ import androidx.annotation.StringDef;
 import androidx.annotation.StringRes;
 import androidx.annotation.StyleRes;
 import androidx.appcompat.content.res.AppCompatResources;
+
+import com.github.leodan11.customview.widget.SpeedDialView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.lang.annotation.Retention;
