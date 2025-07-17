@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import com.github.leodan11.customview.core.model.Point;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Objects;
 
 public class SignatureView extends View {
 
@@ -408,8 +409,8 @@ public class SignatureView extends View {
      */
     public boolean isBitmapEmpty() {
         if (bmp != null) {
-            Bitmap emptyBitmap = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(),
-                    bmp.getConfig());
+            Bitmap.Config config = (bmp.getConfig() != null) ? bmp.getConfig() : Bitmap.Config.ARGB_8888;
+            Bitmap emptyBitmap = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), config);
             Canvas canvas = new Canvas(emptyBitmap);
             canvas.drawColor(backgroundColor);
             return bmp.sameAs(emptyBitmap);
