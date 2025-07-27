@@ -2,12 +2,12 @@
 <resources>
 
     <declare-styleable name="InputMaskedEditText">
-        <attr name="masked" format="string" />
+        <attr name="masked" format="string|reference" />
     </declare-styleable>
 
     <declare-styleable name="MaskEditText">
-        <attr name="mask" format="string" />
-        <attr name="maskCharacter" format="string" />
+        <attr name="mask" format="string|reference" />
+        <attr name="maskCharacter" format="string|reference" />
         <attr name="maskStyle" format="enum">
             <enum name="normal" value="0" />
             <enum name="completable" value="1" />

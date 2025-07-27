@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="gradient_ui_startColor" format="color" />
-    <attr name="gradient_ui_centerColor" format="color" />
-    <attr name="gradient_ui_endColor" format="color" />
+    <attr name="gradient_ui_startColor" format="color|reference" />
+    <attr name="gradient_ui_centerColor" format="color|reference" />
+    <attr name="gradient_ui_endColor" format="color|reference" />
     <attr name="gradient_ui_colors" format="reference" />
     <attr name="gradient_ui_orientation" format="enum">
         <enum name="TOP_BOTTOM" value="0" />
@@ -15,36 +15,36 @@
         <enum name="LEFT_RIGHT" value="6" />
         <enum name="TL_BR" value="7" />
     </attr>
-    <attr name="gradient_ui_animate" format="boolean" />
-    <attr name="gradient_ui_animationEnterDuration" format="integer" />
-    <attr name="gradient_ui_animationExitDuration" format="integer" />
-    <attr name="gradient_ui_cornerRadius" format="dimension" />
+    <attr name="gradient_ui_animate" format="boolean|reference" />
+    <attr name="gradient_ui_animationEnterDuration" format="integer|reference" />
+    <attr name="gradient_ui_animationExitDuration" format="integer|reference" />
+    <attr name="gradient_ui_cornerRadius" format="dimension|reference" />
     <attr name="ticketOrientation" format="enum">
         <enum name="horizontal" value="0" />
         <enum name="vertical" value="1" />
     </attr>
-    <attr name="ticketBackgroundColor" format="color" />
-    <attr name="ticketScallopRadius" format="dimension" />
-    <attr name="ticketScallopPositionPercent" format="float" />
-    <attr name="ticketShowBorder" format="boolean" />
-    <attr name="ticketBorderWidth" format="dimension" />
-    <attr name="ticketBorderColor" format="color" />
-    <attr name="ticketShowDivider" format="boolean" />
-    <attr name="ticketDividerWidth" format="dimension" />
-    <attr name="ticketDividerPadding" format="dimension" />
-    <attr name="ticketDividerColor" format="color" />
+    <attr name="ticketBackgroundColor" format="color|reference" />
+    <attr name="ticketScallopRadius" format="dimension|reference" />
+    <attr name="ticketScallopPositionPercent" format="float|reference" />
+    <attr name="ticketShowBorder" format="boolean|reference" />
+    <attr name="ticketBorderWidth" format="dimension|reference" />
+    <attr name="ticketBorderColor" format="color|reference" />
+    <attr name="ticketShowDivider" format="boolean|reference" />
+    <attr name="ticketDividerWidth" format="dimension|reference" />
+    <attr name="ticketDividerPadding" format="dimension|reference" />
+    <attr name="ticketDividerColor" format="color|reference" />
     <attr name="ticketDividerType" format="enum">
         <enum name="normal" value="0" />
         <enum name="dash" value="1" />
     </attr>
-    <attr name="ticketDividerDashGap" format="dimension" />
-    <attr name="ticketDividerDashLength" format="dimension" />
+    <attr name="ticketDividerDashGap" format="dimension|reference" />
+    <attr name="ticketDividerDashLength" format="dimension|reference" />
     <attr name="ticketCornerType" format="enum">
         <enum name="normal" value="0" />
         <enum name="rounded" value="1" />
         <enum name="scallop" value="2" />
     </attr>
-    <attr name="ticketCornerRadius" format="dimension" />
-    <attr name="ticketElevation" format="dimension" />
+    <attr name="ticketCornerRadius" format="dimension|reference" />
+    <attr name="ticketElevation" format="dimension|reference" />
 
 </resources>

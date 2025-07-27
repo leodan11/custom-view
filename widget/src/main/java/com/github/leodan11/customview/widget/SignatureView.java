@@ -20,7 +20,6 @@ import androidx.annotation.Nullable;
 import com.github.leodan11.customview.core.model.Point;
 
 import java.io.ByteArrayOutputStream;
-import java.util.Objects;
 
 public class SignatureView extends View {
 

@@ -1,10 +1,10 @@
 package com.github.leodan11.customview.widget
 
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatCheckBox
+import androidx.core.graphics.toColorInt
 import com.github.leodan11.customview.core.helper.GradientTextHelper
 import com.github.leodan11.customview.core.utils.WrongColorException
 
@@ -34,8 +34,8 @@ class GradientCheckBox : AppCompatCheckBox {
         endColorHex: String
     ) {
         try {
-            val startColor = Color.parseColor(startColorHex)
-            val endColor = Color.parseColor(endColorHex)
+            val startColor = startColorHex.toColorInt()
+            val endColor = endColorHex.toColorInt()
             addGradientToFullText(startColor, endColor)
         } catch (e: Exception) {
             throw WrongColorException()
@@ -58,8 +58,8 @@ class GradientCheckBox : AppCompatCheckBox {
         endColorHex: String
     ) {
         try {
-            val startColor = Color.parseColor(startColorHex)
-            val endColor = Color.parseColor(endColorHex)
+            val startColor = startColorHex.toColorInt()
+            val endColor = endColorHex.toColorInt()
             addGradientSection(startIndex, endIndex, startColor, endColor)
         } catch (e: Exception) {
             throw WrongColorException()
@@ -84,8 +84,8 @@ class GradientCheckBox : AppCompatCheckBox {
         endColorHex: String
     ) {
         try {
-            val startColor = Color.parseColor(startColorHex)
-            val endColor = Color.parseColor(endColorHex)
+            val startColor = startColorHex.toColorInt()
+            val endColor = endColorHex.toColorInt()
             addGradientSection(gradientText, startColor, endColor)
         } catch (e: Exception) {
             throw WrongColorException()

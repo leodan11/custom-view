@@ -2,13 +2,13 @@
 <resources>
 
     <declare-styleable name="CircularImageView">
-        <attr name="border" format="boolean" />
-        <attr name="border_width" format="dimension" />
-        <attr name="border_color" format="color" />
-        <attr name="circularBackgroundColor" format="color" />
-        <attr name="shadow" format="boolean" />
-        <attr name="shadow_color" format="color" />
-        <attr name="shadow_radius" format="float" />
+        <attr name="border" format="boolean|reference" />
+        <attr name="border_width" format="dimension|reference" />
+        <attr name="border_color" format="color|reference" />
+        <attr name="circularBackgroundColor" format="color|reference" />
+        <attr name="shadow" format="boolean|reference" />
+        <attr name="shadow_color" format="color|reference" />
+        <attr name="shadow_radius" format="float|reference" />
         <attr name="shadow_gravity">
             <flag name="center" value="1" />
             <flag name="top" value="2" />
@@ -19,10 +19,10 @@
     </declare-styleable>
 
     <declare-styleable name="DividerView">
-        <attr name="toDividerColor" format="color" />
-        <attr name="dividerDashLength" format="dimension" />
-        <attr name="dividerDashGap" format="dimension" />
-        <attr name="dividerDashThickness" format="dimension" />
+        <attr name="toDividerColor" format="color|reference" />
+        <attr name="dividerDashLength" format="dimension|reference" />
+        <attr name="dividerDashGap" format="dimension|reference" />
+        <attr name="dividerDashThickness" format="dimension|reference" />
         <attr name="toDividerOrientation" format="enum">
             <enum name="horizontal" value="0" />
             <enum name="vertical" value="1" />
@@ -30,25 +30,25 @@
     </declare-styleable>
 
     <declare-styleable name="ExpandableCardView">
-        <attr name="expandTitle" format="string" />
+        <attr name="expandTitle" format="string|reference" />
         <attr name="expandIcon" format="reference" />
-        <attr name="expandIconTint" format="color" />
+        <attr name="expandIconTint" format="color|reference" />
         <attr name="expandArrowIcon" format="reference" />
-        <attr name="expandArrowIconTint" format="color" />
+        <attr name="expandArrowIconTint" format="color|reference" />
         <attr name="innerViewExpand" format="reference" />
-        <attr name="expandOnClick" format="boolean" />
-        <attr name="animationExpandDuration" format="integer" />
-        <attr name="startExpanded" format="boolean" />
+        <attr name="expandOnClick" format="boolean|reference" />
+        <attr name="animationExpandDuration" format="integer|reference" />
+        <attr name="startExpanded" format="boolean|reference" />
     </declare-styleable>
 
     <declare-styleable name="FabWithLabelView">
         <attr name="android:src" />
         <attr name="srcCompat" />
-        <attr name="fabLabel" format="string" />
-        <attr name="fabBackgroundColor" format="color" />
-        <attr name="fabLabelColor" format="color" />
-        <attr name="fabLabelBackgroundColor" format="color" />
-        <attr name="fabLabelClickable" format="boolean" />
+        <attr name="fabLabel" format="string|reference" />
+        <attr name="fabBackgroundColor" format="color|reference" />
+        <attr name="fabLabelColor" format="color|reference" />
+        <attr name="fabLabelBackgroundColor" format="color|reference" />
+        <attr name="fabLabelClickable" format="boolean|reference" />
     </declare-styleable>
 
     <declare-styleable name="GradientButton">
@@ -72,10 +72,10 @@
     </declare-styleable>
 
     <declare-styleable name="GradientView">
-        <attr name="gv_start" format="color" />
-        <attr name="gv_alpha_start" format="float" />
-        <attr name="gv_end" format="color" />
-        <attr name="gv_alpha_end" format="float" />
+        <attr name="gv_start" format="color|reference" />
+        <attr name="gv_alpha_start" format="float|reference" />
+        <attr name="gv_end" format="color|reference" />
+        <attr name="gv_alpha_end" format="float|reference" />
         <attr name="gv_direction">
             <flag name="left_to_right" value="1" />
             <flag name="right_to_left" value="2" />
@@ -85,36 +85,36 @@
     </declare-styleable>
 
     <declare-styleable name="NumberPicker">
-        <attr name="snp_buttonIconDown" format="integer" />
-        <attr name="snp_buttonIconUp" format="integer" />
-        <attr name="snp_buttonIconLeft" format="integer" />
-        <attr name="snp_buttonIconRight" format="integer" />
-        <attr name="snp_buttonBackgroundTintSelector" format="integer" />
-        <attr name="snp_buttonTouchScaleFactor" format="float" />
+        <attr name="snp_buttonIconDown" format="integer|reference" />
+        <attr name="snp_buttonIconUp" format="integer|reference" />
+        <attr name="snp_buttonIconLeft" format="integer|reference" />
+        <attr name="snp_buttonIconRight" format="integer|reference" />
+        <attr name="snp_buttonBackgroundTintSelector" format="integer|reference" />
+        <attr name="snp_buttonTouchScaleFactor" format="float|reference" />
 
-        <attr name="snp_buttonPaddingLeft" format="dimension" />
-        <attr name="snp_buttonPaddingRight" format="dimension" />
-        <attr name="snp_buttonPaddingTop" format="dimension" />
-        <attr name="snp_buttonPaddingBottom" format="dimension" />
+        <attr name="snp_buttonPaddingLeft" format="dimension|reference" />
+        <attr name="snp_buttonPaddingRight" format="dimension|reference" />
+        <attr name="snp_buttonPaddingTop" format="dimension|reference" />
+        <attr name="snp_buttonPaddingBottom" format="dimension|reference" />
 
-        <attr name="snp_value" format="integer" />
-        <attr name="snp_maxValue" format="integer" />
-        <attr name="snp_minValue" format="integer" />
-        <attr name="snp_stepSize" format="integer" />
-        <attr name="snp_value_text_size" format="dimension" />
-        <attr name="snp_value_text_color" format="color" />
+        <attr name="snp_value" format="integer|reference" />
+        <attr name="snp_maxValue" format="integer|reference" />
+        <attr name="snp_minValue" format="integer|reference" />
+        <attr name="snp_stepSize" format="integer|reference" />
+        <attr name="snp_value_text_size" format="dimension|reference" />
+        <attr name="snp_value_text_color" format="color|reference" />
         <attr name="snp_value_text_appearance" format="reference" />
 
-        <attr name="snp_updateInterval" format="integer" />
-        <attr name="snp_scrollEnabled" format="boolean" />
+        <attr name="snp_updateInterval" format="integer|reference" />
+        <attr name="snp_scrollEnabled" format="boolean|reference" />
 
         <attr name="snp_orientation">
             <enum name="horizontal" value="0" />
             <enum name="vertical" value="1" />
         </attr>
 
-        <attr name="snp_valueMarginStart" format="dimension" />
-        <attr name="snp_valueMarginEnd" format="dimension" />
+        <attr name="snp_valueMarginStart" format="dimension|reference" />
+        <attr name="snp_valueMarginEnd" format="dimension|reference" />
     </declare-styleable>
 
     <declare-styleable name="pinViewTheme">
@@ -122,12 +122,12 @@
     </declare-styleable>
 
     <declare-styleable name="PinView">
-        <attr name="pinCount" format="integer" />
-        <attr name="isPassword" format="boolean" />
-        <attr name="pinPadding" format="dimension" />
+        <attr name="pinCount" format="integer|reference" />
+        <attr name="isPassword" format="boolean|reference" />
+        <attr name="pinPadding" format="dimension|reference" />
         <attr name="pinBackground" format="reference" />
-        <attr name="pinMask" format="string" />
-        <attr name="android:textSize" format="dimension" />
+        <attr name="pinMask" format="string|reference" />
+        <attr name="android:textSize" format="dimension|reference" />
         <attr name="android:fontFamily" format="string|reference" />
         <attr name="android:textColor" format="reference|color" />
         <attr name="android:textStyle">
@@ -138,14 +138,14 @@
     </declare-styleable>
 
     <declare-styleable name="RecyclerViewSwipe">
-        <attr name="leftBgColorSwipe" format="color" />
+        <attr name="leftBgColorSwipe" format="color|reference" />
         <attr name="leftImageSwipe" format="reference" />
-        <attr name="leftTextSwipe" format="string" />
-        <attr name="rightBgColorSwipe" format="color" />
+        <attr name="leftTextSwipe" format="string|reference" />
+        <attr name="rightBgColorSwipe" format="color|reference" />
         <attr name="rightImageSwipe" format="reference" />
-        <attr name="rightTextSwipe" format="string" />
-        <attr name="textColorSwipe" format="color" />
-        <attr name="textSizeSwipe" format="dimension" />
+        <attr name="rightTextSwipe" format="string|reference" />
+        <attr name="textColorSwipe" format="color|reference" />
+        <attr name="textSizeSwipe" format="dimension|reference" />
     </declare-styleable>
 
     <declare-styleable name="SpeedDialView">
@@ -156,52 +156,52 @@
             <enum name="left" value="2" />
             <enum name="right" value="3" />
         </attr>
-        <attr name="sdMainFabAnimationRotateAngle" format="float" />
+        <attr name="sdMainFabAnimationRotateAngle" format="float|reference" />
         <attr name="sdMainFabClosedSrc" format="reference" />
-        <attr name="sdMainFabClosedIconColor" format="color" />
-        <attr name="sdMainFabClosedBackgroundColor" format="color" />
+        <attr name="sdMainFabClosedIconColor" format="color|reference" />
+        <attr name="sdMainFabClosedBackgroundColor" format="color|reference" />
         <attr name="sdMainFabOpenedSrc" format="reference" />
-        <attr name="sdMainFabOpenedIconColor" format="color" />
-        <attr name="sdMainFabOpenedBackgroundColor" format="color" />
+        <attr name="sdMainFabOpenedIconColor" format="color|reference" />
+        <attr name="sdMainFabOpenedBackgroundColor" format="color|reference" />
         <attr name="sdMenu" format="reference" />
         <attr name="sdOverlayLayout" format="reference" />
-        <attr name="sdUseReverseAnimationOnClose" format="boolean" />
+        <attr name="sdUseReverseAnimationOnClose" format="boolean|reference" />
     </declare-styleable>
 
     <declare-styleable name="SpeedDialOverlayLayout">
-        <attr name="clickable_overlay" format="boolean" />
+        <attr name="clickable_overlay" format="boolean|reference" />
         <attr name="android:background" />
     </declare-styleable>
 
     <declare-styleable name="SignatureView">
-        <attr name="toEnable" format="boolean" />
-        <attr name="toPenSize" format="dimension" />
-        <attr name="toPenColor" format="color" />
-        <attr name="toBackgroundColor" format="color" />
+        <attr name="toEnable" format="boolean|reference" />
+        <attr name="toPenSize" format="dimension|reference" />
+        <attr name="toPenColor" format="color|reference" />
+        <attr name="toBackgroundColor" format="color|reference" />
     </declare-styleable>
 
     <declare-styleable name="SnowfallView">
-        <attr name="snowflakesNum" format="integer" />
+        <attr name="snowflakesNum" format="integer|reference" />
         <attr name="snowflakeImage" format="reference" />
-        <attr name="snowflakeAlphaMin" format="integer" />
-        <attr name="snowflakeAlphaMax" format="integer" />
-        <attr name="snowflakeAngleMax" format="integer" />
-        <attr name="snowflakeSizeMin" format="dimension" />
-        <attr name="snowflakeSizeMax" format="dimension" />
-        <attr name="snowflakeSpeedMin" format="integer" />
-        <attr name="snowflakeSpeedMax" format="integer" />
-        <attr name="snowflakesFadingEnabled" format="boolean" />
-        <attr name="snowflakesAlreadyFalling" format="boolean" />
-        <attr name="snowflakesMultipleImages" format="boolean" />
+        <attr name="snowflakeAlphaMin" format="integer|reference" />
+        <attr name="snowflakeAlphaMax" format="integer|reference" />
+        <attr name="snowflakeAngleMax" format="integer|reference" />
+        <attr name="snowflakeSizeMin" format="dimension|reference" />
+        <attr name="snowflakeSizeMax" format="dimension|reference" />
+        <attr name="snowflakeSpeedMin" format="integer|reference" />
+        <attr name="snowflakeSpeedMax" format="integer|reference" />
+        <attr name="snowflakesFadingEnabled" format="boolean|reference" />
+        <attr name="snowflakesAlreadyFalling" format="boolean|reference" />
+        <attr name="snowflakesMultipleImages" format="boolean|reference" />
     </declare-styleable>
 
     <declare-styleable name="SwitchIconView">
-        <attr name="si_tint_color" format="color" />
-        <attr name="si_animation_duration" format="integer" />
-        <attr name="si_disabled_alpha" format="float" />
-        <attr name="si_disabled_color" format="color" />
-        <attr name="si_enabled" format="boolean" />
-        <attr name="si_no_dash" format="boolean" />
+        <attr name="si_tint_color" format="color|reference" />
+        <attr name="si_animation_duration" format="integer|reference" />
+        <attr name="si_disabled_alpha" format="float|reference" />
+        <attr name="si_disabled_color" format="color|reference" />
+        <attr name="si_enabled" format="boolean|reference" />
+        <attr name="si_no_dash" format="boolean|reference" />
     </declare-styleable>
 
     <declare-styleable name="TicketView">
@@ -225,26 +225,26 @@
         <attr name="android:elevation" />
         <attr name="ticketBackgroundBeforeDivider" format="reference" />
         <attr name="ticketBackgroundAfterDivider" format="reference" />
-        <attr name="ticketShadowColor" format="color" />
+        <attr name="ticketShadowColor" format="color|reference" />
     </declare-styleable>
 
     <declare-styleable name="ZigzagView">
-        <attr name="zigzagHeight" format="dimension" />
-        <attr name="zigzagElevation" format="dimension" />
-        <attr name="zigzagBackgroundColor" format="color" />
-        <attr name="zigzagPaddingContent" format="dimension" />
-        <attr name="zigzagPadding" format="dimension" />
-        <attr name="zigzagPaddingLeft" format="dimension" />
-        <attr name="zigzagPaddingRight" format="dimension" />
-        <attr name="zigzagPaddingBottom" format="dimension" />
-        <attr name="zigzagPaddingTop" format="dimension" />
+        <attr name="zigzagHeight" format="dimension|reference" />
+        <attr name="zigzagElevation" format="dimension|reference" />
+        <attr name="zigzagBackgroundColor" format="color|reference" />
+        <attr name="zigzagPaddingContent" format="dimension|reference" />
+        <attr name="zigzagPadding" format="dimension|reference" />
+        <attr name="zigzagPaddingLeft" format="dimension|reference" />
+        <attr name="zigzagPaddingRight" format="dimension|reference" />
+        <attr name="zigzagPaddingBottom" format="dimension|reference" />
+        <attr name="zigzagPaddingTop" format="dimension|reference" />
         <attr name="zigzagSides">
             <flag name="top" value="1" />
             <flag name="bottom" value="2" />
             <flag name="right" value="4" />
             <flag name="left" value="8" />
         </attr>
-        <attr name="zigzagShadowAlpha" format="float" />
+        <attr name="zigzagShadowAlpha" format="float|reference" />
     </declare-styleable>
 
 </resources>

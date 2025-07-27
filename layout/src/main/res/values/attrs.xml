@@ -62,27 +62,37 @@
     </declare-styleable>
 
     <declare-styleable name="GroupBoxLayout">
-        <attr name="layoutLabelText" format="string" />
-        <attr name="layoutLabelTextColor" format="color" />
-        <attr name="layoutLabelTextSize" format="dimension" />
+        <attr name="layoutLabelText" format="string|reference" />
+        <attr name="layoutLabelTextColor" format="color|reference" />
+        <attr name="layoutLabelTextSize" format="dimension|reference" />
         <attr name="layoutLabelStyle" format="reference" />
-        <attr name="layoutBorderColor" format="color" />
-        <attr name="layoutBorderCornerRadius" format="dimension" />
-        <attr name="layoutBorderStrokeWidth" format="dimension" />
+        <attr name="layoutBorderColor" format="color|reference" />
+        <attr name="layoutBorderCornerRadius" format="dimension|reference" />
+        <attr name="layoutBorderStrokeWidth" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ShimmerSimpleLayout">
+        <attr name="shimmer_md_color" format="color|reference"/>
+        <attr name="shimmer_md_animation_duration" format="integer|reference"/>
+        <attr name="shimmer_md_auto_start" format="boolean|reference"/>
+        <attr name="shimmer_md_angle" format="integer|reference"/>
+        <attr name="shimmer_md_mask_width" format="float|reference"/>
+        <attr name="shimmer_md_gradient_center_color_width" format="float|reference"/>
+        <attr name="shimmer_md_reverse_animation" format="boolean|reference"/>
     </declare-styleable>
 
     <declare-styleable name="TableLayout">
-        <attr name="fhtl_min_scale" format="float" />
-        <attr name="fhtl_max_scale" format="float" />
+        <attr name="fhtl_min_scale" format="float|reference" />
+        <attr name="fhtl_max_scale" format="float|reference" />
     </declare-styleable>
 
     <declare-styleable name="ToggleButtonLayout">
         <attr name="menu" format="reference" />
-        <attr name="multipleSelection" format="boolean" />
-        <attr name="allowDeselection" format="boolean" />
-        <attr name="dividerColor" format="color" />
-        <attr name="selectedColor" format="color" />
-        <attr name="customLayout" format="reference" />
+        <attr name="multipleSelection" format="boolean|reference" />
+        <attr name="allowDeselection" format="boolean|reference" />
+        <attr name="dividerColor" format="color|reference" />
+        <attr name="selectedColor" format="color|reference" />
+        <attr name="customLayout" format="reference|reference" />
         <attr name="toggleMode" format="enum">
             <enum name="wrap" value="0" />
             <enum name="even" value="1" />
@@ -127,7 +137,7 @@
             <flag name="left" value="4" />
             <flag name="right" value="8" />
         </attr>
-        <attr name="ticketPunchRadius" format="dimension" />
+        <attr name="ticketPunchRadius" format="dimension|reference" />
     </declare-styleable>
 
 </resources>

@@ -4,5 +4,5 @@ ext.versions = [
         jvm            : '17',
         min_sdk        : 21,
         target_sdk     : 35,
-        publish_version: "5.0.0",
+        publish_version: "5.0.0.1",
 ]
