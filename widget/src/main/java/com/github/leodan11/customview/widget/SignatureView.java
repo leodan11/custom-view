@@ -9,6 +9,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
@@ -16,6 +19,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.Nullable;
+import androidx.core.util.Consumer;
 
 import com.github.leodan11.customview.core.model.Point;
 
@@ -51,6 +55,12 @@ public class SignatureView extends View {
     private boolean enableSignature;
     private float penSize;
     private final TypedArray typedArray;
+    private final HandlerThread workerThread = new HandlerThread("BitmapCheckThread");
+    private final Handler backgroundHandler;
+    {
+        workerThread.start();
+        backgroundHandler = new Handler(workerThread.getLooper());
+    }
 
     public SignatureView(Context context) {
         super(context);
@@ -402,19 +412,23 @@ public class SignatureView extends View {
     }
 
     /**
-     * Check is signature bitmap empty
+     * Asynchronously checks whether the bitmap is empty by comparing it to a blank version.
      *
-     * @return boolean
+     * @param callback A callback that receives true if the bitmap is empty, false otherwise.
      */
-    public boolean isBitmapEmpty() {
-        if (bmp != null) {
+    public void isBitmapEmpty(Consumer<Boolean> callback) {
+        if (bmp == null) {
+            callback.accept(true); // Null is considered "empty"
+            return;
+        }
+        backgroundHandler.post(() -> {
             Bitmap.Config config = (bmp.getConfig() != null) ? bmp.getConfig() : Bitmap.Config.ARGB_8888;
             Bitmap emptyBitmap = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), config);
             Canvas canvas = new Canvas(emptyBitmap);
             canvas.drawColor(backgroundColor);
-            return bmp.sameAs(emptyBitmap);
-        }
-        return false;
+            boolean result = bmp.sameAs(emptyBitmap);
+            new Handler(Looper.getMainLooper()).post(() -> callback.accept(result));
+        });
     }
 
     @Override
@@ -451,7 +465,9 @@ public class SignatureView extends View {
         @Override
         public void writeToParcel(Parcel out, int flags) {
             super.writeToParcel(out, flags);
-            out.writeByteArray(compress(bitmap));
+            if (bitmap != null) {
+                out.writeByteArray(compress(bitmap));
+            }
         }
 
         private static byte[] compress(Bitmap bitmap) {

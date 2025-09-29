@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <public name="pulse" type="anim" />
+    <public name="slide_from_bottom" type="anim" />
+    <public name="slide_from_left" type="anim" />
+    <public name="slide_from_logo" type="anim" />
+    <public name="slide_from_right" type="anim" />
+    <public name="slide_from_top" type="anim" />
+
     <public name="text_warning" type="string" />
     <public name="text_success" type="string" />
     <public name="text_error" type="string" />

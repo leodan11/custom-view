@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.github.leodan11.customview.core.ReadMoreOption
+import com.github.leodan11.customview.core.Splashy
 import com.github.leodan11.customview.core.ToastKit
 import com.github.leodan11.customview.core.Toasty
 import com.github.leodan11.customview.core.helper.Converters.dipToPixels
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        onCreateSplashy()
 
         val more = ReadMoreOption.Builder(this@MainActivity)
             .textLength(3)
@@ -123,10 +126,12 @@ class MainActivity : AppCompatActivity() {
         with(binding.viewExampleSignature) {
 
             action.setOnClickListener {
-                if (value.isBitmapEmpty) {
-                    Toast.makeText(applicationContext, "Empty", Toast.LENGTH_LONG).show()
-                } else {
-                    view.setImageBitmap(value.signatureBitmap)
+                value.isBitmapEmpty {
+                    if (it) {
+                        Toast.makeText(applicationContext, "Empty", Toast.LENGTH_LONG).show()
+                    } else {
+                        view.setImageBitmap(value.signatureBitmap)
+                    }
                 }
             }
 
@@ -222,6 +227,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun onCreateSplashy() {
+        Splashy(this)
+            .setTitle("Splashy")
+            .setSubTitle("Splash screen made easy")
+            .setFullScreen(true)
+            .show()
     }
 
     private fun generateRandomString(length: Int = 10): String {
