@@ -171,7 +171,7 @@ class ToggleButtonLayout : CardView {
                 R.styleable.ToggleButtonLayout_selectedColor,
                 Utils.getThemeAttrColor(
                     context,
-                    com.google.android.material.R.attr.colorControlHighlight
+                    androidx.appcompat.R.attr.colorControlHighlight
                 )
             )
             //make sure this one is last

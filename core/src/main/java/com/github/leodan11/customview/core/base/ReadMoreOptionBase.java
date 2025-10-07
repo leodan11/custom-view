@@ -313,7 +313,7 @@ public abstract class ReadMoreOptionBase {
          */
         private int getColorDefault() {
             TypedValue typedValue = new TypedValue();
-            context.getTheme().resolveAttribute(com.google.android.material.R.attr.colorPrimary, typedValue, true);
+            context.getTheme().resolveAttribute(com.google.android.material.R.attr.colorPrimaryContainer, typedValue, true);
             return typedValue.data;
         }
 

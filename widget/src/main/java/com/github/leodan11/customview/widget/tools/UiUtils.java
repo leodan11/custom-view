@@ -41,7 +41,7 @@ public class UiUtils {
 
     public static int getPrimaryColor(Context context) {
         int colorAttr;
-        colorAttr = com.google.android.material.R.attr.colorPrimary;
+        colorAttr = com.google.android.material.R.attr.colorPrimaryContainer;
         TypedValue outValue = new TypedValue();
         context.getTheme().resolveAttribute(colorAttr, outValue, true);
         return outValue.data;
@@ -225,7 +225,8 @@ public class UiUtils {
             return null;
         } else {
             Bitmap bitmap;
-            if (drawable instanceof BitmapDrawable bitmapDrawable) {
+            if (drawable instanceof BitmapDrawable) {
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
                 if (bitmapDrawable.getBitmap() != null) {
                     return bitmapDrawable.getBitmap();
                 }
@@ -235,8 +236,7 @@ public class UiUtils {
                 // Single color bitmap will be created of 1x1 pixel
                 bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
             } else {
-                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap
-                        .Config.ARGB_8888);
+                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
             }
 
             Canvas canvas = new Canvas(bitmap);
@@ -302,11 +302,18 @@ public class UiUtils {
 
 
     public static RectF getRectCoordinates(@NotNull CurvedView.Curvature curvature, int width, int height) {
-        Float multiplier = switch (curvature) {
-            case HIGH -> 1f;
-            case MEDIUM -> 2f;
-            default -> 3f;
-        };
+        float multiplier;
+        switch (curvature) {
+            case HIGH:
+                multiplier = 1f;
+                break;
+            case MEDIUM:
+                multiplier = 2f;
+                break;
+            default:
+                multiplier = 3f;
+                break;
+        }
         return new RectF((-multiplier * width), ((float) (-height * 2)), ((multiplier + 1) * width), ((float) height));
     }
 

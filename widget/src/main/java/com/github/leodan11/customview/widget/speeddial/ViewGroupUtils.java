@@ -60,7 +60,8 @@ public class ViewGroupUtils {
 
     private static void offsetDescendantMatrix(ViewParent target, View view, Matrix m) {
         final ViewParent parent = view.getParent();
-        if (parent instanceof View vp && parent != target) {
+        if (parent instanceof View && parent != target) {
+            View vp = (View) parent;
             offsetDescendantMatrix(target, vp, m);
             m.preTranslate(-vp.getScrollX(), -vp.getScrollY());
         }

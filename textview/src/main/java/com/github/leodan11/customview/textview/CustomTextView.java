@@ -419,7 +419,7 @@ public class CustomTextView extends AppCompatTextView implements Checkable {
     }
 
     private int getThemeColor(int index) {
-        int[] attribute = new int[]{com.google.android.material.R.attr.colorPrimary, com.google.android.material.R.attr.colorPrimaryDark, com.google.android.material.R.attr.colorAccent};
+        int[] attribute = new int[]{androidx.appcompat.R.attr.colorPrimary, androidx.appcompat.R.attr.colorPrimaryDark, androidx.appcompat.R.attr.colorAccent};
         TypedArray array = getContext().getTheme().obtainStyledAttributes(attribute);
         int color = array.getColor(index, Color.parseColor("#FF4081"));
         array.recycle();

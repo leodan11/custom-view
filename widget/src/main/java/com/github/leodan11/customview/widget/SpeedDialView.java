@@ -633,7 +633,8 @@ public class SpeedDialView extends LinearLayout implements CoordinatorLayout.Att
 
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        if (state instanceof Bundle bundle) {
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
             InstanceState instanceState = bundle.getParcelable(InstanceState.class.getName());
             if (instanceState != null
                     && instanceState.mSpeedDialActionItems != null

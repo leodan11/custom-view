@@ -213,7 +213,7 @@ internal class SplashyActivity : AppCompatActivity() {
         if (intent.hasExtra(PROGRESS_COLOR)) {
             val color = intent.getIntExtra(
                 PROGRESS_COLOR,
-                this.customColorResource(com.google.android.material.R.attr.colorPrimary)
+                this.customColorResource(androidx.appcompat.R.attr.colorPrimary)
             )
             binding.pbLoad.indeterminateDrawable?.setColorFilter(
                 ContextCompat.getColor(

@@ -7,11 +7,7 @@ import com.github.leodan11.customview.textfield.content.MaskedWatcher
 import com.github.leodan11.customview.textfield.model.MaskedFormatter
 import androidx.core.content.withStyledAttributes
 
-class InputMaskedEditText @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = com.google.android.material.R.attr.editTextStyle
-) : AppCompatEditText(context, attrs, defStyleAttr) {
+class InputMaskedEditText @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : AppCompatEditText(context, attrs) {
 
     private var maskedFormatter: MaskedFormatter? = null
     var maskedWatcher: MaskedWatcher? = null

@@ -11,10 +11,11 @@ public enum ProgressDirection {
         return this == TO_RIGHT ? TO_LEFT : TO_RIGHT;
     }
     public static ProgressDirection fromInt(int v) {
-        return switch (v) {
-            case 1 -> TO_RIGHT;
-            case 2 -> TO_LEFT;
-            default -> throw new IllegalArgumentException("Invalid ProgressDirection " + v);
-        };
+        if (v == 1) {
+            return TO_RIGHT;
+        } else if (v == 2) {
+            return TO_LEFT;
+        }
+        throw new IllegalArgumentException("Invalid ProgressDirection " + v);
     }
 }

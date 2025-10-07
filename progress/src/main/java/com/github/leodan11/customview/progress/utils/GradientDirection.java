@@ -8,12 +8,15 @@ public enum GradientDirection {
     GradientDirection(int v) { this.value = v; }
     public int getValue() { return value; }
     public static GradientDirection fromInt(int v) {
-        return switch (v) {
-            case 1 -> LEFT_TO_RIGHT;
-            case 2 -> RIGHT_TO_LEFT;
-            case 3 -> TOP_TO_BOTTOM;
-            case 4 -> BOTTOM_TO_END;
-            default -> throw new IllegalArgumentException("Invalid GradientDirection " + v);
-        };
+        if (v == 1) {
+            return LEFT_TO_RIGHT;
+        } else if (v == 2) {
+            return RIGHT_TO_LEFT;
+        } else if (v == 3) {
+            return TOP_TO_BOTTOM;
+        } else if (v == 4) {
+            return BOTTOM_TO_END;
+        }
+        throw new IllegalArgumentException("Invalid GradientDirection " + v);
     }
 }

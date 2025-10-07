@@ -9,11 +9,7 @@ import com.github.leodan11.customview.textfield.content.MaskStyle
 import com.github.leodan11.customview.textfield.model.Mask
 import com.github.leodan11.customview.textfield.model.mostOccurred
 
-class MaskEditText @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyleAttr: Int = com.google.android.material.R.attr.editTextStyle
-) : AppCompatEditText(context, attrs, defStyleAttr) {
+class MaskEditText @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) : AppCompatEditText(context, attrs) {
 
     private var maskChangedListener: MaskChangedListener? = null
 

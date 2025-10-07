@@ -36,9 +36,10 @@
             android:layout_margin="10dp"
             android:hint="@string/app_name">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.github.leodan11.customview.textfield.InputMaskedEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:masked="###-******" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,10 +49,9 @@
             android:layout_margin="10dp"
             android:hint="@string/app_name">
 
-            <com.github.leodan11.customview.textfield.InputMaskedEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:masked="###-******" />
+                android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

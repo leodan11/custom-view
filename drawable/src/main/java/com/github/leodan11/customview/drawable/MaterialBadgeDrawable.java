@@ -345,21 +345,25 @@ public class MaterialBadgeDrawable extends Drawable {
         text2 = (text2 != null ? text2 : "");
 
         switch (getBadgeType()) {
-            case TYPE_ONLY_ONE_TEXT -> {
+            case TYPE_ONLY_ONE_TEXT: {
                 text1Width = (int) paint.measureText(text1);
                 badgeWidth = (int) (text1Width + getPaddingLeft() + getPaddingRight());
                 setCornerRadius(getCornerRadius());
+                break;
             }
-            case TYPE_WITH_TWO_TEXT, TYPE_WITH_TWO_TEXT_COMPLEMENTARY -> {
+            case TYPE_WITH_TWO_TEXT:
+            case TYPE_WITH_TWO_TEXT_COMPLEMENTARY: {
                 text1Width = (int) paint.measureText(text1);
                 text2Width = (int) paint.measureText(text2);
                 badgeWidth = (int) (text1Width + text2Width +
                         getPaddingLeft() + getPaddingRight() + getPaddingCenter());
                 setCornerRadius(getCornerRadius());
+                break;
             }
-            default -> {
+            default: {
                 badgeWidth = (int) (getTextSize() + getPaddingLeft() + getPaddingRight());
                 setCornerRadius(badgeHeight);
+                break;
             }
         }
 
@@ -367,15 +371,17 @@ public class MaterialBadgeDrawable extends Drawable {
         if (boundsWidth > 0) {
             // If the bounds have been set, adjust the badge size
             switch (getBadgeType()) {
-                case TYPE_ONLY_ONE_TEXT -> {
+                case TYPE_ONLY_ONE_TEXT: {
                     if (boundsWidth < badgeWidth) {
                         text1Width = (int) (boundsWidth - getPaddingLeft() - getPaddingRight());
                         text1Width = Math.max(text1Width, 0);
 
                         badgeWidth = boundsWidth;
                     }
+                    break;
                 }
-                case TYPE_WITH_TWO_TEXT, TYPE_WITH_TWO_TEXT_COMPLEMENTARY -> {
+                case TYPE_WITH_TWO_TEXT:
+                case TYPE_WITH_TWO_TEXT_COMPLEMENTARY: {
                     if (boundsWidth < badgeWidth) {
                         if (boundsWidth < (text1Width + getPaddingLeft() + getPaddingRight())) {
                             text1Width = (int) (boundsWidth - getPaddingLeft() - getPaddingRight());
@@ -390,8 +396,10 @@ public class MaterialBadgeDrawable extends Drawable {
 
                         badgeWidth = boundsWidth;
                     }
+                    break;
                 }
-                default -> {
+                default: {
+                    break;
                 }
             }
         }
@@ -427,15 +435,16 @@ public class MaterialBadgeDrawable extends Drawable {
         text2 = (text2 != null ? text2 : "");
 
         switch (getBadgeType()) {
-            case TYPE_ONLY_ONE_TEXT -> {
+            case TYPE_ONLY_ONE_TEXT: {
                 paint.setColor(getTextColor());
                 canvas.drawText(
                         cutText(text1, text1Width),
                         textCx,
                         textCy,
                         paint);
+                break;
             }
-            case TYPE_WITH_TWO_TEXT_COMPLEMENTARY -> {
+            case TYPE_WITH_TWO_TEXT_COMPLEMENTARY: {
                 paint.setColor(getTextColor());
                 canvas.drawText(
                         text1,
@@ -456,8 +465,9 @@ public class MaterialBadgeDrawable extends Drawable {
                         bounds.width() - marginLeftAndRight - getPaddingRight() - text2Width / 2f,
                         textCy,
                         paint);
+                break;
             }
-            case TYPE_WITH_TWO_TEXT -> {
+            case TYPE_WITH_TWO_TEXT: {
                 backgroundDrawableOfText1.setBounds(
                         bounds.left + marginLeftAndRight + getStrokeWidth(),
                         bounds.top + marginTopAndBottom + getStrokeWidth(),
@@ -486,14 +496,16 @@ public class MaterialBadgeDrawable extends Drawable {
                         bounds.width() - marginLeftAndRight - getPaddingRight() - text2Width / 2f,
                         textCy,
                         paint);
+                break;
             }
-            default -> {
+            default: {
                 paint.setColor(getTextColor());
                 canvas.drawText(
                         cutNumber(getNumber(), badgeWidth),
                         textCx,
                         textCy,
                         paint);
+                break;
             }
         }
     }
