@@ -81,11 +81,6 @@
         <attr name="shimmer_md_reverse_animation" format="boolean|reference"/>
     </declare-styleable>
 
-    <declare-styleable name="TableLayout">
-        <attr name="fhtl_min_scale" format="float|reference" />
-        <attr name="fhtl_max_scale" format="float|reference" />
-    </declare-styleable>
-
     <declare-styleable name="ToggleButtonLayout">
         <attr name="menu" format="reference" />
         <attr name="multipleSelection" format="boolean|reference" />

@@ -78,11 +78,9 @@ internal class FadeOutDrawable(private val density: Float) {
     }
 
     fun prepare(child: View?) {
-        if (child != null) {
-            child.toBitmapOrNull(BITMAP_SCALE)?.also { bitmap ->
-                generateParticles(bitmap)
-                bitmap.recycle()
-            }
+        child?.toBitmapOrNull(BITMAP_SCALE)?.also { bitmap ->
+            generateParticles(bitmap)
+            bitmap.recycle()
         }
     }
 
