@@ -4,6 +4,10 @@ if (versions == null || versions.publish_version == null) {
     throw new IllegalStateException("Must provide module_group and module_name!")
 }
 
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += ["-parameters"]
+}
+
 afterEvaluate {
     publishing {
         publications {

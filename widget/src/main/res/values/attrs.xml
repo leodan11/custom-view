@@ -137,17 +137,6 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="RecyclerViewSwipe">
-        <attr name="leftBgColorSwipe" format="color|reference" />
-        <attr name="leftImageSwipe" format="reference" />
-        <attr name="leftTextSwipe" format="string|reference" />
-        <attr name="rightBgColorSwipe" format="color|reference" />
-        <attr name="rightImageSwipe" format="reference" />
-        <attr name="rightTextSwipe" format="string|reference" />
-        <attr name="textColorSwipe" format="color|reference" />
-        <attr name="textSizeSwipe" format="dimension|reference" />
-    </declare-styleable>
-
     <declare-styleable name="SpeedDialView">
         <attr name="android:enabled" />
         <attr name="sdExpansionMode" format="enum">
@@ -193,6 +182,22 @@
         <attr name="snowflakesFadingEnabled" format="boolean|reference" />
         <attr name="snowflakesAlreadyFalling" format="boolean|reference" />
         <attr name="snowflakesMultipleImages" format="boolean|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeableRecyclerView">
+        <attr name="leftBgColor" format="color|reference" />
+        <attr name="leftImage" format="reference" />
+        <attr name="leftText" format="string|reference" />
+        <attr name="rightBgColor" format="color|reference" />
+        <attr name="rightImage" format="reference" />
+        <attr name="rightText" format="string|reference" />
+        <attr name="textColor" format="color|reference" />
+        <attr name="textSize" format="dimension|reference" />
+        <attr name="cornerRadius" format="dimension|reference" />
+        <attr name="leftCornerRadius" format="dimension|reference" />
+        <attr name="rightCornerRadius" format="dimension|reference" />
+        <attr name="supportRTL" format="boolean|reference" />
+        <attr name="forceRTL" format="boolean|reference" />
     </declare-styleable>
 
     <declare-styleable name="SwitchIconView">

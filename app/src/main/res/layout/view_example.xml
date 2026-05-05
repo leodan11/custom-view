@@ -178,6 +178,21 @@
 
             </com.github.leodan11.customview.layout.TicketLayout>
 
+            <com.github.leodan11.customview.widget.SwipeableRecyclerView
+                android:id="@+id/containerList2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:nestedScrollingEnabled="false"
+                app:cornerRadius="@dimen/dimen_8"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:leftBgColor="@color/purple_200"
+                app:leftText="@string/app_name"
+                app:rightBgColor="@color/teal_200"
+                app:rightImage="@drawable/baseline_add"
+                app:textColor="@color/white" />
+
         </LinearLayout>
 
     </com.github.leodan11.customview.layout.ShimmerSimpleLayout>

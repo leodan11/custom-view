@@ -1,8 +1,10 @@
 package com.leodan11.myapplication
 
+import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ImageView
@@ -10,7 +12,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.github.leodan11.customview.core.ReadMoreOption
+import com.github.leodan11.customview.core.RecyclerViewSwipeDecorator
 import com.github.leodan11.customview.core.Splashy
 import com.github.leodan11.customview.core.ToastKit
 import com.github.leodan11.customview.core.Toasty
@@ -18,9 +23,9 @@ import com.github.leodan11.customview.core.helper.Converters.dipToPixels
 import com.github.leodan11.customview.drawable.MaterialBadgeDrawable
 import com.github.leodan11.customview.drawable.TextDrawable
 import com.github.leodan11.customview.textfield.MaterialSpinner
-import com.github.leodan11.customview.widget.helpers.SwipeListener
-import com.github.leodan11.customview.widget.helpers.makeLeftRightSwipeAble
 import com.github.leodan11.customview.widget.pin.model.PinListener
+import com.github.leodan11.customview.widget.swipeablerv.SwipeLeftRightCallback
+import com.google.android.material.snackbar.Snackbar
 import com.leodan11.myapplication.databinding.ActivityMainBinding
 import java.util.UUID
 import kotlin.random.Random
@@ -49,6 +54,8 @@ class MainActivity : AppCompatActivity() {
             }
             .expandAnimation(true)
             .build()
+
+        val adapter = CustomAdapter()
 
         with(binding) {
 
@@ -122,6 +129,20 @@ class MainActivity : AppCompatActivity() {
                 badgeTextView.text = generateRandomBadgeDrawable().toSpannable()
                 switchIconView.switchState()
             }
+
+            containerList2.adapter = adapter
+            containerList2.setListener(object : SwipeLeftRightCallback.Listener {
+                override fun onSwipedLeft(position: Int) {
+                    Snackbar.make(root, "Item: $position -> moved LEFT", Snackbar.LENGTH_LONG).show()
+                    adapter.notifyItemChanged(position)
+                }
+
+                override fun onSwipedRight(position: Int) {
+                    Snackbar.make(root, "Item: $position -> moved RIGHT", Snackbar.LENGTH_LONG).show()
+                    adapter.notifyItemChanged(position)
+                }
+
+            })
         }
         with(binding.viewExampleSignature) {
 
@@ -144,28 +165,41 @@ class MainActivity : AppCompatActivity() {
                 view.setImageResource(R.drawable.ic_launcher_background)
             }
 
-            val adapter = CustomAdapter()
+
             containerList.adapter = adapter
             val listData = listOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
             adapter.updateFlowerCount(listData)
-            containerList.makeLeftRightSwipeAble(this@MainActivity)
-                .setListener(object : SwipeListener {
+            val callback: ItemTouchHelper.Callback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT) {
+                override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+                    return false
+                }
 
-                    override fun onSwipedLeft(position: Int) {
-                        Toasty.normal(this@MainActivity, "Archived $position", Toast.LENGTH_SHORT)
-                            .show()
-                        adapter.notifyItemRangeChanged(position, adapter.itemCount)
-                    }
+                override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    val position: Int = viewHolder.bindingAdapterPosition
+                    val moved: String = if (direction == ItemTouchHelper.RIGHT) "RIGHT" else "LEFT"
+                    Snackbar.make(viewHolder.itemView, "Item: $position -> moved $moved", Snackbar.LENGTH_LONG).show()
+                    adapter.notifyItemChanged(position)
+                }
 
-                    override fun onSwipedRight(position: Int) {
-                        Toasty.warning(this@MainActivity, "Deleted $position", Toast.LENGTH_SHORT)
-                            .show()
-                        adapter.notifyItemRangeChanged(position, adapter.itemCount)
-                    }
+                override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
+                    RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                        .addSwipeLeftBackgroundColor(getColor(R.color.purple_200))
+                        .addSwipeLeftLabel("Example 1")
+                        .addSwipeLeftActionIcon(R.drawable.baseline_ac_unit)
+                        .setSwipeLeftActionIconTint(getColor(R.color.white))
+                        .addSwipeRightBackgroundColor(getColor(R.color.teal_200))
+                        .addSwipeRightLabel("Example 2")
+                        .addCornerRadius(TypedValue.COMPLEX_UNIT_DIP, 16)
+                        .addSwipeRightActionIcon(R.drawable.baseline_add)
+                        .setSwipeRightLabelColor(getColor(R.color.white))
+                        .create()
+                        .decorate()
+                    super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                }
 
-                })
-                .createSwipeAble()
-
+            }
+            val itemTouchHelper = ItemTouchHelper(callback)
+            itemTouchHelper.attachToRecyclerView(containerList)
         }
         with(binding.viewExampleSnowfall) {
             var temp = true
